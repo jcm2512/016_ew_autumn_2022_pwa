@@ -6,7 +6,7 @@
 
     <title>Svelte PWA</title>
 
-    <link rel="manifest" href="manifest.json" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="description" content="Svelte PWA starter template" />
     <meta name="theme-color" content="#2F3BA2" />
 
@@ -29,10 +29,6 @@
   </head>
 
   <body>
-    <noscript>
-      <div>Oops! Javascript required here! Allow it and try again!</div>
-    </noscript>
-
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {

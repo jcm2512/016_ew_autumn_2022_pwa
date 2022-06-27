@@ -11,6 +11,7 @@ const FILES_TO_CACHE = [
   "/build/bundle.css",
   "/build/bundle.js",
   "/build/bundle.js.map",
+  "/offline.html",
 ];
 // install
 self.addEventListener("install", (evt) => {
