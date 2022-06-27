@@ -4,13 +4,13 @@ const CACHE_NAME = "static-cache-v1";
 // Cache Files
 const FILES_TO_CACHE = [
   "/index.html",
-  "favicon.png",
-  "global.css",
-  "logo.png",
-  "manifest.json",
-  "build/bundle.css",
-  "build/bundle.js",
-  "build/bundle.js.map",
+  "/favicon.png",
+  "/global.css",
+  "/logo.png",
+  "/manifest.json",
+  "/build/bundle.css",
+  "/build/bundle.js",
+  "/build/bundle.js.map",
 ];
 // install
 self.addEventListener("install", (evt) => {
@@ -50,7 +50,7 @@ self.addEventListener("fetch", (evt) => {
   evt.respondWith(
     fetch(evt.request).catch(() => {
       return caches.open(CACHE_NAME).then((cache) => {
-        return cache.match("index.html");
+        return cache.match("offline.html");
       });
     })
   );
