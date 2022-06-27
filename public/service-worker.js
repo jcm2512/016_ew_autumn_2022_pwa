@@ -50,9 +50,10 @@ self.addEventListener("fetch", (evt) => {
   }
   evt.respondWith(
     fetch(evt.request).catch(() => {
-      return caches.open(CACHE_NAME).then((cache) => {
-        return cache.match("offline.html");
-      });
+      return caches.open(CACHE_NAME);
+      //   .then((cache) => {
+      //     return cache.match("offline.html");
+      //   });
     })
   );
 });
