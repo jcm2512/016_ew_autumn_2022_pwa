@@ -4,10 +4,64 @@
     value: {
       monsters: 0,
       monsterData: {
-        100: {
-          name: "joey",
+        110: {
+          name: "monster",
           count: 0,
-          img: "path/to/img.png",
+          img: "icons8-cute-monster-96.png",
+          found: false,
+        },
+        120: {
+          name: "jackolantern",
+          count: 0,
+          img: "icons8-cute-pumpkin-96.png",
+          found: false,
+        },
+        130: {
+          name: "skull",
+          count: 0,
+          img: "icons8-cute-skull-96.png",
+          found: false,
+        },
+        140: {
+          name: "frankensteins monster",
+          count: 0,
+          img: "icons8-frankensteins-monster-96.png",
+          found: false,
+        },
+        150: {
+          name: "mummy",
+          count: 0,
+          img: "icons8-mummy-96.png",
+          found: false,
+        },
+        160: {
+          name: "skull",
+          count: 0,
+          img: "icons8-thriller-96.png",
+          found: false,
+        },
+        170: {
+          name: "witch",
+          count: 0,
+          img: "icons8-witch-96.png",
+          found: false,
+        },
+        180: {
+          name: "wizard",
+          count: 0,
+          img: "icons8-ghost-96.png",
+          found: false,
+        },
+        190: {
+          name: "bat",
+          count: 0,
+          img: "icons8-bat-96.png",
+          found: false,
+        },
+        200: {
+          name: "ghost",
+          count: 0,
+          img: "icons8-ghost-96.png",
           found: false,
         },
       },
