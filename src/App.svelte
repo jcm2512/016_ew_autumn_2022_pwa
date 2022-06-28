@@ -58,7 +58,8 @@
   // ---- URL SCAN: (on page load)
   let result = getParameter(window.location.href, eventid);
   if (result) {
-    set.add(getParameter(window.location.href, eventid));
+    // set.add(getParameter(window.location.href, eventid));
+    set.push(getParameter(window.location.href, eventid));
   }
   saveResults();
 
@@ -90,7 +91,8 @@
     };
     const qrCodeSuccessCallback = (decodedText, decodedResult) => {
       $found = true;
-      set.add(getParameter(decodedText, eventid));
+      //   set.add(getParameter(decodedText, eventid));
+      set.push(getParameter(decodedText, eventid));
       saveResults();
       stop();
     };
