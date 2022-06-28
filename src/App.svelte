@@ -15,7 +15,10 @@
     param = "k";
 
   let tempStorage = JSON.parse(localStorage.getItem(eventid)) || [];
-  let set = new Set(tempStorage);
+  //   let set = new Set(tempStorage);
+  let set = tempStorage;
+
+  console.log(tempStorage);
 
   var onResize = function () {
     console.log("resized");
@@ -37,7 +40,8 @@
       case eventid:
         return params.get(param);
       case "clear":
-        set = new Set([]);
+        // set = new Set([]);
+        set = [];
         return false;
       default:
         console.log("Please add 'id' parameter to url");
@@ -95,13 +99,13 @@
 
 <main>
   <div bind:this={reader} id="reader" width="600px" />
-  <ul>
-    {#key trigger}
-      {#each [...set] as item}
-        <li>{item}</li>
-      {/each}
-    {/key}
-  </ul>
+
+  {#key trigger}
+    {#each [...set] as item}
+      <div class="item">{item}</div>
+    {/each}
+  {/key}
+
   <div class="nav">
     <div class="button_container">
       {#if !scanning}
@@ -259,5 +263,9 @@
       -webkit-transform: rotate(360deg);
       transform: rotate(360deg);
     }
+  }
+
+  .item {
+    color: #ffffff;
   }
 </style>
