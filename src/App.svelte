@@ -10,6 +10,39 @@
   let trigger = 0; //trigger DOM refresh when incremented
   $found = false;
 
+  const numberedList = [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+  ];
+
   let eventid = "ae22",
     id = "id",
     param = "k";
@@ -20,7 +53,7 @@
 
   console.log(tempStorage);
 
-  var onResize = function () {
+  const onResize = function () {
     console.log("resized");
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -42,6 +75,7 @@
       case "clear":
         // set = new Set([]);
         set = [];
+        console.log(JSON.stringify([...set]));
         return false;
       default:
         console.log("Please add 'id' parameter to url");
@@ -102,11 +136,17 @@
 <main>
   <div bind:this={reader} id="reader" width="600px" />
 
-  {#key trigger}
-    {#each [...set] as item}
+  <div class="list">
+    <!-- {#key trigger}
+      {#each [...set] as item}
+        <div class="item">{item}</div>
+      {/each}
+    {/key} -->
+
+    {#each numberedList as item}
       <div class="item">{item}</div>
     {/each}
-  {/key}
+  </div>
 
   <div class="nav">
     <div class="button_container">
@@ -131,15 +171,22 @@
 </main>
 
 <style>
+  .longlist {
+    overflow: hidden;
+    height: 200%;
+  }
   main {
     background-color: black;
     text-align: center;
     padding: 1em;
     margin: 0 auto;
+    display: grid;
+    grid-template-rows: repeat(4, 4fr) 100px;
+    grid-template-columns: 1;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
   }
 
   div {
@@ -151,20 +198,23 @@
   }
 
   .nav {
-    grid-area: app;
-    align-self: end;
-    /* position: fixed; */
-    /* bottom: 0; */
-    width: 100%;
-    display: grid;
+    grid-row: 5;
+    align-self: center;
+    justify-self: center;
+    /* height: 100%; */
+    /* width: 100%; */
+    /* display: grid; */
     grid-template-rows: 1fr;
     z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .button_container {
     justify-self: center;
-    height: 7rem;
-    width: 7rem;
+    height: 6rem;
+    width: 6rem;
     z-index: 10;
     grid-row: 1;
     grid-column: 1;
@@ -269,5 +319,16 @@
 
   .item {
     color: #ffffff;
+    height: 20vh;
+  }
+
+  .list {
+    grid-column: 1/2;
+    grid-row: 1/4;
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    height: 75vh;
+    overflow: hidden;
+    overflow-y: scroll;
   }
 </style>
