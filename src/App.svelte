@@ -201,7 +201,6 @@
     align-items: center;
     width: 100%;
     padding: 20px;
-    background-color: darksalmon;
     grid-row: 5;
     align-self: center;
     justify-self: center;
@@ -225,11 +224,11 @@
   }
 
   .button {
+    background-color: var(--orange);
     width: 100%;
     height: 100%;
     padding: 0.2rem;
     color: var(--white);
-    background-color: var(--blue);
     font-size: 1.5rem;
     font-family: var(--main-font);
     border: solid 0.5rem var(--white);
@@ -240,6 +239,10 @@
       "text";
     grid-template-rows: 3fr 1fr;
     grid-template-columns: 1fr;
+  }
+
+  .button img {
+    width: 60%;
   }
 
   .button img,
