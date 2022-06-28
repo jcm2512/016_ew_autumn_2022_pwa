@@ -104,6 +104,7 @@
     start = function () {
       loading = true;
       button.classList.add("loader");
+      reader.style.visibility = "visible";
       html5QrCode
         .start({ facingMode: "environment" }, config, qrCodeSuccessCallback)
         .then((ignore) => {
@@ -113,6 +114,7 @@
         });
     };
     stop = function () {
+      reader.style.visibility = "hidden";
       html5QrCode
         .stop()
         .then((ignore) => {
@@ -171,9 +173,11 @@
 </main>
 
 <style>
-  .longlist {
-    overflow: hidden;
-    height: 200%;
+  #reader {
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 100;
+    visibility: hidden;
   }
   main {
     background-color: black;
@@ -181,12 +185,15 @@
     padding: 1em;
     margin: 0 auto;
     display: grid;
-    grid-template-rows: repeat(4, 4fr) 100px;
-    grid-template-columns: 1;
+    /* grid-template-rows: repeat(4, 4fr) 100px; */
+    /* grid-template-columns: 1; */
     height: 100%;
     /* display: flex; */
     /* flex-direction: column; */
     /* justify-content: space-between; */
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
   }
 
   div {
@@ -198,6 +205,10 @@
   }
 
   .nav {
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: blue;
     grid-row: 5;
     align-self: center;
     justify-self: center;
@@ -327,7 +338,7 @@
     grid-row: 1/4;
     display: grid;
     grid-template-columns: repeat(3, 3fr);
-    height: 75vh;
+    height: 100%;
     overflow: hidden;
     overflow-y: scroll;
   }

@@ -12,6 +12,7 @@ html, body {
 body {
 	height: 100vh; /* fallback for browsers that do not support Custom Properties */
 	height: calc(var(--vh, 1vh) * 100);  
+	overflow:hidden;
 }
   html {
 	height: -webkit-fill-available;
