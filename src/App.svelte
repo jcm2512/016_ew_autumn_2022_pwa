@@ -1,11 +1,13 @@
 <script>
   import { Html5QrcodeScanner, Html5Qrcode } from "html5-qrcode";
+  import { animateCSS } from "./animateCSS.svelte";
   import { onMount } from "svelte";
   import { found, scanning, loading, trigger, monsterObject } from "./store.js";
   import { localData } from "./localstorage.svelte";
 
   let reader, button; // Reference to DOM element
   let start, stop; // Functions loaded on Mount
+  let DOMelements = [];
   $found = false;
 
   // Load local game data
@@ -116,15 +118,29 @@
   <div bind:this={reader} id="reader" width="600px" />
 
   <div class="list">
-    <!-- {#key $trigger}
-      {#each [...set] as item}
-        <div class="item">{item}</div>
-      {/each}
-    {/key} -->
-
-    <!-- {#each numberedList as item}
-      <div class="item">{item}</div>
-    {/each} -->
+    {#each monsters as monster, index}
+      {#if $monsterObject[monster].found}
+        <span class="img_Container">
+          <img
+            src={`/assets/icons/monsters/${$monsterObject[monster].img}`}
+            alt={$monsterObject[monster].name}
+            class="icon"
+            bind:this={DOMelements[index]}
+            on:click|preventDefault={() => {
+              animateCSS(DOMelements[index], "rubberBand");
+            }}
+          />
+        </span>
+      {:else}
+        <span class="img_Container">
+          <img
+            src={`/assets/icons/monsters/${$monsterObject[monster].img}`}
+            alt={$monsterObject[monster].name}
+            class="icon locked "
+          />
+        </span>
+      {/if}
+    {/each}
   </div>
 
   <div class="nav">
@@ -157,7 +173,7 @@
     visibility: hidden;
   }
   main {
-    background-color: black;
+    background-color: slateblue;
     text-align: center;
     padding: 1em;
     margin: 0 auto;
@@ -185,7 +201,7 @@
     align-items: center;
     width: 100%;
     padding: 20px;
-    background-color: blue;
+    background-color: darksalmon;
     grid-row: 5;
     align-self: center;
     justify-self: center;
@@ -318,5 +334,14 @@
     height: 100%;
     overflow: hidden;
     overflow-y: scroll;
+  }
+
+  img {
+    height: 20vw;
+    width: 20vw;
+  }
+
+  .locked {
+    filter: brightness(0) grayscale(100%) opacity(0.5);
   }
 </style>
