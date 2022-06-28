@@ -1,57 +1,26 @@
 <script>
   import { Html5QrcodeScanner, Html5Qrcode } from "html5-qrcode";
   import { onMount } from "svelte";
-  import { found } from "./store.js";
+  import { found, scanning, loading, trigger, monsterObject } from "./store.js";
+  import { localData } from "./localstorage.svelte";
 
   let reader, button; // Reference to DOM element
   let start, stop; // Functions loaded on Mount
-  let scanning = false; // Triggered when camera is ready to scan
-  let loading = false; // Loading animation
-  let trigger = 0; //trigger DOM refresh when incremented
   $found = false;
 
-  const numberedList = [
-    "01",
-    "02",
-    "03",
-    "04",
-    "05",
-    "06",
-    "07",
-    "08",
-    "09",
-    "10",
-    "11",
-    "12",
-    "13",
-    "14",
-    "15",
-    "01",
-    "02",
-    "03",
-    "04",
-    "05",
-    "06",
-    "07",
-    "08",
-    "09",
-    "10",
-    "11",
-    "12",
-    "13",
-    "14",
-    "15",
-  ];
+  // Load local game data
+  let sessionStorage = localData;
+  sessionStorage.load();
 
-  let eventid = "ae22",
-    id = "id",
-    param = "k";
+  $monsterObject = sessionStorage.get("monsterData").monsterData;
+  $: $trigger && sessionStorage.set({ monsterData: $monsterObject }),
+    sessionStorage.save();
 
-  let tempStorage = JSON.parse(localStorage.getItem(eventid)) || [];
-  //   let set = new Set(tempStorage);
-  let set = tempStorage;
+  let monsters = Object.keys($monsterObject);
+  console.log(monsters);
 
-  console.log(tempStorage);
+  let eventid = "ew202210",
+    param = "m";
 
   const onResize = function () {
     console.log("resized");
@@ -61,6 +30,24 @@
   onResize();
   window.onresize = onResize;
 
+  let FoundMonsters = [];
+  let HiddenMonsters = [];
+
+  FoundMonsters.push(
+    Object.values($monsterObject)
+      .filter((monster) => monster.found)
+      .map((monster) => {
+        return monster.name;
+      })
+  );
+  HiddenMonsters.push(
+    Object.values($monsterObject)
+      .filter((monster) => !monster.found)
+      .map((monster) => {
+        return monster.name;
+      })
+  );
+
   // ---- FUNCTIONS:
   // Get Parameter
   const getParameter = (url, eventid) => {
@@ -69,13 +56,11 @@
       console.log("No parameters found in URL");
       return false;
     }
-    switch (params.get(id)) {
+    switch (params.get("id")) {
       case eventid:
         return params.get(param);
       case "clear":
-        // set = new Set([]);
-        set = [];
-        console.log(JSON.stringify([...set]));
+        sessionStorage.clear();
         return false;
       default:
         console.log("Please add 'id' parameter to url");
@@ -85,32 +70,23 @@
 
   // Save Results
   const saveResults = () => {
-    trigger += 1;
-    localStorage.setItem(eventid, JSON.stringify([...set]));
+    $trigger += 1;
   };
-
-  // ---- URL SCAN: (on page load)
-  let result = getParameter(window.location.href, eventid);
-  if (result) {
-    // set.add(getParameter(window.location.href, eventid));
-    set.push(getParameter(window.location.href, eventid));
-  }
-  saveResults();
 
   // ---- APP SCAN ----
   onMount(() => {
     const html5QrCode = new Html5Qrcode("reader");
     const config = { fps: 10, qrbox: { width: 250, height: 250 } };
     start = function () {
-      loading = true;
+      $loading = true;
       button.classList.add("loader");
       reader.style.visibility = "visible";
       html5QrCode
         .start({ facingMode: "environment" }, config, qrCodeSuccessCallback)
         .then((ignore) => {
           // QR Code scanning has started.
-          scanning = true;
-          loading = false;
+          $scanning = true;
+          $loading = false;
         });
     };
     stop = function () {
@@ -119,7 +95,7 @@
         .stop()
         .then((ignore) => {
           // QR Code scanning is stopped.
-          scanning = false;
+          $scanning = false;
         })
         .catch((err) => {
           // Stop failed, handle it.
@@ -127,8 +103,9 @@
     };
     const qrCodeSuccessCallback = (decodedText, decodedResult) => {
       $found = true;
-      //   set.add(getParameter(decodedText, eventid));
-      set.push(getParameter(decodedText, eventid));
+      let foundMonster = getParameter(decodedText, eventid);
+      $monsterObject[foundMonster].count += 1;
+      $monsterObject[foundMonster].found = true;
       saveResults();
       stop();
     };
@@ -139,22 +116,22 @@
   <div bind:this={reader} id="reader" width="600px" />
 
   <div class="list">
-    <!-- {#key trigger}
+    <!-- {#key $trigger}
       {#each [...set] as item}
         <div class="item">{item}</div>
       {/each}
     {/key} -->
 
-    {#each numberedList as item}
+    <!-- {#each numberedList as item}
       <div class="item">{item}</div>
-    {/each}
+    {/each} -->
   </div>
 
   <div class="nav">
     <div class="button_container">
-      {#if !scanning}
+      {#if !$scanning}
         <div on:click={start} class="button">
-          {#if loading}
+          {#if $loading}
             <div class="loader" />
           {:else}
             <img bind:this={button} class="start" alt="scan" />
