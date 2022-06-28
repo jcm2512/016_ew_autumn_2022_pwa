@@ -12,7 +12,7 @@
 
   let eventid = "ae22",
     id = "id",
-    param = "p";
+    param = "k";
 
   let tempStorage = JSON.parse(localStorage.getItem(eventid)) || [];
   let set = new Set(tempStorage);
@@ -95,6 +95,13 @@
 
 <main>
   <div bind:this={reader} id="reader" width="600px" />
+  <ul>
+    {#key trigger}
+      {#each [...set] as item}
+        <li>{item}</li>
+      {/each}
+    {/key}
+  </ul>
   <div class="nav">
     <div class="button_container">
       {#if !scanning}
