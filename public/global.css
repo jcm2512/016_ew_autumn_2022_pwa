@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Fredoka&family=Kiwi+Maru:wght@500&family=Londrina+Outline&family=Londrina+Solid:wght@300;900&family=Nunito:wght@300;400;600;700&family=Rampart+One&display=swap');
+
 * { box-sizing: Border-box ;
 	margin:0;}
 
@@ -13,4 +15,5 @@ body {
 }
   html {
 	height: -webkit-fill-available;
+	font-family: 'Comfortaa', cursive;
   }
