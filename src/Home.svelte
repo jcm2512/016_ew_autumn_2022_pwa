@@ -45,7 +45,7 @@
     overflow-y: auto;
     z-index: 0;
     color: #fff;
-    font-family: "Gill Sans MT";
+    font-family: "Comfortaa";
   }
 
   #bg {

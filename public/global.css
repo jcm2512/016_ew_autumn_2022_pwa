@@ -36,7 +36,6 @@ body {
   #qr_button {
     height: 7rem;
     width: 7rem;
-    /* background: linear-gradient(43.6deg, #E84B50 22.24%, #BC76E4 73.52%); */
 	border-radius: 50%;
 	margin-top: -2.5rem;
 	border: 0.75rem solid var(--background);
