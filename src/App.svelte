@@ -243,6 +243,7 @@
 
   .button img {
     width: 60%;
+    height: auto;
   }
 
   .button img,

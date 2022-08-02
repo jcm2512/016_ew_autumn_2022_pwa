@@ -3,25 +3,14 @@
 :root{
 --main-font: "Londrina Solid";
 --white: hsl(0, 0%, 100%);
---yellow: hsl(44, 90%, 77%);
---light-yellow: hsl(48, 100%, 80%);
---orange: hsl(36, 75%, 75%);
---pink:hsl(340, 66%, 64%);
---light-pink: hsl(330, 100%, 87%);
---blue:hsl(204, 74%, 70%);
---dark-blue:hsl(219, 49%, 62%);
---transparent-blue:hsla(226, 6%, 57%, 0.5);
---outline: hsl(279, 21%, 52%);
---gray:hsl(226, 6%, 57%);
---light-gray: hsl(219, 56%, 93%);
---off-white:hsl(213, 61%, 90%);
---medium-gray: hsl(0, 0%, 85%);
---green: hsl(160, 41%, 55%);
---light-green: hsl(162, 45%, 62%);
---transparent-black:hsla(0, 0%, 0%, 0.6);
-
-
---border-light:  hsl(0, 0%, 100%);
+--purple: hsl(278, 67%, 68%);
+--pink: #F15BB5;
+--yellow: #FEE440;
+--orange: #F89E7C;
+--green: #A2D583;
+--blue: #00BBF9;
+--aqua: #00F5D4;
+--background: #15304A;
 }
 
 * { box-sizing: Border-box ;
@@ -31,6 +20,7 @@ html, body {
 	position: relative;
 	/* width: 100vw;
 	height: 100vh; */
+	background-color:var(--background);
 }
 
 body {
@@ -41,4 +31,38 @@ body {
   html {
 	height: -webkit-fill-available;
 	font-family: 'Comfortaa', cursive;
+  }
+
+  #qr_button {
+    height: 7rem;
+    width: 7rem;
+    /* background: linear-gradient(43.6deg, #E84B50 22.24%, #BC76E4 73.52%); */
+	border-radius: 50%;
+	margin-top: -2.5rem;
+	border: 0.75rem solid var(--background);
+	background-image: url("assets/icons/scan-barcode.svg"), linear-gradient(43.6deg, #E84B50 22.24%, #BC76E4 73.52%);
+	background-position: center;
+	background-repeat: no-repeat;
+  }
+
+  .nav_button {
+	margin: auto;
+	height: 4.5rem;
+	width: 4.5rem;
+	display: flex;
+	border-radius: 50%;
+  }
+
+  .nav_button img{
+	margin: 0 auto;
+  	align-self: center;
+  }
+
+  .active{
+	background-color: #1CB2B7;
+}
+
+  nav{
+	display: flex;
+	justify-content: space-between;
   }

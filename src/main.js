@@ -1,10 +1,10 @@
-import App from "./App.svelte";
+import Home from "./Home.svelte";
 
-const app = new App({
+const home = new Home({
   target: document.body,
   // props: {
   //   name: "world",
   // },
 });
 
-export default app;
+export default home;
