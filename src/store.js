@@ -8,3 +8,19 @@ export const menuState = writable("Home");
 
 // MONSTER LIST
 export let monsterCollection = writable({});
+
+// STAMP CATEGORIES
+export let stampsCategories = writable({
+  1: {
+    title: "Monster Collection",
+    subtitle: "モンスターコレクション",
+  },
+  2: {
+    title: "Super Rare Collection",
+    subtitle: "スーパーレアコレクション",
+  },
+  3: {
+    title: "Teacher Collection",
+    subtitle: "先生コレクション",
+  },
+});
