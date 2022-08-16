@@ -7,13 +7,16 @@
     loading,
     trigger,
     monsterCollection,
+    menuState,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
+  import Stamps from "./Stamps.svelte";
+  import Menu from "./menu.svelte";
 
   // Global Variables
   let eventid = "ew202210",
     param = "m";
-  let reader, button; // Reference to DOM element
+  let reader, button, overlay, main, nav_home, nav_stamps; // Reference to DOM element
   let start, stop; // Functions loaded on Mount
   let DOMelements = [];
   $found = false;
@@ -64,6 +67,19 @@
     $trigger += 1;
   };
 
+  function nav(event) {
+    $menuState = event;
+    if (event === "Home") {
+      main.setAttribute("class", "");
+      main.classList.add("bg_dark");
+    }
+
+    if (event === "Stamps") {
+      main.setAttribute("class", "");
+      main.classList.add("bg_purple");
+    }
+  }
+
   //// ---- QR SCAN ----
   onMount(() => {
     const html5QrCode = new Html5Qrcode("reader");
@@ -72,6 +88,7 @@
       $loading = true;
       button.classList.add("loading");
       reader.style.visibility = "visible";
+      overlay.style.visibility = "visible";
       html5QrCode
         .start({ facingMode: "environment" }, config, qrCodeSuccessCallback)
         .then((ignore) => {
@@ -82,6 +99,7 @@
     };
     stop = function () {
       reader.style.visibility = "hidden";
+      overlay.style.visibility = "hidden";
       html5QrCode
         .stop()
         .then((ignore) => {
@@ -103,156 +121,65 @@
   });
 </script>
 
-<div id="main">
-  <div bind:this={reader} id="reader" width="600px" />
-  <div id="bg" />
-  <div id="content">
-    <div id="heading">
-      <div class="sub">English World</div>
-      <div class="main">Halloween Monster Festival</div>
-    </div>
+<div id="main" bind:this={main} class="bg_dark">
+  <div bind:this={reader} id="reader" width="600px" class="grid-top" />
+  <div bind:this={overlay} id="overlay" class="grid-top " />
+  <div id="bg" class="grid-top " />
+  <div id="sub_menu_container"><div id="sub_menu" /></div>
+  <div id="shadow" />
 
-    <div id="menu">
-      <div class="title">アクティビティ</div>
-      <div class="menu_item activity">
-        <div class="item activity_1">Trick Or Treat</div>
-        <div class="item activity_2">Ask a Teacher</div>
-        <div class="item activity_3">Halloween Craft</div>
-      </div>
-      <div class="title">ゲーム</div>
-      <div class="menu_item game">
-        <div class="item game_1">Haunted Forest</div>
-        <div class="item game_2">Flip Flip</div>
-        <div class="item game_3">Monster Feeding</div>
-        <div class="item game_4">Eyeball Throw</div>
-        <div class="item game_5">Piranha Catch</div>
-        <div class="item game_6">Witches Hat Ring Toss</div>
-      </div>
-    </div>
+  <div id="content" class="grid-top grid">
+    {#if $menuState === "Home"}
+      <Menu />
+    {:else}
+      <Stamps />
+    {/if}
   </div>
 </div>
+
 <nav>
-  <div class="nav_button home active">
-    <img src="assets/icons/home-active.svg" alt="Home" />
-  </div>
+  {#if $menuState === "Home"}
+    <div
+      bind:this={nav_home}
+      class="nav_button nav_home active"
+      on:click={() => nav("Home")}
+    >
+      <img src="assets/icons/home-active.svg" alt="Home" />
+    </div>
+  {:else}
+    <div
+      bind:this={nav_home}
+      class="nav_button nav_home"
+      on:click={() => nav("Home")}
+    >
+      <img src="assets/icons/home.svg" alt="Home" />
+    </div>
+  {/if}
+
   {#if !$scanning}
     <div id="qr_button" bind:this={button} on:click={start} />
   {:else}
     <div id="qr_button" class="stop" bind:this={button} on:click={stop} />
   {/if}
-  <div class="nav_button monsters">
-    <img src="assets/icons/monsters.svg" alt="Monsters" />
-  </div>
+
+  {#if $menuState === "Stamps"}
+    <div
+      bind:this={nav_stamps}
+      class="nav_button nav_stamps active"
+      on:click={() => nav("Stamps")}
+    >
+      <img src="assets/icons/monsters-active.svg" alt="Stamps" />
+    </div>
+  {:else}
+    <div
+      bind:this={nav_stamps}
+      class="nav_button nav_stamps"
+      on:click={() => nav("Stamps")}
+    >
+      <img src="assets/icons/monsters.svg" alt="Stamps" />
+    </div>
+  {/if}
 </nav>
 
 <style>
-  :root {
-    --nav-height: 7rem;
-  }
-
-  #heading {
-    font-weight: 700;
-    margin-top: 3vh;
-  }
-
-  #heading .sub {
-    font-size: 1rem;
-  }
-
-  #heading .main {
-    font-size: 2rem;
-  }
-
-  #menu {
-    margin-bottom: var(--nav-height);
-  }
-
-  .menu_item {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-flow: row;
-  }
-
-  .menu_item.activity {
-    grid-template-rows: repeat(2, 7rem);
-  }
-
-  .menu_item.game {
-    grid-template-rows: repeat(5, 7rem);
-  }
-
-  .title {
-    grid-column: span 2;
-    font-weight: 700;
-    font-size: 1.2rem;
-  }
-
-  .item {
-    height: auto;
-    grid-column: span 2;
-    border-radius: 1.2rem;
-    padding: 1rem;
-    margin: 0.4rem;
-    font-size: 1.4rem;
-    font-weight: 700;
-  }
-
-  .activity_1 {
-    background-color: var(--pink);
-  }
-
-  .activity_2 {
-    background-color: var(--green);
-    grid-column: span 1;
-  }
-
-  .activity_3 {
-    background-color: var(--orange);
-    grid-column: span 1;
-  }
-
-  .game_1 {
-    background-color: var(--orange);
-    grid-row: span 1;
-    grid-column: span 2;
-  }
-
-  .game_2 {
-    background-color: var(--aqua);
-    grid-column: span 1;
-  }
-
-  .game_3 {
-    background-color: var(--purple);
-    grid-column: span 1;
-    grid-row: span 2;
-  }
-
-  .game_4 {
-    background-color: var(--blue);
-    grid-column: span 1;
-    grid-row: span 2;
-  }
-
-  .game_5 {
-    background-color: var(--green);
-    grid-column: span 1;
-  }
-
-  .game_6 {
-    color: var(--background);
-    background-color: var(--yellow);
-    grid-column: span 2;
-  }
-
-  nav {
-    color: #fff;
-    width: 100%;
-    height: var(--nav-height);
-    position: absolute;
-    bottom: 0;
-    background: linear-gradient(180deg, #e5e6e9 32.81%, #b3c5d1 100%);
-    border-radius: 25px 25px 0px 0px;
-    z-index: 100;
-  }
 </style>

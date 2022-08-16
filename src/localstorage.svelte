@@ -5,9 +5,39 @@
       found: 0,
       collection: {
         y_001: {
-          name: "monster",
+          name: "monster1",
           count: 0,
-          img: "icons8-cute-monster-96.png",
+          img: "/assets/icons/monsters/yellow_monster.png",
+          found: false,
+        },
+        y_002: {
+          name: "monster2",
+          count: 0,
+          img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
+          found: false,
+        },
+        y_003: {
+          name: "monster3",
+          count: 0,
+          img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
+          found: false,
+        },
+        y_004: {
+          name: "monster4",
+          count: 0,
+          img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
+          found: false,
+        },
+        y_005: {
+          name: "monster5",
+          count: 0,
+          img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
+          found: false,
+        },
+        y_006: {
+          name: "monster6",
+          count: 0,
+          img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
           found: false,
         },
       },
