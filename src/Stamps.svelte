@@ -1,19 +1,68 @@
 <script>
-  import { stampCollection, stampsCategories } from "./store.js";
-  import StampCollection from "./StampCollection.svelte";
+  import { stampCollection } from "./store.js";
   import { gsap } from "gsap";
   import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-  gsap.registerPlugin(ScrollToPlugin);
-  let stamps = Object.keys($stampCollection);
+  import { animateCSS } from "./animateCSS.svelte";
 
-  let stageCards;
+  gsap.registerPlugin(ScrollToPlugin);
+
+  let stageCards, next;
   let CARDS = [];
+
+  const LVL = {
+    id: 0,
+  };
+
+  const handleNav = function (direction, div, lvl, options) {
+    let width = CARDS[lvl.id].offsetWidth;
+    let padding = (div.offsetWidth - width) / 2;
+
+    // Calculate the current ID when swiping
+    lvl.id = Math.round(div.scrollLeft / width);
+
+    switch (direction) {
+      case "prev":
+        if (lvl.id > 0) {
+          lvl.id -= 1;
+        }
+        break;
+      case "next":
+        if (lvl.id < Object.keys($stampCollection).length - 1) {
+          lvl.id += 1;
+        }
+        break;
+    }
+    // PLAY SWIPE ANIMATION
+    if (direction != "play") {
+      gsap.to(stageCards, {
+        duration: 0.5,
+        scrollTo: {
+          x: `#lvl_${lvl.id + 1}`,
+          offsetX: padding,
+        },
+      });
+    }
+  };
 </script>
+
+<div id="sub_menu_container">
+  <div
+    id="sub_menu"
+    bind:this={next}
+    on:click|preventDefault={() => {
+      console.log("clicked");
+      handleNav("next", stageCards, LVL);
+      animateCSS(next, "headShake");
+    }}
+  />
+</div>
+
+<div id="shadow" />
 
 <!-- swipable menu START-->
 <ul bind:this={stageCards} id="stage_card" class="gallery">
   {#each Object.keys($stampCollection) as id, index}
-    <div class={id}>
+    <div id="section" class={id} bind:this={CARDS[index]}>
       <div id="heading">
         <div class="sub">{$stampCollection[id].subheading}</div>
         <div class="main">{$stampCollection[id].heading}</div>
@@ -112,6 +161,10 @@
     margin-inline-end: 0px;
     padding-inline-start: 10vw;
     padding-inline-end: 10vw;
+  }
+
+  #section {
+    scroll-snap-align: center;
   }
 
   /* Hide scrollbar for Chrome, Safari and Opera */

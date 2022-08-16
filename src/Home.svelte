@@ -16,7 +16,7 @@
   // Global Variables
   let eventid = "ew202210",
     param = "m";
-  let reader, button, overlay, main, nav_home, nav_stamps; // Reference to DOM element
+  let reader, button, overlay, main, nav_home, nav_stamps, next; // Reference to DOM element
   let start, stop; // Functions loaded on Mount
   let DOMelements = [];
   $found = false;
@@ -124,8 +124,6 @@
   <div bind:this={reader} id="reader" width="600px" class="grid-top" />
   <div bind:this={overlay} id="overlay" class="grid-top " />
   <div id="bg" class="grid-top " />
-  <div id="sub_menu_container"><div id="sub_menu" /></div>
-  <div id="shadow" />
 
   <div id="content" class="grid-top grid">
     {#if $menuState === "Home"}

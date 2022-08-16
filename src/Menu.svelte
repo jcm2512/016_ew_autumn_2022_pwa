@@ -21,6 +21,8 @@
   </div>
 </div>
 
+<div id="shadow" />
+
 <style>
   .menu_item {
     display: grid;
