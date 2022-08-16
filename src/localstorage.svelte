@@ -3,7 +3,7 @@
     key: "localdata_ew202210",
     value: {
       found: 0,
-      monsterCollection: {
+      collection: {
         y_001: {
           name: "monster",
           count: 0,

@@ -1,4 +1,110 @@
+<script>
+  import { onMount } from "svelte";
+  import { Html5QrcodeScanner, Html5Qrcode } from "html5-qrcode";
+  import {
+    found,
+    scanning,
+    loading,
+    trigger,
+    monsterCollection,
+  } from "./store.js";
+  import { localData } from "./localstorage.svelte";
+
+  // Global Variables
+  let eventid = "ew202210",
+    param = "m";
+  let reader, button; // Reference to DOM element
+  let start, stop; // Functions loaded on Mount
+  let DOMelements = [];
+  $found = false;
+
+  // Load local data
+  let sessionStorage = localData;
+  sessionStorage.load();
+
+  // Set collected monsters to local data
+  $monsterCollection = sessionStorage.get("collection").collection;
+  $: $trigger && sessionStorage.set({ collection: $monsterCollection }),
+    sessionStorage.save();
+  let monsters = Object.keys($monsterCollection);
+  console.log(monsters);
+
+  // Fix document page size when toolbar is shown or hidden
+  const onResize = function () {
+    console.log("resized");
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  };
+
+  onResize();
+  window.onresize = onResize;
+
+  //// ---- FUNCTIONS:
+  //// Get Parameter
+  const getParameter = (url, eventid) => {
+    const params = new URLSearchParams(new URL(url).search);
+    if (!params.get(param)) {
+      console.log("No parameters found in URL");
+      return false;
+    }
+    switch (params.get("id")) {
+      case eventid:
+        return params.get(param);
+      case "clear":
+        sessionStorage.clear();
+        return false;
+      default:
+        console.log("Please add 'id' parameter to url");
+        return false;
+    }
+  };
+
+  //// Save Results
+  const saveResults = () => {
+    $trigger += 1;
+  };
+
+  //// ---- QR SCAN ----
+  onMount(() => {
+    const html5QrCode = new Html5Qrcode("reader");
+    const config = { fps: 10, qrbox: { width: 250, height: 250 } };
+    start = function () {
+      $loading = true;
+      button.classList.add("loading");
+      reader.style.visibility = "visible";
+      html5QrCode
+        .start({ facingMode: "environment" }, config, qrCodeSuccessCallback)
+        .then((ignore) => {
+          // QR Code scanning has started.
+          $scanning = true;
+          $loading = false;
+        });
+    };
+    stop = function () {
+      reader.style.visibility = "hidden";
+      html5QrCode
+        .stop()
+        .then((ignore) => {
+          // QR Code scanning is stopped.
+          $scanning = false;
+        })
+        .catch((err) => {
+          // Stop failed, handle it.
+        });
+    };
+    const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+      $found = true;
+      let foundMonster = getParameter(decodedText, eventid);
+      $monsterCollection[foundMonster].count += 1;
+      $monsterCollection[foundMonster].found = true;
+      saveResults();
+      stop();
+    };
+  });
+</script>
+
 <div id="main">
+  <div bind:this={reader} id="reader" width="600px" />
   <div id="bg" />
   <div id="content">
     <div id="heading">
@@ -29,7 +135,11 @@
   <div class="nav_button home active">
     <img src="assets/icons/home-active.svg" alt="Home" />
   </div>
-  <div id="qr_button" />
+  {#if !$scanning}
+    <div id="qr_button" bind:this={button} on:click={start} />
+  {:else}
+    <div id="qr_button" class="stop" bind:this={button} on:click={stop} />
+  {/if}
   <div class="nav_button monsters">
     <img src="assets/icons/monsters.svg" alt="Monsters" />
   </div>
@@ -38,28 +148,6 @@
 <style>
   :root {
     --nav-height: 7rem;
-  }
-
-  #main {
-    height: 100%;
-    overflow-y: auto;
-    z-index: 0;
-    color: #fff;
-    font-family: "Comfortaa";
-  }
-
-  #bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: url("/assets/bg/hw_bg.png");
-    opacity: 0.2;
-    background-size: 100% auto;
-  }
-
-  #content {
-    position: relative;
-    padding: 1rem;
   }
 
   #heading {
