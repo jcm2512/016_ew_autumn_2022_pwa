@@ -4,6 +4,7 @@
 --main-font: "Londrina Solid";
 --white: hsl(0, 0%, 100%);
 --purple: hsl(278, 67%, 68%);
+--red: #E84B50;
 --pink: #F15BB5;
 --yellow: #FEE440;
 --orange: #F89E7C;
@@ -65,6 +66,13 @@ body {
 
   .bg_purple {
     background-color:var(--purple);
+  }
+
+  .bg_red {
+    background-color:var(--red);
+  }
+  .bg_blue {
+    background-color:var(--blue);
   }
 
   #content {
@@ -183,8 +191,10 @@ body {
 
 
   #heading {
+    /* position: absolute; */
+    top:0;
     font-weight: 700;
-    margin-top: 3vh;
+    padding-top: 3vh;
   }
 
   .title {
@@ -194,13 +204,14 @@ body {
   }
 
   #heading .sub {
-    font-size: 1rem;
+    font-size: 4vw;
   }
 
   #heading .main {
-    font-size: 2rem;
+    font-size: 6vw;
   }
 
   #menu {
+    margin-top: 20vw;
     margin-bottom: calc(var(--sub-menu-height) + 3rem);
   }

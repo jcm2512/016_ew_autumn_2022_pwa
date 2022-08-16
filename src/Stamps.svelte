@@ -1,12 +1,14 @@
 <script>
-  import { stampCollection } from "./store.js";
+  import { onMount } from "svelte";
+
+  import { stampCollection, menuState, triggerMenuState } from "./store.js";
   import { gsap } from "gsap";
   import { ScrollToPlugin } from "gsap/ScrollToPlugin";
   import { animateCSS } from "./animateCSS.svelte";
 
   gsap.registerPlugin(ScrollToPlugin);
 
-  let stageCards, next;
+  let stageCards, next, heading, menu;
   let CARDS = [];
 
   const LVL = {
@@ -42,6 +44,20 @@
         },
       });
     }
+    switch (lvl.id) {
+      case 0:
+        $menuState = "Monsters";
+        break;
+      case 1:
+        $menuState = "Special";
+        break;
+      case 2:
+        $menuState = "Teachers";
+        break;
+    }
+
+    $triggerMenuState += 1;
+    console.log($triggerMenuState);
   };
 </script>
 
@@ -50,7 +66,6 @@
     id="sub_menu"
     bind:this={next}
     on:click|preventDefault={() => {
-      console.log("clicked");
       handleNav("next", stageCards, LVL);
       animateCSS(next, "headShake");
     }}
@@ -62,12 +77,12 @@
 <!-- swipable menu START-->
 <ul bind:this={stageCards} id="stage_card" class="gallery">
   {#each Object.keys($stampCollection) as id, index}
-    <div id="section" class={id} bind:this={CARDS[index]}>
-      <div id="heading">
+    <div id="lvl_{index + 1}" class="section" bind:this={CARDS[index]}>
+      <div id="heading" bind:this={heading}>
         <div class="sub">{$stampCollection[id].subheading}</div>
         <div class="main">{$stampCollection[id].heading}</div>
       </div>
-      <div id="menu">
+      <div id="menu" bind:this={menu}>
         {#each Object.keys($stampCollection[id].stamps) as area_name}
           <div class="title">{area_name}</div>
           <div class="menu_item stamps">
@@ -86,46 +101,9 @@
     </div>
   {/each}
 </ul>
-<!-- swipable menu END -->
+<div class="sticky" />
 
-<!--     
-<div id="heading">
-  <div class="sub">{$stampCollection[id].subheading}</div>
-  <div class="main">{$stampCollection[id].heading}</div>
-</div>
-<div id="menu">
-  <div class="title">アクティビティ</div>
-  <div class="menu_item stamps">
-    {#each monsters as stamp, index}
-      <img
-        src={$monsterCollection[stamp].img}
-        alt={$monsterCollection[stamp].name}
-        class="stamp"
-      />
-    {/each}
-  </div>
-  <div class="title">アクティビティ</div>
-  <div class="menu_item stamps">
-    {#each monsters as stamp, index}
-      <img
-        src={$monsterCollection[stamp].img}
-        alt={$monsterCollection[stamp].name}
-        class="stamp"
-      />
-    {/each}
-  </div>
-  <div class="title">アクティビティ</div>
-  <div class="menu_item stamps">
-    {#each monsters as stamp, index}
-      <img
-        src={$monsterCollection[stamp].img}
-        alt={$monsterCollection[stamp].name}
-        class="stamp"
-      />
-    {/each}
-  </div>
-</div> 
--->
+<!-- swipable menu END -->
 <style>
   .menu_item.stamps {
     display: grid;
@@ -150,7 +128,7 @@
     grid-template-columns: repeat(3, 90vw);
     grid-template-rows: 1fr 9fr;
     overflow: scroll;
-    scroll-snap-type: both mandatory;
+    scroll-snap-type: x mandatory;
   }
 
   ul {
@@ -163,7 +141,7 @@
     padding-inline-end: 10vw;
   }
 
-  #section {
+  .section {
     scroll-snap-align: center;
   }
 

@@ -5,6 +5,7 @@ export const scanning = writable(false); // Triggered when camera is ready to sc
 export const loading = writable(false); // Loading animation
 export const trigger = writable(0); //trigger DOM refresh when incremented
 export const menuState = writable("Stamps");
+export const triggerMenuState = writable(0);
 
 // MONSTER LIST
 export const stampCollection = writable({});

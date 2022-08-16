@@ -8,6 +8,7 @@
     trigger,
     stampCollection,
     menuState,
+    triggerMenuState,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Stamps from "./Stamps.svelte";
@@ -25,11 +26,40 @@
   let sessionStorage = localData;
   sessionStorage.load();
 
+  function setBG() {
+    console.log($menuState);
+    if ($menuState === "Home") {
+      main.setAttribute("class", "");
+      main.classList.add("bg_dark");
+    }
+
+    if ($menuState === "Stamps") {
+      main.setAttribute("class", "");
+      main.classList.add("bg_purple");
+    }
+
+    if ($menuState === "Monsters") {
+      main.setAttribute("class", "");
+      main.classList.add("bg_purple");
+    }
+
+    if ($menuState === "Special") {
+      main.setAttribute("class", "");
+      main.classList.add("bg_red");
+    }
+
+    if ($menuState === "Teachers") {
+      main.setAttribute("class", "");
+      main.classList.add("bg_blue");
+    }
+  }
+
   // Set collected monsters to local data
   $stampCollection = sessionStorage.get("collection").collection;
   console.log($stampCollection);
   $: $trigger && sessionStorage.set({ stamps: $stampCollection }),
     sessionStorage.save();
+  $: $triggerMenuState && setBG();
 
   // Fix document page size when toolbar is shown or hidden
   const onResize = function () {
@@ -68,15 +98,7 @@
 
   function nav(event) {
     $menuState = event;
-    if (event === "Home") {
-      main.setAttribute("class", "");
-      main.classList.add("bg_dark");
-    }
-
-    if (event === "Stamps") {
-      main.setAttribute("class", "");
-      main.classList.add("bg_purple");
-    }
+    setBG();
   }
 
   //// ---- QR SCAN ----
