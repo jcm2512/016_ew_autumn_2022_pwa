@@ -12,7 +12,7 @@
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Stamps from "./Stamps.svelte";
-  import Menu from "./menu.svelte";
+  import Menu from "./Menu.svelte";
 
   // Global Variables
   let eventid = "ew202210",
