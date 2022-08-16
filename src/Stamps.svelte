@@ -1,23 +1,39 @@
 <script>
-  import { monsterCollection, stampsCategories } from "./store.js";
+  import { stampCollection, stampsCategories } from "./store.js";
   import StampCollection from "./StampCollection.svelte";
   import { gsap } from "gsap";
   import { ScrollToPlugin } from "gsap/ScrollToPlugin";
   gsap.registerPlugin(ScrollToPlugin);
-  let monsters = Object.keys($monsterCollection);
-  let stageCards, CARDS;
-  // console.log($monsterCollection[monsters].name);
+  let stamps = Object.keys($stampCollection);
+
+  let stageCards;
+  let CARDS = [];
 </script>
 
 <!-- swipable menu START-->
 <ul bind:this={stageCards} id="stage_card" class="gallery">
-  {#each Object.keys($stampsCategories) as id, index}
-    <div class="level">
-      {$stampsCategories[id].subtitle}
-      {$stampsCategories[id].title}
-    </div>
-    <div bind:this={CARDS[index]} class="_level">
-      <StampCollection {index} />
+  {#each Object.keys($stampCollection) as id, index}
+    <div class={id}>
+      <div id="heading">
+        <div class="sub">{$stampCollection[id].subheading}</div>
+        <div class="main">{$stampCollection[id].heading}</div>
+      </div>
+      <div id="menu">
+        {#each Object.keys($stampCollection[id].stamps) as area_name}
+          <div class="title">{area_name}</div>
+          <div class="menu_item stamps">
+            {#each Object.keys($stampCollection[id].stamps[area_name].area_stamps) as stamp}
+              <img
+                src={$stampCollection[id].stamps[area_name].area_stamps[stamp]
+                  .img}
+                alt={$stampCollection[id].stamps[area_name].area_stamps[stamp]
+                  .name}
+                class="stamp"
+              />
+            {/each}
+          </div>
+        {/each}
+      </div>
     </div>
   {/each}
 </ul>
@@ -25,8 +41,8 @@
 
 <!--     
 <div id="heading">
-  <div class="sub">モンスターコレクション</div>
-  <div class="main">Monster Collection</div>
+  <div class="sub">{$stampCollection[id].subheading}</div>
+  <div class="main">{$stampCollection[id].heading}</div>
 </div>
 <div id="menu">
   <div class="title">アクティビティ</div>
@@ -82,7 +98,7 @@
   .gallery {
     display: grid;
     gap: 0 5vw;
-    grid-template-columns: repeat(3, 80vw);
+    grid-template-columns: repeat(3, 90vw);
     grid-template-rows: 1fr 9fr;
     overflow: scroll;
     scroll-snap-type: both mandatory;

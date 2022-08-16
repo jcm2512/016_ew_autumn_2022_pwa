@@ -6,7 +6,7 @@
     scanning,
     loading,
     trigger,
-    monsterCollection,
+    stampCollection,
     menuState,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
@@ -26,11 +26,10 @@
   sessionStorage.load();
 
   // Set collected monsters to local data
-  $monsterCollection = sessionStorage.get("collection").collection;
-  $: $trigger && sessionStorage.set({ collection: $monsterCollection }),
+  $stampCollection = sessionStorage.get("collection").collection;
+  console.log($stampCollection);
+  $: $trigger && sessionStorage.set({ stamps: $stampCollection }),
     sessionStorage.save();
-  let monsters = Object.keys($monsterCollection);
-  console.log(monsters);
 
   // Fix document page size when toolbar is shown or hidden
   const onResize = function () {
@@ -113,8 +112,8 @@
     const qrCodeSuccessCallback = (decodedText, decodedResult) => {
       $found = true;
       let foundMonster = getParameter(decodedText, eventid);
-      $monsterCollection[foundMonster].count += 1;
-      $monsterCollection[foundMonster].found = true;
+      $stampCollection[foundMonster].count += 1;
+      $stampCollection[foundMonster].found = true;
       saveResults();
       stop();
     };
