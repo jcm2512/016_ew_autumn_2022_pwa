@@ -10,6 +10,7 @@
 --green: #A2D583;
 --blue: #00BBF9;
 --aqua: #00F5D4;
+--grey: #ababab;
 --background: #15304A;
 }
 
@@ -68,6 +69,9 @@ body {
     z-index: 100;
     visibility: hidden;
 	height:fit-content;
+	border: 1rem solid var(--grey);
+	border-radius: 5rem;
+	overflow: hidden;
   }
 
   #qr_button {
