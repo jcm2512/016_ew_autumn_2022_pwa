@@ -147,6 +147,8 @@
   });
 </script>
 
+<div class="clear" on:click={() => sessionStorage.clear()}>clear</div>
+
 <div id="main" bind:this={main} class="bg_dark">
   <div bind:this={reader} id="reader" width="600px" class="grid-top" />
   <div bind:this={overlay} id="overlay" class="grid-top " />
