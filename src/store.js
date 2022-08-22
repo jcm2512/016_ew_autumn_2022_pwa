@@ -3,6 +3,7 @@ export const found = writable(false);
 
 export const scanning = writable(false); // Triggered when camera is ready to scan
 export const loading = writable(false); // Loading animation
+export const qr_state = writable("ready");
 export const trigger = writable(0); //trigger DOM refresh when incremented
 export const menuState = writable("Stamps");
 export const triggerMenuState = writable(0);

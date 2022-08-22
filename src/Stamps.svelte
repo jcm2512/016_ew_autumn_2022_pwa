@@ -47,22 +47,24 @@
     }
     switch (lvl.id) {
       case 0:
-        $menuState = "Monsters";
+        $menuState = "monsters";
         break;
       case 1:
-        $menuState = "Special";
+        $menuState = "specials";
         break;
       case 2:
-        $menuState = "Teachers";
+        $menuState = "teachers";
         break;
     }
 
     $triggerMenuState += 1;
     console.log($triggerMenuState);
   };
+
+  console.log($stampCollection, $menuState);
 </script>
 
-<div id="sub_menu_container">
+<!-- <div id="sub_menu_container">
   <div
     id="sub_menu"
     bind:this={next}
@@ -71,23 +73,24 @@
       animateCSS(next, "headShake");
     }}
   />
-</div>
+</div> -->
 
 <div id="shadow" />
 
 <!-- swipable menu START-->
 <ul bind:this={stageCards} id="stage_card" class="gallery">
-  {#each Object.keys($stampCollection) as id, index}
-    <div id="lvl_{index + 1}" class="section" bind:this={CARDS[index]}>
-      <div id="heading" bind:this={heading}>
-        <div class="sub">{$stampCollection[id].subheading}</div>
-        <div class="main">{$stampCollection[id].heading}</div>
-      </div>
-      <div id="menu" bind:this={menu}>
-        <Teachers {id} />
-      </div>
+  <!-- {#each Object.keys($stampCollection) as id, index} -->
+  <!-- <div id="lvl_{index + 1}" class="section" bind:this={CARDS[index]}> -->
+  <div id="lvl_1" class="section">
+    <div id="heading" bind:this={heading}>
+      <div class="sub">{$stampCollection[$menuState].subheading}</div>
+      <div class="main">{$stampCollection[$menuState].heading}</div>
     </div>
-  {/each}
+    <div id="menu" bind:this={menu}>
+      <Teachers id={$menuState} />
+    </div>
+  </div>
+  <!-- {/each} -->
 </ul>
 <div class="sticky" />
 
@@ -113,8 +116,6 @@
   .gallery {
     display: grid;
     gap: 0 5vw;
-    grid-template-columns: repeat(3, 90vw);
-    grid-template-rows: 1fr 9fr;
     overflow: scroll;
     scroll-snap-type: x mandatory;
   }

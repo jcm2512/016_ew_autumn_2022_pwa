@@ -9,15 +9,18 @@
     stampCollection,
     menuState,
     triggerMenuState,
+    qr_state,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Stamps from "./Stamps.svelte";
   import Menu from "./Menu.svelte";
+  import QR from "./components/QR.svelte";
 
   // Global Variables
   let eventid = "ew202210",
     param = "m";
-  let reader, button, overlay, main, nav_home, nav_stamps, next; // Reference to DOM element
+  let reader, button, overlay, main, next; // Reference to DOM element
+  let nav_home, nav_teachers, nav_specials, nav_monsters; // Reference to DOM Nav elements
   let start, stop; // Functions loaded on Mount
   let DOMelements = [];
   $found = false;
@@ -27,28 +30,27 @@
   sessionStorage.load();
 
   function setBG() {
-    console.log($menuState);
-    if ($menuState === "Home") {
+    if ($menuState === "home") {
       main.setAttribute("class", "");
       main.classList.add("bg_dark");
     }
 
-    if ($menuState === "Stamps") {
+    if ($menuState === "stamps") {
       main.setAttribute("class", "");
       main.classList.add("bg_purple");
     }
 
-    if ($menuState === "Monsters") {
+    if ($menuState === "monsters") {
       main.setAttribute("class", "");
       main.classList.add("bg_purple");
     }
 
-    if ($menuState === "Special") {
+    if ($menuState === "specials") {
       main.setAttribute("class", "");
       main.classList.add("bg_red");
     }
 
-    if ($menuState === "Teachers") {
+    if ($menuState === "teachers") {
       main.setAttribute("class", "");
       main.classList.add("bg_blue");
     }
@@ -97,7 +99,8 @@
   };
 
   function nav(event) {
-    $menuState = event;
+    console.log(event.id);
+    $menuState = event.id;
     setBG();
   }
 
@@ -107,7 +110,7 @@
     const config = { fps: 10, qrbox: { width: 250, height: 250 } };
     start = function () {
       $loading = true;
-      button.classList.add("loading");
+      $qr_state = "loading";
       reader.style.visibility = "visible";
       overlay.style.visibility = "visible";
       html5QrCode
@@ -116,6 +119,7 @@
           // QR Code scanning has started.
           $scanning = true;
           $loading = false;
+          $qr_state = "scanning";
         });
     };
     stop = function () {
@@ -126,6 +130,7 @@
         .then((ignore) => {
           // QR Code scanning is stopped.
           $scanning = false;
+          $qr_state = "ready";
         })
         .catch((err) => {
           // Stop failed, handle it.
@@ -148,56 +153,63 @@
   <div id="bg" class="grid-top " />
 
   <div id="content" class="grid-top grid">
-    {#if $menuState === "Home"}
+    {#if $menuState === "home"}
       <Menu />
-    {:else}
+    {/if}
+    {#if $menuState === "teachers"}
+      <Stamps />
+    {/if}
+    {#if $menuState === "specials"}
+      <Stamps />
+    {/if}
+    {#if $menuState === "monsters"}
       <Stamps />
     {/if}
   </div>
 </div>
 
 <nav>
-  {#if $menuState === "Home"}
-    <div
-      bind:this={nav_home}
-      class="nav_button nav_home active"
-      on:click={() => nav("Home")}
-    >
-      <img src="assets/icons/home-active.svg" alt="Home" />
-    </div>
-  {:else}
-    <div
-      bind:this={nav_home}
-      class="nav_button nav_home"
-      on:click={() => nav("Home")}
-    >
-      <img src="assets/icons/home.svg" alt="Home" />
-    </div>
-  {/if}
-
+  <div
+    bind:this={nav_home}
+    class="nav_button active"
+    id="home"
+    on:click={() => nav(nav_home)}
+  >
+    <img src="assets/icons/nav/home-active.svg" alt="home" />
+  </div>
+  <div
+    bind:this={nav_teachers}
+    class="nav_button"
+    id="teachers"
+    on:click={() => nav(nav_teachers)}
+  >
+    <img src="assets/icons/nav/user-square.svg" alt="teachers" />
+  </div>
   {#if !$scanning}
-    <div id="qr_button" bind:this={button} on:click={start} />
-  {:else}
-    <div id="qr_button" class="stop" bind:this={button} on:click={stop} />
-  {/if}
-
-  {#if $menuState === "Stamps"}
-    <div
-      bind:this={nav_stamps}
-      class="nav_button nav_stamps active"
-      on:click={() => nav("Stamps")}
-    >
-      <img src="assets/icons/monsters-active.svg" alt="Stamps" />
+    <div class="qr_button" bind:this={button} on:click={start}>
+      <QR />
     </div>
   {:else}
-    <div
-      bind:this={nav_stamps}
-      class="nav_button nav_stamps"
-      on:click={() => nav("Stamps")}
-    >
-      <img src="assets/icons/monsters.svg" alt="Stamps" />
+    <div class="qr_button" bind:this={button} on:click={stop}>
+      <QR />
     </div>
   {/if}
+  <div
+    bind:this={nav_specials}
+    id="specials"
+    class="nav_button"
+    on:click={() => nav(nav_specials)}
+  >
+    <img src="assets/icons/nav/verify.svg" alt="specials" />
+  </div>
+  <div
+    bind:this={nav_monsters}
+    class="nav_button"
+    id="monsters"
+    on:click={() => nav(nav_monsters)}
+  >
+    <img src="assets/icons/nav/monsters.svg" alt="monsters" />
+  </div>
 </nav>
 
 <style>
