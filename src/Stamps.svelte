@@ -5,6 +5,7 @@
   import { gsap } from "gsap";
   import { ScrollToPlugin } from "gsap/ScrollToPlugin";
   import { animateCSS } from "./animateCSS.svelte";
+  import Teachers from "./pages/Teachers.svelte";
 
   gsap.registerPlugin(ScrollToPlugin);
 
@@ -83,20 +84,7 @@
         <div class="main">{$stampCollection[id].heading}</div>
       </div>
       <div id="menu" bind:this={menu}>
-        {#each Object.keys($stampCollection[id].stamps) as area_name}
-          <div class="title">{area_name}</div>
-          <div class="menu_item stamps">
-            {#each Object.keys($stampCollection[id].stamps[area_name].area_stamps) as stamp}
-              <img
-                src={$stampCollection[id].stamps[area_name].area_stamps[stamp]
-                  .img}
-                alt={$stampCollection[id].stamps[area_name].area_stamps[stamp]
-                  .name}
-                class="stamp"
-              />
-            {/each}
-          </div>
-        {/each}
+        <Teachers {id} />
       </div>
     </div>
   {/each}
