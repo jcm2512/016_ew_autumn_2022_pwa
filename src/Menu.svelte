@@ -26,8 +26,8 @@
 <style>
   .clear {
     font-size: 7vw;
-    margin-bottom: -10vw;
     width: 7vw;
+    justify-self: right;
   }
   .menu_item {
     display: grid;
