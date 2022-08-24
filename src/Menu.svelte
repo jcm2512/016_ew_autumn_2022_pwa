@@ -3,25 +3,25 @@
   <div class="main">Halloween Monster Festival</div>
 </div>
 
-<div id="menu">
-  <div class="title">アクティビティ</div>
-  <div class="menu_item activity">
-    <div class="item activity_1">Trick Or Treat</div>
-    <div class="item activity_2">Ask a Teacher</div>
-    <div class="item activity_3">Halloween Craft</div>
-  </div>
-  <div class="title">ゲーム</div>
-  <div class="menu_item game">
-    <div class="item game_1">Haunted Forest</div>
-    <div class="item game_2">Flip Flip</div>
-    <div class="item game_3">Monster Feeding</div>
-    <div class="item game_4">Eyeball Throw</div>
-    <div class="item game_5">Piranha Catch</div>
-    <div class="item game_6">Witches Hat Ring Toss</div>
+<div id="content" class="grid-top grid">
+  <div id="menu">
+    <div class="title">アクティビティ</div>
+    <div class="menu_item activity">
+      <div class="item activity_1">Trick Or Treat</div>
+      <div class="item activity_2">Ask a Teacher</div>
+      <div class="item activity_3">Halloween Craft</div>
+    </div>
+    <div class="title">ゲーム</div>
+    <div class="menu_item game">
+      <div class="item game_1">Haunted Forest</div>
+      <div class="item game_2">Flip Flip</div>
+      <div class="item game_3">Monster Feeding</div>
+      <div class="item game_4">Eyeball Throw</div>
+      <div class="item game_5">Piranha Catch</div>
+      <div class="item game_6">Witches Hat Ring Toss</div>
+    </div>
   </div>
 </div>
-
-<div id="shadow" />
 
 <style>
   .menu_item {

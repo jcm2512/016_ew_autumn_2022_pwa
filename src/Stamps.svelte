@@ -75,43 +75,20 @@
   />
 </div> -->
 
-<div id="shadow" />
-
-<!-- swipable menu START-->
-<ul bind:this={stageCards} id="stage_card" class="gallery">
-  <!-- {#each Object.keys($stampCollection) as id, index} -->
-  <!-- <div id="lvl_{index + 1}" class="section" bind:this={CARDS[index]}> -->
-  <div id="lvl_1" class="section">
+<div id="content" class="grid-top grid">
+  <div bind:this={stageCards} id="stamp_card">
     <div id="heading" bind:this={heading}>
       <div class="sub">{$stampCollection[$menuState].subheading}</div>
       <div class="main">{$stampCollection[$menuState].heading}</div>
     </div>
     <div id="menu" bind:this={menu}>
-      <Teachers id={$menuState} />
+      <Teachers />
     </div>
   </div>
-  <!-- {/each} -->
-</ul>
+</div>
 <div class="sticky" />
 
-<!-- swipable menu END -->
 <style>
-  .menu_item.stamps {
-    display: grid;
-
-    grid-template-rows: repeat(2, 7rem);
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-    align-items: center;
-    grid-gap: 0.5rem;
-  }
-
-  .stamp {
-    max-height: 25vw;
-    max-width: 25vw;
-    filter: brightness(0) opacity(0.5);
-  }
-
   /* swipable menu */
   .gallery {
     display: grid;

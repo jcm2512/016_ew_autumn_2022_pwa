@@ -80,7 +80,7 @@ body {
   #content {
     position: relative;
     padding: 1rem;
-	overflow-y: auto;
+	overflow-y: scroll;
 	z-index: 50;
   }
 

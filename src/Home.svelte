@@ -21,6 +21,7 @@
     param = "m";
   let reader, button, overlay, main, next; // Reference to DOM element
   let nav_home, nav_teachers, nav_specials, nav_monsters; // Reference to DOM Nav elements
+  let previous_nav = nav_home;
   let start, stop; // Functions loaded on Mount
   let DOMelements = [];
   $found = false;
@@ -72,6 +73,7 @@
 
   onResize();
   window.onresize = onResize;
+  // setBG();
 
   //// ---- FUNCTIONS:
   //// Get Parameter
@@ -99,13 +101,19 @@
   };
 
   function nav(event) {
-    console.log(event.id);
+    // console.log("PREV:", previous_nav);
+
+    // console.log("NAV EVENT:", event.classList);
     $menuState = event.id;
+    previous_nav.classList.remove("active");
+    event.classList.add("active");
     setBG();
+    previous_nav = event;
   }
 
   //// ---- QR SCAN ----
   onMount(() => {
+    previous_nav = nav_home;
     const html5QrCode = new Html5Qrcode("reader");
     const config = { fps: 10, qrbox: { width: 250, height: 250 } };
     start = function () {
@@ -154,20 +162,22 @@
   <div bind:this={overlay} id="overlay" class="grid-top " />
   <div id="bg" class="grid-top " />
 
-  <div id="content" class="grid-top grid">
-    {#if $menuState === "home"}
-      <Menu />
-    {/if}
-    {#if $menuState === "teachers"}
-      <Stamps />
-    {/if}
-    {#if $menuState === "specials"}
-      <Stamps />
-    {/if}
-    {#if $menuState === "monsters"}
-      <Stamps />
-    {/if}
-  </div>
+  <!-- MAIN CONTENT -->
+  {#if $menuState === "home"}
+    <Menu />
+  {/if}
+  {#if $menuState === "teachers"}
+    <Stamps />
+  {/if}
+  {#if $menuState === "specials"}
+    <Stamps />
+  {/if}
+  {#if $menuState === "monsters"}
+    <Stamps />
+  {/if}
+  <!-- END  -->
+
+  <div id="shadow" />
 </div>
 
 <nav>
@@ -177,7 +187,11 @@
     id="home"
     on:click={() => nav(nav_home)}
   >
-    <img src="assets/icons/nav/home-active.svg" alt="home" />
+    {#if $menuState === "home"}
+      <img src="assets/icons/nav/home-active.svg" alt="home" />
+    {:else}
+      <img src="assets/icons/nav/home.svg" alt="home" />
+    {/if}
   </div>
   <div
     bind:this={nav_teachers}
@@ -185,7 +199,11 @@
     id="teachers"
     on:click={() => nav(nav_teachers)}
   >
-    <img src="assets/icons/nav/user-square.svg" alt="teachers" />
+    {#if $menuState === "teachers"}
+      <img src="assets/icons/nav/user-square-active.svg" alt="teachers" />
+    {:else}
+      <img src="assets/icons/nav/user-square.svg" alt="teachers" />
+    {/if}
   </div>
   {#if !$scanning}
     <div class="qr_button" bind:this={button} on:click={start}>
@@ -202,7 +220,11 @@
     class="nav_button"
     on:click={() => nav(nav_specials)}
   >
-    <img src="assets/icons/nav/verify.svg" alt="specials" />
+    {#if $menuState === "specials"}
+      <img src="assets/icons/nav/verify-active.svg" alt="specials" />
+    {:else}
+      <img src="assets/icons/nav/verify.svg" alt="specials" />
+    {/if}
   </div>
   <div
     bind:this={nav_monsters}
@@ -210,7 +232,11 @@
     id="monsters"
     on:click={() => nav(nav_monsters)}
   >
-    <img src="assets/icons/nav/monsters.svg" alt="monsters" />
+    {#if $menuState === "monsters"}
+      <img src="assets/icons/nav/monsters-active.svg" alt="monsters" />
+    {:else}
+      <img src="assets/icons/nav/monsters.svg" alt="monsters" />
+    {/if}
   </div>
 </nav>
 
