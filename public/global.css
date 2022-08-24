@@ -169,8 +169,8 @@ html {
 
 .nav_button img,
 #qr_code img {
-  margin: 0 auto;
-  align-self: stretch;
+  /* margin: 0 auto;
+  align-self: stretch; */
   padding: 3vw;
 }
 
