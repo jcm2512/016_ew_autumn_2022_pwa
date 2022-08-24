@@ -35,13 +35,16 @@ body {
 	height: 100vh; */
 }
 
+html,
 body {
+  position: relative;
+  width: 100vw;
   height: 100vh;
-  /* fallback for browsers that do not support Custom Properties */
-  height: calc(var(--vh, 1vh) * 100);
-  overflow: hidden;
-  overscroll-behavior-y: contain;
-  /* Prevent swipe to refresh*/
+   /* fallback for browsers that do not support Custom Properties */
+   height: calc(var(--vh, 1vh) * 100);
+   overflow: hidden;
+   overscroll-behavior-y: contain;
+   /* Prevent swipe to refresh*/
 }
 
 html {
