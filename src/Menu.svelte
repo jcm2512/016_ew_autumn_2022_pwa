@@ -4,20 +4,16 @@
     <div class="sub">STAMP RALLY</div>
   </div>
   <div id="menu">
-    <div class="title">アクティビティ</div>
+    <div class="title jp-font bold">先生とお話してみよう</div>
     <div class="menu_item activity">
-      <div class="item activity_1">Trick Or Treat</div>
       <div class="item activity_2">Ask a Teacher</div>
-      <div class="item activity_3">Halloween Craft</div>
     </div>
-    <div class="title">ゲーム</div>
+    <div class="title jp-font bold">エリア</div>
     <div class="menu_item game">
       <div class="item game_1">Haunted Forest</div>
-      <div class="item game_2">Flip Flip</div>
-      <div class="item game_3">Monster Feeding</div>
-      <div class="item game_4">Eyeball Throw</div>
-      <div class="item game_5">Piranha Catch</div>
-      <div class="item game_6">Witches Hat Ring Toss</div>
+      <div class="item game_2">Scary Swamp</div>
+      <div class="item game_5">Magical Something</div>
+      <div class="item game_6">Halloween Craft</div>
     </div>
   </div>
 </div>
@@ -30,11 +26,11 @@
   }
 
   .menu_item.activity {
-    grid-template-rows: repeat(2, 7rem);
+    grid-template-rows: 7rem;
   }
 
   .menu_item.game {
-    grid-template-rows: repeat(5, 7rem);
+    grid-template-rows: repeat(2, 7rem);
   }
 
   .item {
@@ -44,27 +40,17 @@
     padding: 1rem;
     margin: 0.4rem;
     font-size: 1.4rem;
-    font-weight: 700;
-  }
-
-  .activity_1 {
-    background-color: var(--pink);
+    font-weight: 400;
   }
 
   .activity_2 {
     background-color: var(--green);
-    grid-column: span 1;
-  }
-
-  .activity_3 {
-    background-color: var(--orange);
-    grid-column: span 1;
+    grid-column: span 2;
   }
 
   .game_1 {
     background-color: var(--orange);
-    grid-row: span 1;
-    grid-column: span 2;
+    grid-column: span 1;
   }
 
   .game_2 {
@@ -72,30 +58,17 @@
     grid-column: span 1;
   }
 
-  .game_3 {
-    background-color: var(--purple);
-    grid-column: span 1;
-    grid-row: span 2;
-  }
-
-  .game_4 {
-    background-color: var(--blue);
-    grid-column: span 1;
-    grid-row: span 2;
-  }
-
   .game_5 {
-    background-color: var(--green);
+    background-color: var(--blue);
     grid-column: span 1;
   }
 
   .game_6 {
-    color: var(--background);
-    background-color: var(--yellow);
-    grid-column: span 2;
+    background-color: var(--purple);
+    grid-column: span 1;
   }
 
-  #heading {
-    text-align: center;
+  #menu_heading .sub {
+    margin-top: -5vw;
   }
 </style>
