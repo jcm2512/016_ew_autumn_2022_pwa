@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Fredoka&family=Kiwi+Maru:wght@500&family=Londrina+Outline&family=Londrina+Solid:wght@300;900&family=Nunito:wght@300;400;600;700&family=Rampart+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Fredoka&family=Kiwi+Maru:wght@500&family=Londrina+Outline&family=Londrina+Solid:wght@300;900&family=Luckiest+Guy&family=Nunito:wght@300;400;600;700&family=Rampart+One&display=swap');
 :root{
 --main-font: "Londrina Solid";
 --white: hsl(0, 0%, 100%);
@@ -58,7 +57,8 @@ body {
     
     z-index: 0;
     color: #fff;
-    font-family: "Comfortaa";
+    font-family: "Luckiest Guy";
+    font-size: 9rem;
 
   }
 
@@ -186,6 +186,7 @@ body {
   }
 
   #shadow{
+    pointer-events: none;
     position: absolute;
   height: 35vh;
   width: 100%;
@@ -199,25 +200,38 @@ body {
   #heading {
     /* position: absolute; */
     top:0;
-    font-weight: 700;
     padding-top: 3vh;
   }
 
   .title {
     grid-column: span 2;
-    font-weight: 700;
     font-size: 1.2rem;
   }
 
-  #heading .sub {
-    font-size: 4vw;
+  #menu_heading{
+    text-align: center;
   }
 
-  #heading .main {
+  #menu_heading .sub {
+    font-size: 12vw;
+  }
+
+  #menu_heading .main {
+    font-size: 20vw;
+    font-weight: 400;
+  }
+
+
+  #heading .sub {
     font-size: 6vw;
   }
 
+  #heading .main {
+    font-size: 10vw;
+    font-weight: 400;
+  }
+
   #menu {
-    margin-top: 20vw;
+    margin-top: 5vw;
     margin-bottom: calc(var(--sub-menu-height) + 3rem);
   }

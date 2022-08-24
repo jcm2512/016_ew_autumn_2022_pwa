@@ -5,8 +5,8 @@
       found: 0,
       collection: {
         monsters: {
-          heading: "Monster Collection",
-          subheading: "モンスターコレクション",
+          heading: "MONSTER STAMPS",
+          subheading: "モンスター",
           stamps: {
             area_1: {
               title: "area_1",
@@ -199,8 +199,8 @@
           },
         },
         specials: {
-          heading: "Super Rare Collection",
-          subheading: "スーパーレアコレクション",
+          heading: "SPECIAL STAMPS",
+          subheading: "スーパーレア",
           stamps: {
             area_1: {
               title: "Specials",
@@ -294,11 +294,11 @@
           },
         },
         teachers: {
-          heading: "Teacher Collection",
-          subheading: "先生コレクション",
+          heading: "TEACHERS & STAFF",
+          subheading: "先生・スタッフ",
           stamps: {
             area_1: {
-              title: "area_1",
+              title: "TEACHERS",
               area_stamps: {
                 teacher_01_001: {
                   name: "teacher_01",

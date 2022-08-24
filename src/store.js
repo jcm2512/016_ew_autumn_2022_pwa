@@ -22,7 +22,7 @@ export let stampsCategories = writable({
     subtitle: "スーパーレアコレクション",
   },
   3: {
-    title: "Teacher Collection",
+    title: "Teacher Collections",
     subtitle: "先生コレクション",
   },
 });

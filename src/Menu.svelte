@@ -1,9 +1,8 @@
-<div id="heading">
-  <div class="sub">English World</div>
-  <div class="main">Halloween Monster Festival</div>
-</div>
-
 <div id="content" class="grid-top grid">
+  <div id="menu_heading" class="menu_heading">
+    <div class="main">MONSTER</div>
+    <div class="sub">STAMP RALLY</div>
+  </div>
   <div id="menu">
     <div class="title">アクティビティ</div>
     <div class="menu_item activity">
@@ -94,5 +93,9 @@
     color: var(--background);
     background-color: var(--yellow);
     grid-column: span 2;
+  }
+
+  #heading {
+    text-align: center;
   }
 </style>

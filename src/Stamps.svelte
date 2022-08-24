@@ -64,17 +64,6 @@
   console.log($stampCollection, $menuState);
 </script>
 
-<!-- <div id="sub_menu_container">
-  <div
-    id="sub_menu"
-    bind:this={next}
-    on:click|preventDefault={() => {
-      handleNav("next", stageCards, LVL);
-      animateCSS(next, "headShake");
-    }}
-  />
-</div> -->
-
 <div id="content" class="grid-top grid">
   <div bind:this={stageCards} id="stamp_card">
     <div id="heading" bind:this={heading}>
@@ -87,40 +76,3 @@
   </div>
 </div>
 <div class="sticky" />
-
-<style>
-  /* swipable menu */
-  .gallery {
-    display: grid;
-    gap: 0 5vw;
-    overflow: scroll;
-    scroll-snap-type: x mandatory;
-  }
-
-  ul {
-    list-style-type: disc;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 10vw;
-    padding-inline-end: 10vw;
-  }
-
-  .section {
-    scroll-snap-align: center;
-  }
-
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .gallery::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .gallery {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-
-  /* swipable menu END*/
-</style>
