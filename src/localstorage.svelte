@@ -500,6 +500,7 @@
       }
     },
     clear: function () {
+      console.log("local storage cleared");
       localStorage.removeItem(this.key);
     },
     load: function () {

@@ -10,6 +10,7 @@
     menuState,
     triggerMenuState,
     qr_state,
+    sessionStorage,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Stamps from "./Stamps.svelte";
@@ -27,8 +28,8 @@
   $found = false;
 
   // Load local data
-  let sessionStorage = localData;
-  sessionStorage.load();
+  $sessionStorage = localData;
+  $sessionStorage.load();
 
   function setBG() {
     if ($menuState === "home") {
@@ -58,10 +59,10 @@
   }
 
   // Set collected monsters to local data
-  $stampCollection = sessionStorage.get("collection").collection;
+  $stampCollection = $sessionStorage.get("collection").collection;
   console.log($stampCollection);
-  $: $trigger && sessionStorage.set({ stamps: $stampCollection }),
-    sessionStorage.save();
+  $: $trigger && $sessionStorage.set({ stamps: $stampCollection }),
+    $sessionStorage.save();
   $: $triggerMenuState && setBG();
 
   // Fix document page size when toolbar is shown or hidden
@@ -154,8 +155,6 @@
     };
   });
 </script>
-
-<div class="clear" on:click={() => sessionStorage.clear()}>clear</div>
 
 <div id="main" bind:this={main} class="bg_dark">
   <div bind:this={reader} id="reader" width="600px" class="grid-top" />
