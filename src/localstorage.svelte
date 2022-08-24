@@ -6,10 +6,10 @@
       collection: {
         monsters: {
           heading: "MONSTER STAMPS",
-          subheading: "モンスター",
+          subheading: "モンスターのスタンプ",
           stamps: {
             area_1: {
-              title: "area_1",
+              title: "Haunted Forest",
               area_stamps: {
                 area_1_001: {
                   name: "monster1",
@@ -56,7 +56,7 @@
               },
             },
             area_2: {
-              title: "area_2",
+              title: "Scary Swamp",
               area_stamps: {
                 area_2_001: {
                   name: "monster1",
@@ -103,7 +103,7 @@
               },
             },
             area_3: {
-              title: "area_3",
+              title: "Magical Something",
               area_stamps: {
                 area_3_001: {
                   name: "monster1",
@@ -150,7 +150,7 @@
               },
             },
             area_4: {
-              title: "area_4",
+              title: "Halloween Craft",
               area_stamps: {
                 area_4_001: {
                   name: "monster1",
@@ -200,10 +200,10 @@
         },
         specials: {
           heading: "SPECIAL STAMPS",
-          subheading: "スーパーレア",
+          subheading: "特別なスタンプ",
           stamps: {
             area_1: {
-              title: "Specials",
+              title: "",
               area_stamps: {
                 spec_01_001: {
                   name: "spec_01",
@@ -294,11 +294,11 @@
           },
         },
         teachers: {
-          heading: "TEACHERS & STAFF",
-          subheading: "先生・スタッフ",
+          heading: "TEACHER STAMPS",
+          subheading: "先生のスタンプ",
           stamps: {
             area_1: {
-              title: "TEACHERS",
+              title: "",
               area_stamps: {
                 teacher_01_001: {
                   name: "teacher_01",

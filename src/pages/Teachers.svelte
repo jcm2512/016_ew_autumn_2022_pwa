@@ -8,7 +8,9 @@
 </script>
 
 {#each Object.keys($stampCollection[$menuState].stamps) as area_name}
-  <div class="title">{area_name}</div>
+  <div class="title">
+    {$stampCollection[$menuState].stamps[area_name].title}
+  </div>
   <div class="menu_item stamps">
     {#each Object.keys($stampCollection[$menuState].stamps[area_name].area_stamps) as stamp}
       <img
