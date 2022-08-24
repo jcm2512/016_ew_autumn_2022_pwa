@@ -193,6 +193,7 @@
       <img src="assets/icons/nav/home.svg" alt="home" />
     {/if}
   </div>
+
   <div
     bind:this={nav_teachers}
     class="nav_button"
