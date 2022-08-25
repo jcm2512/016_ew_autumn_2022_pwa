@@ -42,8 +42,8 @@ body {
   height: 110vh;
    /* fallback for browsers that do not support Custom Properties */
    height: calc(var(--vh, 1vh) * 100);
-   /* overflow: hidden; */
-   /* overscroll-behavior-y: contain; */
+   overflow: hidden;
+   overscroll-behavior-y: contain;
    /* Prevent swipe to refresh*/
 }
 
