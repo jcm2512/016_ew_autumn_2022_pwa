@@ -1,6 +1,6 @@
 {
-    "short_name": "svelte-pwa",
-"name": "svelte-test-pwa",
+    "short_name": "Monster Stamp Rally",
+"name": "Monster Stamp Rally",
 "start_url": "/index.html",
 "icons": [
   {
@@ -9,9 +9,9 @@
     "sizes": "512x512"
   }
 ],
-"background_color": "#3367D6",
-"display": "standalone",
+"background_color": "#CA0CF9",
+"display": "minimal-ui",
 "scope": "/",
-"theme_color": "#3367D6",
-"description": "Svelte Test PWA"
+"theme_color": "#CA0CF9",
+"description": "2022 Monster Stamp Rally"
 }
