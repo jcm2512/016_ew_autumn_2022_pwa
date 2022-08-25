@@ -6,7 +6,7 @@
       collection: {
         monsters: {
           heading: "MONSTER STAMPS",
-          subheading: "モンスターのスタンプ",
+          subheading: "モンスタースタンプ",
           stamps: {
             area_1: {
               title: "Haunted Forest",
@@ -200,7 +200,7 @@
         },
         specials: {
           heading: "SPECIAL STAMPS",
-          subheading: "特別なスタンプ",
+          subheading: "スペシャルスタンプ",
           stamps: {
             area_1: {
               title: "",
@@ -295,7 +295,7 @@
         },
         teachers: {
           heading: "TEACHER STAMPS",
-          subheading: "先生のスタンプ",
+          subheading: "先生たちスタンプ",
           stamps: {
             area_1: {
               title: "",

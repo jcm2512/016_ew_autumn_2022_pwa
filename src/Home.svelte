@@ -11,14 +11,16 @@
     triggerMenuState,
     qr_state,
     sessionStorage,
+    current_param,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Stamps from "./Stamps.svelte";
   import Menu from "./Menu.svelte";
   import QR from "./components/QR.svelte";
+  import Unavailable from "./pages/Unavailable.svelte";
 
   // Global Variables
-  let eventid = "ew202210",
+  let eventid = "ew2022-10",
     param = "m";
   let reader, button, overlay, main, next; // Reference to DOM element
   let nav_home, nav_teachers, nav_specials, nav_monsters; // Reference to DOM Nav elements
@@ -86,6 +88,7 @@
     }
     switch (params.get("id")) {
       case eventid:
+        console.log("Found:", params.get(param));
         return params.get(param);
       case "clear":
         sessionStorage.clear();
@@ -114,6 +117,8 @@
 
   //// ---- QR SCAN ----
   onMount(() => {
+    $current_param = getParameter(window.location.href, eventid);
+
     previous_nav = nav_home;
     const html5QrCode = new Html5Qrcode("reader");
     const config = { fps: 10, qrbox: { width: 250, height: 250 } };
@@ -161,20 +166,24 @@
   <div bind:this={overlay} id="overlay" class="grid-top " />
   <div id="bg" class="grid-top " />
 
-  <!-- MAIN CONTENT -->
-  {#if $menuState === "home"}
-    <Menu />
+  {#if $current_param === "advertisement"}
+    <Unavailable />
+  {:else}
+    <!-- MAIN CONTENT START-->
+    {#if $menuState === "home"}
+      <Menu />
+    {/if}
+    {#if $menuState === "teachers"}
+      <Stamps />
+    {/if}
+    {#if $menuState === "specials"}
+      <Stamps />
+    {/if}
+    {#if $menuState === "monsters"}
+      <Stamps />
+    {/if}
+    <!-- MAIN CONTENT END  -->
   {/if}
-  {#if $menuState === "teachers"}
-    <Stamps />
-  {/if}
-  {#if $menuState === "specials"}
-    <Stamps />
-  {/if}
-  {#if $menuState === "monsters"}
-    <Stamps />
-  {/if}
-  <!-- END  -->
 
   <div id="shadow" />
 </div>

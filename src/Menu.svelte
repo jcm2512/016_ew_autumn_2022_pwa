@@ -9,7 +9,7 @@
     <div class="sub">STAMP RALLY</div>
   </div>
   <div id="menu">
-    <div class="title jp-font bold">先生とお話してみよう</div>
+    <div class="title jp-font bold">先生たちに聞いてみよう</div>
     <div class="menu_item activity">
       <div class="item activity_2">Ask a Teacher</div>
     </div>

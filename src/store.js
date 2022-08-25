@@ -8,6 +8,7 @@ export const trigger = writable(0); //trigger DOM refresh when incremented
 export const menuState = writable("home");
 export const triggerMenuState = writable(0);
 export const sessionStorage = writable();
+export const current_param = writable("");
 
 // MONSTER LIST
 export const stampCollection = writable({});
