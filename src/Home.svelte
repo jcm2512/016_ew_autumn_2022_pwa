@@ -33,6 +33,9 @@
   $sessionStorage = localData;
   $sessionStorage.load();
 
+  // Watch Variables
+  $: $found && console.log("You found something:", $found);
+
   function setBG() {
     if ($menuState === "home") {
       main.setAttribute("class", "");
@@ -89,6 +92,7 @@
     switch (params.get("id")) {
       case eventid:
         console.log("Found:", params.get(param));
+        $found = true;
         return params.get(param);
       case "clear":
         sessionStorage.clear();
@@ -162,6 +166,15 @@
 </script>
 
 <div id="main" bind:this={main} class="bg_dark">
+  {#if $found}
+    <div id="popup">
+      <div class="message">
+        <div id="logo-banner" />
+      </div>
+    </div>
+    <div id="overlay_popup" class="grid-top " />
+  {/if}
+
   <div bind:this={reader} id="reader" width="600px" class="grid-top" />
   <div bind:this={overlay} id="overlay" class="grid-top " />
   <div id="bg" class="grid-top " />
