@@ -18,6 +18,7 @@
   import Menu from "./Menu.svelte";
   import QR from "./components/QR.svelte";
   import Unavailable from "./pages/Unavailable.svelte";
+  import Found from "./popups/Found.svelte";
 
   // Global Variables
   let eventid = "ew2022-10",
@@ -166,13 +167,8 @@
 </script>
 
 <div id="main" bind:this={main} class="bg_dark">
-  {#if $found}
-    <div id="popup">
-      <div class="message">
-        <div id="logo-banner" />
-      </div>
-    </div>
-    <div id="overlay_popup" class="grid-top " />
+  {#if $current_param !== "advertisement" && $found}
+    <Found />
   {/if}
 
   <div bind:this={reader} id="reader" width="600px" class="grid-top" />

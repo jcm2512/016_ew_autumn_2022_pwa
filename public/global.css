@@ -283,10 +283,42 @@ nav {
 }
 
 #popup{
-  position: absolute;
+  grid-row: 1;
+  grid-column: 1;
+  display: flex;
+  position: relative;
   width: 100%;
-  height: 100%; 
+  height: 80vh;
   z-index: 100;
+  justify-content: center;
+  align-items: center;
+}
+
+#popup_dialog{
+  width: 80vw;
+  height: 100vw;
+    font-size: 16vw;
+    display: grid;
+    grid-template: 35vw 50vw 15vw / 1fr
+}
+
+#popup_bg{
+  background-image: url("/assets/elements/dialog.svg");
+  background-size: 100%;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center; 
+  height: 100%;
+  grid-column: 1;
+  grid-row: 1/-1;
+
+}
+
+#popup_message{
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 12vw;
+  text-align: center;
+  margin-top: 8vw;
 }
 
 #overlay_popup {
@@ -294,3 +326,46 @@ nav {
   background-color: rgb(0 0 0 / 0.7);
   z-index: 80;
 }
+
+#ok_button{
+  background-color: var(--red);
+  border-radius: 4vw;
+  text-align:center;
+  font-size: 10vw;
+  grid-column: 1;
+  grid-row: 3;
+  z-index: 100;
+  height: 15vw;
+  width: 60%;
+  justify-self: center;
+  border: solid white 0.8vw;
+  }
+
+#popup_monsters{
+  grid-column: 1;
+  grid-row: 2;
+  font-size: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+img.monster{
+  width: 30vw;
+  -webkit-filter: drop-shadow(1vw 2vw 1vw rgb(0, 0, 0, 0.5));
+  filter: drop-shadow(1vw 2vw 1vw rgb(0, 0, 0, 0.5));}
+
+.half-tile{
+  width: 30vw;
+  display: grid;
+  grid-template-rows: 30vw 10vw;
+  grid-auto-columns: 100%;
+  justify-items: center;
+  /* align-items: center; */
+}
+
+.monster_name{
+  font-size: 4vw;
+  text-align: center;
+  font-family: "Londrina Solid";
+  visibility: hidden;}
