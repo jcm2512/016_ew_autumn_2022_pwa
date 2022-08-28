@@ -18,7 +18,7 @@
   import Menu from "./Menu.svelte";
   import QR from "./components/QR.svelte";
   import Unavailable from "./pages/Unavailable.svelte";
-  import Found from "./popups/Found.svelte";
+  import Dialog from "./popups/Dialog.svelte";
 
   // Global Variables
   let eventid = "ew2022-10",
@@ -168,7 +168,7 @@
 
 <div id="main" bind:this={main} class="bg_dark">
   {#if $current_param !== "advertisement" && $found}
-    <Found />
+    <Dialog />
   {/if}
 
   <div bind:this={reader} id="reader" width="600px" class="grid-top" />
