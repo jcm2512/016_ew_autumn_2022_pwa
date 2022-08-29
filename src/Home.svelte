@@ -12,6 +12,7 @@
     qr_state,
     sessionStorage,
     current_param,
+    foundStamp,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Stamps from "./Stamps.svelte";
@@ -95,10 +96,11 @@
         console.log("Found:", stamp);
         $found = true;
         let id = stamp.split("_");
-        let foundStamp =
-          $stampCollection[id[0]].stamps[id[1]].area_stamps[stamp];
-        foundStamp.count += 1;
-        foundStamp.found = true;
+        $foundStamp = $stampCollection[id[0]].stamps[id[1]].area_stamps[stamp];
+        $foundStamp.count += 1;
+        $foundStamp.found = true;
+
+        console.log($foundStamp);
 
         saveResults();
         return params.get(param);
@@ -174,7 +176,7 @@
 
 <div id="main" bind:this={main} class="bg_dark">
   {#if $current_param !== "advertisement" && $found}
-    <Dialog />
+    <Dialog stamp={$foundStamp} />
   {/if}
 
   <div bind:this={reader} id="reader" width="600px" class="grid-top" />
