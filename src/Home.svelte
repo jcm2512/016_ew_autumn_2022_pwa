@@ -35,7 +35,7 @@
   $sessionStorage.load();
 
   // Watch Variables
-  $: $found && console.log("You found something:", $found);
+  // $: $found && console.log("You found something:", $found);
 
   function setBG() {
     if ($menuState === "home") {
@@ -66,7 +66,6 @@
 
   // Set collected monsters to local data
   $stampCollection = $sessionStorage.get("collection").collection;
-  console.log($stampCollection);
   $: $trigger && $sessionStorage.set({ stamps: $stampCollection }),
     $sessionStorage.save();
   $: $triggerMenuState && setBG();
@@ -94,6 +93,10 @@
       case eventid:
         console.log("Found:", params.get(param));
         $found = true;
+        console.log($stampCollection);
+        let foundMonster = params.get(param);
+        $stampCollection[foundMonster].count += 1;
+        $stampCollection[foundMonster].found = true;
         return params.get(param);
       case "clear":
         sessionStorage.clear();
@@ -156,15 +159,14 @@
         });
     };
     const qrCodeSuccessCallback = (decodedText, decodedResult) => {
-      $found = true;
-      let foundMonster = getParameter(decodedText, eventid);
-      $stampCollection[foundMonster].count += 1;
-      $stampCollection[foundMonster].found = true;
-      saveResults();
       stop();
+      let foundMonster = getParameter(decodedText, eventid);
+      saveResults();
     };
   });
 </script>
+
+<!-- {@debug $found} -->
 
 <div id="main" bind:this={main} class="bg_dark">
   {#if $current_param !== "advertisement" && $found}
