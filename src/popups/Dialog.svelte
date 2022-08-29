@@ -1,8 +1,9 @@
 <script>
-  import { found } from "../store.js";
+  import { found, updateStamps } from "../store.js";
   function button() {
     console.log("pressed");
     $found = false;
+    $updateStamps += 1;
   }
 
   export let stamp;

@@ -10,6 +10,7 @@ export const triggerMenuState = writable(0);
 export const sessionStorage = writable();
 export const current_param = writable("");
 export const foundStamp = writable();
+export const updateStamps = writable(0);
 
 // MONSTER LIST
 export const stampCollection = writable({});

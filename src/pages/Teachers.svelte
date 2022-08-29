@@ -1,5 +1,10 @@
 <script>
-  import { stampCollection, menuState, triggerMenuState } from "../store.js";
+  import {
+    stampCollection,
+    menuState,
+    triggerMenuState,
+    updateStamps,
+  } from "../store.js";
 
   let stageCards, next, heading, menu;
   let CARDS = [];
@@ -12,15 +17,31 @@
     {$stampCollection[$menuState].stamps[area_name].title}
   </div>
   <div class="menu_item stamps">
-    {#each Object.keys($stampCollection[$menuState].stamps[area_name].area_stamps) as stamp}
-      <img
-        src={$stampCollection[$menuState].stamps[area_name].area_stamps[stamp]
-          .img}
-        alt={$stampCollection[$menuState].stamps[area_name].area_stamps[stamp]
-          .name}
-        class="stamp"
-      />
-    {/each}
+    {#key $updateStamps}
+      {#each Object.keys($stampCollection[$menuState].stamps[area_name].area_stamps) as stamp}
+        {#if $stampCollection[$menuState].stamps[area_name].area_stamps[stamp].found}
+          <img
+            src={$stampCollection[$menuState].stamps[area_name].area_stamps[
+              stamp
+            ].img}
+            alt={$stampCollection[$menuState].stamps[area_name].area_stamps[
+              stamp
+            ].name}
+            class="stamp"
+          />
+        {:else}
+          <img
+            src={$stampCollection[$menuState].stamps[area_name].area_stamps[
+              stamp
+            ].img}
+            alt={$stampCollection[$menuState].stamps[area_name].area_stamps[
+              stamp
+            ].name}
+            class="stamp locked"
+          />
+        {/if}
+      {/each}
+    {/key}
   </div>
 {/each}
 
@@ -40,6 +61,9 @@
   .stamp {
     max-height: 25vw;
     max-width: 25vw;
+  }
+
+  .locked {
     filter: brightness(0) opacity(0.5);
   }
 </style>
