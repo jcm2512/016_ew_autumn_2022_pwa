@@ -91,12 +91,16 @@
     }
     switch (params.get("id")) {
       case eventid:
-        console.log("Found:", params.get(param));
+        let stamp = params.get(param);
+        console.log("Found:", stamp);
         $found = true;
-        console.log($stampCollection);
-        let foundMonster = params.get(param);
-        $stampCollection[foundMonster].count += 1;
-        $stampCollection[foundMonster].found = true;
+        let id = stamp.split("_");
+        let foundStamp =
+          $stampCollection[id[0]].stamps[id[1]].area_stamps[stamp];
+        foundStamp.count += 1;
+        foundStamp.found = true;
+
+        saveResults();
         return params.get(param);
       case "clear":
         sessionStorage.clear();
@@ -109,6 +113,7 @@
 
   //// Save Results
   const saveResults = () => {
+    console.log("save results");
     $trigger += 1;
   };
 
@@ -160,8 +165,7 @@
     };
     const qrCodeSuccessCallback = (decodedText, decodedResult) => {
       stop();
-      let foundMonster = getParameter(decodedText, eventid);
-      saveResults();
+      getParameter(decodedText, eventid);
     };
   });
 </script>

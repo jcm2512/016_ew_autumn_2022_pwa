@@ -8,45 +8,45 @@
           heading: "MONSTER STAMPS",
           subheading: "モンスタースタンプ",
           stamps: {
-            area_1: {
+            a1: {
               title: "Haunted Forest",
               area_stamps: {
-                area_1_001: {
+                monsters_a1_001: {
                   name: "monster1",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/yellow_monster.png",
                   found: false,
                 },
-                area_1_002: {
+                monsters_a1_002: {
                   name: "monster2",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
-                area_1_003: {
+                monsters_a1_003: {
                   name: "monster3",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
-                area_1_004: {
+                monsters_a1_004: {
                   name: "monster4",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
-                area_1_005: {
+                monsters_a1_005: {
                   name: "monster5",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
-                area_1_006: {
+                monsters_a1_006: {
                   name: "monster6",
                   count: 0,
                   special: false,
@@ -55,45 +55,45 @@
                 },
               },
             },
-            area_2: {
+            a2: {
               title: "Scary Swamp",
               area_stamps: {
-                area_2_001: {
+                monsters_a2_001: {
                   name: "monster1",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/yellow_monster.png",
                   found: false,
                 },
-                area_2_002: {
+                monsters_a2_002: {
                   name: "monster2",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
-                area_2_003: {
+                monsters_a2_003: {
                   name: "monster3",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
-                area_2_004: {
+                monsters_a2_004: {
                   name: "monster4",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
-                area_2_005: {
+                monsters_a2_005: {
                   name: "monster5",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
-                area_2_006: {
+                monsters_a2_006: {
                   name: "monster6",
                   count: 0,
                   special: false,
@@ -102,45 +102,45 @@
                 },
               },
             },
-            area_3: {
+            a3: {
               title: "Magical Something",
               area_stamps: {
-                area_3_001: {
+                monsters_a3_001: {
                   name: "monster1",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/yellow_monster.png",
                   found: false,
                 },
-                area_3_002: {
+                monsters_a3_002: {
                   name: "monster2",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
-                area_3_003: {
+                monsters_a3_003: {
                   name: "monster3",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
-                area_3_004: {
+                monsters_a3_004: {
                   name: "monster4",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
-                area_3_005: {
+                monsters_a3_005: {
                   name: "monster5",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
-                area_3_006: {
+                monsters_a3_006: {
                   name: "monster6",
                   count: 0,
                   special: false,
@@ -149,45 +149,45 @@
                 },
               },
             },
-            area_4: {
+            a4: {
               title: "Halloween Craft",
               area_stamps: {
-                area_4_001: {
+                monsters_a4_001: {
                   name: "monster1",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/yellow_monster.png",
                   found: false,
                 },
-                area_4_002: {
+                monsters_a4_002: {
                   name: "monster2",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
-                area_4_003: {
+                monsters_a4_003: {
                   name: "monster3",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
-                area_4_004: {
+                monsters_a4_004: {
                   name: "monster4",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
-                area_4_005: {
+                monsters_a4_005: {
                   name: "monster5",
                   count: 0,
                   special: false,
                   img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
-                area_4_006: {
+                monsters_a4_006: {
                   name: "monster6",
                   count: 0,
                   special: false,
@@ -202,88 +202,88 @@
           heading: "SPECIAL STAMPS",
           subheading: "スペシャルスタンプ",
           stamps: {
-            area_1: {
+            a1: {
               title: "",
               area_stamps: {
-                spec_01_001: {
-                  name: "spec_01",
+                specials_a1_001: {
+                  name: "specials_a1_001",
                   count: 0,
                   special: true,
                   img: "/assets/icons/monsters/icons8-cute-skull-96.png",
                   found: false,
                 },
-                spec_02_001: {
-                  name: "spec_02",
+                specials_a1_002: {
+                  name: "specials_a1_002",
                   count: 0,
                   special: true,
                   img: "/assets/icons/monsters/icons8-cute-skull-96.png",
                   found: false,
                 },
-                spec_03_001: {
-                  name: "spec_03",
+                specials_a1_003: {
+                  name: "specials_a1_003",
                   count: 0,
                   special: true,
                   img: "/assets/icons/monsters/icons8-cute-skull-96.png",
                   found: false,
                 },
-                spec_04_001: {
-                  name: "spec_04",
+                specials_a1_004: {
+                  name: "specials_a1_004",
                   count: 0,
                   special: true,
                   img: "/assets/icons/monsters/icons8-cute-skull-96.png",
                   found: false,
                 },
-                spec_05_001: {
-                  name: "spec_05",
+                specials_a1_005: {
+                  name: "specials_a1_005",
                   count: 0,
                   special: true,
                   img: "/assets/icons/monsters/icons8-cute-skull-96.png",
                   found: false,
                 },
-                spec_06_001: {
-                  name: "spec_06",
+                specials_a1_006: {
+                  name: "specials_a1_006",
                   count: 0,
                   special: true,
                   img: "/assets/icons/monsters/icons8-cute-skull-96.png",
                   found: false,
                 },
-                spec_07_001: {
-                  name: "spec_07",
+                specials_a1_007: {
+                  name: "specials_a1_007",
                   count: 0,
                   special: true,
                   img: "/assets/icons/monsters/icons8-cute-skull-96.png",
                   found: false,
                 },
-                spec_08_001: {
-                  name: "spec_08",
+                specials_a1_008: {
+                  name: "specials_a1_008",
                   count: 0,
                   special: true,
                   img: "/assets/icons/monsters/icons8-cute-skull-96.png",
                   found: false,
                 },
-                spec_09_001: {
-                  name: "spec_09",
+                specials_a1_009: {
+                  name: "specials_a1_009",
                   count: 0,
                   special: true,
                   img: "/assets/icons/monsters/icons8-cute-skull-96.png",
                   found: false,
                 },
-                spec_10_001: {
-                  name: "spec_10",
+                specials_a1_010: {
+                  name: "specials_a1_010",
                   count: 0,
                   special: true,
                   img: "/assets/icons/monsters/icons8-cute-skull-96.png",
                   found: false,
                 },
-                spec_11_001: {
-                  name: "spec_11",
+                specials_a1_011: {
+                  name: "specials_a1_011",
                   count: 0,
                   special: true,
                   img: "/assets/icons/monsters/icons8-cute-skull-96.png",
                   found: false,
                 },
-                spec_12_001: {
-                  name: "spec_12",
+                specials_a1_012: {
+                  name: "specials_a1_012",
                   count: 0,
                   special: true,
                   img: "/assets/icons/monsters/icons8-cute-skull-96.png",
@@ -297,10 +297,10 @@
           heading: "TEACHER STAMPS",
           subheading: "先生たちスタンプ",
           stamps: {
-            area_1: {
+            a1: {
               title: "",
               area_stamps: {
-                teacher_01_001: {
+                teachers_a1_001: {
                   name: "teacher_01",
                   count: 0,
                   special: true,
@@ -308,7 +308,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_02_001: {
+                teachers_a1_001: {
                   name: "teacher_02",
                   count: 0,
                   special: true,
@@ -316,7 +316,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_03_001: {
+                teachers_a1_001: {
                   name: "teacher_03",
                   count: 0,
                   special: true,
@@ -324,7 +324,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_04_001: {
+                teachers_a1_001: {
                   name: "teacher_04",
                   count: 0,
                   special: true,
@@ -332,7 +332,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_05_001: {
+                teachers_a1_001: {
                   name: "teacher_05",
                   count: 0,
                   special: true,
@@ -340,7 +340,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_06_001: {
+                teachers_a1_001: {
                   name: "teacher_06",
                   count: 0,
                   special: true,
@@ -348,7 +348,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_07_001: {
+                teachers_a1_001: {
                   name: "teacher_07",
                   count: 0,
                   special: true,
@@ -356,7 +356,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_08_001: {
+                teachers_a1_001: {
                   name: "teacher_08",
                   count: 0,
                   special: true,
@@ -364,7 +364,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_09_001: {
+                teachers_a1_001: {
                   name: "teacher_09",
                   count: 0,
                   special: true,
@@ -372,7 +372,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_10_001: {
+                teachers_a1_001: {
                   name: "teacher_10",
                   count: 0,
                   special: true,
@@ -380,7 +380,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_11_001: {
+                teachers_a1_001: {
                   name: "teacher_11",
                   count: 0,
                   special: true,
@@ -388,7 +388,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_12_001: {
+                teachers_a1_001: {
                   name: "teacher_12",
                   count: 0,
                   special: true,
@@ -396,7 +396,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_13_001: {
+                teachers_a1_001: {
                   name: "teacher_13",
                   count: 0,
                   special: true,
@@ -404,7 +404,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_14_001: {
+                teachers_a1_001: {
                   name: "teacher_14",
                   count: 0,
                   special: true,
@@ -412,7 +412,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_15_001: {
+                teachers_a1_001: {
                   name: "teacher_15",
                   count: 0,
                   special: true,
@@ -420,7 +420,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_16_001: {
+                teachers_a1_001: {
                   name: "teacher_16",
                   count: 0,
                   special: true,
@@ -428,7 +428,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_17_001: {
+                teachers_a1_001: {
                   name: "teacher_17",
                   count: 0,
                   special: true,
@@ -436,7 +436,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_18_001: {
+                teachers_a1_001: {
                   name: "teacher_18",
                   count: 0,
                   special: true,
@@ -444,7 +444,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_19_001: {
+                teachers_a1_001: {
                   name: "teacher_19",
                   count: 0,
                   special: true,
@@ -452,7 +452,7 @@
                   found: false,
                   items: [],
                 },
-                teacher_20_001: {
+                teachers_a1_001: {
                   name: "teacher_20",
                   count: 0,
                   special: true,
