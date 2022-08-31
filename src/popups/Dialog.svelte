@@ -13,7 +13,11 @@
 <div id="popup">
   <div id="popup_dialog">
     <div id="popup_bg" />
-    <div id="popup_message">YOU FOUND A MONSTER</div>
+    {#if stamp.length > 1}
+      <div id="popup_message">YOU FOUND STAMPS</div>
+    {:else}
+      <div id="popup_message">YOU FOUND A STAMP</div>
+    {/if}
     <div id="popup_monsters">
       {#each stamp as stamp}
         <div class="half-tile">
