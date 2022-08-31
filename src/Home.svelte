@@ -33,14 +33,23 @@
   let DOMelements = [];
   $found = false;
 
+  // Write menu state to localdata
+  const loadState = function () {
+    if (localStorage.getItem("state") != null)
+      $menuState = JSON.parse(localStorage.getItem("state"));
+  };
+
+  const saveState = function () {
+    localStorage.setItem("state", JSON.stringify($menuState));
+  };
+
   // Load local data
   $sessionStorage = localData;
   $sessionStorage.load();
+  loadState();
 
-  // Watch Variables
-  // $: $found && console.log("You found something:", $found);
-
-  function setBG() {
+  function updateState() {
+    saveState();
     if ($menuState === "home") {
       main.setAttribute("class", "");
       main.classList.add("bg_dark");
@@ -71,7 +80,7 @@
   $stampCollection = $sessionStorage.get("collection").collection;
   $: $trigger && $sessionStorage.set({ stamps: $stampCollection }),
     $sessionStorage.save();
-  $: $triggerMenuState && setBG();
+  $: $triggerMenuState && updateState();
 
   // Fix document page size when toolbar is shown or hidden
   const onResize = function () {
@@ -82,7 +91,6 @@
 
   onResize();
   window.onresize = onResize;
-  // setBG();
 
   //// ---- FUNCTIONS:
   //// Get Parameter
@@ -151,15 +159,23 @@
     $menuState = event.id;
     previous_nav.classList.remove("active");
     event.classList.add("active");
-    setBG();
+    updateState();
     previous_nav = event;
+  }
+
+  function getNav(id) {
+    if (id === "home") return nav_home;
+    if (id === "teachers") return nav_teachers;
+    if (id === "specials") return nav_specials;
+    if (id === "monsters") return nav_monsters;
   }
 
   //// ---- QR SCAN ----
   onMount(() => {
     $current_param = getParameter(window.location.href, eventid);
+    previous_nav = getNav($menuState);
+    nav(previous_nav);
 
-    previous_nav = nav_home;
     const html5QrCode = new Html5Qrcode("reader");
     const config = { fps: 10, qrbox: { width: 250, height: 250 } };
     start = function () {
@@ -233,7 +249,7 @@
 <nav>
   <div
     bind:this={nav_home}
-    class="nav_button active"
+    class="nav_button"
     id="home"
     on:click={() => nav(nav_home)}
   >
