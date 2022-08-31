@@ -368,4 +368,5 @@ img.monster{
   font-size: 4vw;
   text-align: center;
   font-family: "Londrina Solid";
-  visibility: hidden;}
+  /* visibility: hidden; */
+}

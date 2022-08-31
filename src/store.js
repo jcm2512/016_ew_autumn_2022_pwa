@@ -11,6 +11,7 @@ export const sessionStorage = writable();
 export const current_param = writable("");
 export const foundStamp = writable();
 export const updateStamps = writable(0);
+export const foundStampCollection = writable([]);
 
 // MONSTER LIST
 export const stampCollection = writable({});

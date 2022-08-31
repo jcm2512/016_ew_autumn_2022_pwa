@@ -13,6 +13,7 @@
     sessionStorage,
     current_param,
     foundStamp,
+    foundStampCollection,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Stamps from "./Stamps.svelte";
@@ -20,10 +21,11 @@
   import QR from "./components/QR.svelte";
   import Unavailable from "./pages/Unavailable.svelte";
   import Dialog from "./popups/Dialog.svelte";
+  import { _colorStringFilter } from "gsap/gsap-core.js";
 
   // Global Variables
   let eventid = "ew2022-10",
-    param = "m";
+    stampid = "m";
   let reader, button, overlay, main, next; // Reference to DOM element
   let nav_home, nav_teachers, nav_specials, nav_monsters; // Reference to DOM Nav elements
   let previous_nav = nav_home;
@@ -86,24 +88,47 @@
   //// Get Parameter
   const getParameter = (url, eventid) => {
     const params = new URLSearchParams(new URL(url).search);
-    if (!params.get(param)) {
-      console.log("No parameters found in URL");
+    if (!params.get(stampid)) {
+      console.log("Stamp not found in URL");
       return false;
     }
     switch (params.get("id")) {
       case eventid:
-        let stamp = params.get(param);
+        let stamp = params.get(stampid);
         console.log("Found:", stamp);
         $found = true;
         let id = stamp.split("_");
-        $foundStamp = $stampCollection[id[0]].stamps[id[1]].area_stamps[stamp];
-        $foundStamp.count += 1;
-        $foundStamp.found = true;
 
-        console.log($foundStamp);
+        // SINGLE STAMP
+        if (id.length === 3) {
+          $foundStamp =
+            $stampCollection[id[0]].stamps[id[1]].area_stamps[stamp];
+          $foundStamp.count += 1;
+          $foundStamp.found = true;
+          $foundStampCollection.push($foundStamp);
+        }
+
+        // MULTI STAMP
+        if (id.length === 2) {
+          let items = Object.keys(
+            $stampCollection[id[0]].stamps[id[1]].area_stamps
+          );
+          let random = items[Math.floor(Math.random() * items.length)];
+          $foundStamp =
+            $stampCollection[id[0]].stamps[id[1]].area_stamps[random];
+          $foundStamp.found = true;
+          $foundStampCollection.push($foundStamp);
+          let random_2 = items[Math.floor(Math.random() * items.length)];
+          $foundStamp =
+            $stampCollection[id[0]].stamps[id[1]].area_stamps[random_2];
+          $foundStamp.found = true;
+          $foundStampCollection.push($foundStamp);
+        }
+
+        console.log($foundStampCollection);
 
         saveResults();
-        return params.get(param);
+        return params.get(stampid);
       case "clear":
         sessionStorage.clear();
         return false;
@@ -176,7 +201,7 @@
 
 <div id="main" bind:this={main} class="bg_dark">
   {#if $current_param !== "advertisement" && $found}
-    <Dialog stamp={$foundStamp} />
+    <Dialog stamp={$foundStampCollection} />
   {/if}
 
   <div bind:this={reader} id="reader" width="600px" class="grid-top" />
