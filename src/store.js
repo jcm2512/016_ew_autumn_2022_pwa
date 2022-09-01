@@ -12,6 +12,7 @@ export const current_param = writable("");
 export const foundStamp = writable();
 export const updateStamps = writable(0);
 export const foundStampCollection = writable([]);
+export const advertState = writable("");
 
 // MONSTER LIST
 export const stampCollection = writable({});

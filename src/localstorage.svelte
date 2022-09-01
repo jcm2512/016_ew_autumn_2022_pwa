@@ -15,7 +15,7 @@
                   name: "monster1",
                   count: 0,
                   special: false,
-                  img: "/assets/icons/monsters/yellow_monster.png",
+                  img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
                 monsters_a1_002: {
@@ -62,7 +62,7 @@
                   name: "monster1",
                   count: 0,
                   special: false,
-                  img: "/assets/icons/monsters/yellow_monster.png",
+                  img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
                 monsters_a2_002: {
@@ -109,7 +109,7 @@
                   name: "monster1",
                   count: 0,
                   special: false,
-                  img: "/assets/icons/monsters/yellow_monster.png",
+                  img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
                 monsters_a3_002: {
@@ -156,7 +156,7 @@
                   name: "monster1",
                   count: 0,
                   special: false,
-                  img: "/assets/icons/monsters/yellow_monster.png",
+                  img: "/assets/icons/monsters/icons8-cute-pumpkin-96.png",
                   found: false,
                 },
                 monsters_a4_002: {
@@ -306,7 +306,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_002: {
                   name: "teacher_02",
@@ -314,7 +313,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_003: {
                   name: "teacher_03",
@@ -322,7 +320,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_004: {
                   name: "teacher_04",
@@ -330,7 +327,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_005: {
                   name: "teacher_05",
@@ -338,7 +334,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_006: {
                   name: "teacher_06",
@@ -346,7 +341,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_007: {
                   name: "teacher_07",
@@ -354,7 +348,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_008: {
                   name: "teacher_08",
@@ -362,7 +355,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_009: {
                   name: "teacher_09",
@@ -370,7 +362,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_010: {
                   name: "teacher_10",
@@ -378,7 +369,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_011: {
                   name: "teacher_11",
@@ -386,7 +376,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_012: {
                   name: "teacher_12",
@@ -394,7 +383,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_013: {
                   name: "teacher_13",
@@ -402,7 +390,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_014: {
                   name: "teacher_14",
@@ -410,7 +397,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_015: {
                   name: "teacher_15",
@@ -418,7 +404,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_016: {
                   name: "teacher_16",
@@ -426,7 +411,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_017: {
                   name: "teacher_17",
@@ -434,7 +418,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_018: {
                   name: "teacher_18",
@@ -442,7 +425,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_019: {
                   name: "teacher_19",
@@ -450,7 +432,6 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
                 },
                 teachers_a1_020: {
                   name: "teacher_20",
@@ -458,7 +439,13 @@
                   special: true,
                   img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
                   found: false,
-                  items: [],
+                },
+                teachers_a1_021: {
+                  name: "teacher_21",
+                  count: 0,
+                  special: true,
+                  img: "/assets/icons/monsters/icons8-frankensteins-monster-96.png",
+                  found: false,
                 },
               },
             },

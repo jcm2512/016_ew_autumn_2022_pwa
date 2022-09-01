@@ -14,6 +14,7 @@
     current_param,
     foundStamp,
     foundStampCollection,
+    advertState,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Stamps from "./Stamps.svelte";
@@ -37,6 +38,10 @@
     if (localStorage.getItem("state") != null)
       $menuState = JSON.parse(localStorage.getItem("state"));
   };
+
+  // Check for advertisement key
+  if (localStorage.getItem("advert") != null)
+    $advertState = JSON.parse(localStorage.getItem("advert"));
 
   const saveState = function () {
     localStorage.setItem("state", JSON.stringify($menuState));
@@ -172,6 +177,10 @@
   //// ---- QR SCAN ----
   onMount(() => {
     $current_param = getParameter(window.location.href, eventid);
+    if ($current_param === "advertisement") {
+      localStorage.setItem("advert", JSON.stringify("true"));
+      $advertState = "true";
+    }
     previous_nav = getNav($menuState);
     nav(previous_nav);
 
@@ -223,24 +232,24 @@
   <div bind:this={overlay} id="overlay" class="grid-top " />
   <div id="bg" class="grid-top " />
 
-  {#if $current_param === "advertisement"}
-    <Unavailable />
-  {:else}
-    <!-- MAIN CONTENT START-->
-    {#if $menuState === "home"}
+  <!-- MAIN CONTENT START-->
+  {#if $menuState === "home"}
+    {#if $advertState === "true"}
+      <Unavailable />
+    {:else}
       <Menu />
     {/if}
-    {#if $menuState === "teachers"}
-      <Stamps />
-    {/if}
-    {#if $menuState === "specials"}
-      <Stamps />
-    {/if}
-    {#if $menuState === "monsters"}
-      <Stamps />
-    {/if}
-    <!-- MAIN CONTENT END  -->
   {/if}
+  {#if $menuState === "teachers"}
+    <Stamps />
+  {/if}
+  {#if $menuState === "specials"}
+    <Stamps />
+  {/if}
+  {#if $menuState === "monsters"}
+    <Stamps />
+  {/if}
+  <!-- MAIN CONTENT END  -->
 
   <div id="shadow" />
 </div>
