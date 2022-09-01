@@ -1,9 +1,3 @@
-# Stamp_ID
-
-type [m, s, t]
-area [1,2,3,4]
-stamp_num
-
 # single stamp
 
 http://localhost:8080/?id=ew2022-10&m=monsters_a2_001
@@ -19,3 +13,7 @@ https://ew-monster-stamp-rally.netlify.app/?id=ew2022-10&m=monsters_a3
 https://ew-monster-stamp-rally.netlify.app/?id=ew2022-10&m=teachers_a1_002
 
 https://ew-monster-stamp-rally.netlify.app/?id=ew2022-10&m=special_a1_002
+
+# todo
+
+what happens if the advertising qr gets scanned in app?

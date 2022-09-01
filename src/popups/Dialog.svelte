@@ -1,13 +1,11 @@
 <script>
   import { found, updateStamps, foundStampCollection } from "../store.js";
 
-  //reset found stamps
-  $foundStampCollection = [];
-
   function button() {
     console.log("pressed");
     $found = false;
     $updateStamps += 1;
+    $foundStampCollection = [];
   }
 
   export let stamp;

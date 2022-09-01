@@ -21,7 +21,6 @@
   import QR from "./components/QR.svelte";
   import Unavailable from "./pages/Unavailable.svelte";
   import Dialog from "./popups/Dialog.svelte";
-  import { _colorStringFilter } from "gsap/gsap-core.js";
 
   // Global Variables
   let eventid = "ew2022-10",
