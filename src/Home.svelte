@@ -33,6 +33,15 @@
   let DOMelements = [];
   $found = false;
 
+  // CHECK VERSION NUMBER AND CLEAR LOCAL CACHE
+  if (localStorage.getItem("MSR_version") == undefined) {
+    console.log("clearing cache");
+    localStorage.clear();
+
+    // SET VERSION NUMBER
+    localStorage.setItem("MSR_version", JSON.stringify("2.0"));
+  }
+
   // Write menu state to localdata
   const loadState = function () {
     if (localStorage.getItem("state") != null)
@@ -241,13 +250,21 @@
     {/if}
   {/if}
   {#if $menuState === "teachers"}
-    <Stamps />
+    {#if $advertState === "true"}
+      <Unavailable />
+    {:else}
+      <Stamps />
+    {/if}
   {/if}
   {#if $menuState === "specials"}
     <Stamps />
   {/if}
   {#if $menuState === "monsters"}
-    <Stamps />
+    {#if $advertState === "true"}
+      <Unavailable />
+    {:else}
+      <Stamps />
+    {/if}
   {/if}
   <!-- MAIN CONTENT END  -->
 
