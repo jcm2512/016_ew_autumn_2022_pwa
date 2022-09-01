@@ -1,9 +1,4 @@
-<script>
-  import { sessionStorage } from "./store.js";
-</script>
-
 <div id="content" class="grid-top grid">
-  <div class="clear" on:click={() => $sessionStorage.clear()}>&#9881</div>
   <div id="menu_heading" class="menu_heading">
     <div class="main">MONSTER</div>
     <div class="sub">STAMP RALLY</div>
@@ -24,11 +19,6 @@
 </div>
 
 <style>
-  .clear {
-    font-size: 7vw;
-    width: 7vw;
-    justify-self: right;
-  }
   .menu_item {
     display: grid;
     grid-template-columns: 1fr 1fr;
