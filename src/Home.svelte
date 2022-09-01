@@ -21,6 +21,7 @@
   import Menu from "./Menu.svelte";
   import QR from "./components/QR.svelte";
   import Unavailable from "./pages/Unavailable.svelte";
+  import Trivia from "./pages/Trivia.svelte";
   import Dialog from "./popups/Dialog.svelte";
 
   // Global Variables
@@ -241,32 +242,38 @@
   <div bind:this={overlay} id="overlay" class="grid-top " />
   <div id="bg" class="grid-top " />
 
-  <!-- MAIN CONTENT START-->
-  {#if $menuState === "home"}
-    {#if $advertState === "true"}
+  {#if $advertState === "true"}
+    <!-- AD CONTENT START-->
+
+    {#if $menuState === "home"}
+      <Trivia />
+    {/if}
+    {#if $menuState === "teachers"}
       <Unavailable />
-    {:else}
+    {/if}
+    {#if $menuState === "specials"}
+      <Unavailable />
+    {/if}
+    {#if $menuState === "monsters"}
+      <Unavailable />
+    {/if}
+    <!-- AD CONTENT END  -->
+  {:else}
+    <!-- MAIN CONTENT START-->
+    {#if $menuState === "home"}
       <Menu />
     {/if}
-  {/if}
-  {#if $menuState === "teachers"}
-    {#if $advertState === "true"}
-      <Unavailable />
-    {:else}
+    {#if $menuState === "teachers"}
       <Stamps />
     {/if}
-  {/if}
-  {#if $menuState === "specials"}
-    <Stamps />
-  {/if}
-  {#if $menuState === "monsters"}
-    {#if $advertState === "true"}
-      <Unavailable />
-    {:else}
+    {#if $menuState === "specials"}
       <Stamps />
     {/if}
+    {#if $menuState === "monsters"}
+      <Stamps />
+    {/if}
+    <!-- MAIN CONTENT END  -->
   {/if}
-  <!-- MAIN CONTENT END  -->
 
   <div id="shadow" />
 </div>
