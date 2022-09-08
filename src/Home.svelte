@@ -202,6 +202,7 @@
     if ($current_param === "advertisement") {
       localStorage.setItem("advert", JSON.stringify("true"));
       $advertState = "true";
+      $menuState = "home";
     }
     previous_nav = getNav($menuState);
     nav(previous_nav);

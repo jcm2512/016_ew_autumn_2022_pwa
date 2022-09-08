@@ -2,6 +2,13 @@
   import Fact_1_en from "./Fact_1_en.svelte";
   import Fact_1_jp from "./Fact_1_jp.svelte";
 
+  import { Swiper, SwiperSlide } from "swiper/svelte";
+
+  // Import Swiper
+  import { Pagination } from "swiper";
+  import "swiper/css";
+  import "swiper/css/pagination";
+
   let eng = true;
 </script>
 
@@ -12,12 +19,26 @@
   </div>
   <div id="menu">
     <!-- <div class="title jp-font bold">知っていましたか?</div> -->
-    <div on:click={() => (eng = !eng)}>
-      {#if eng}
-        Swiper
-      {:else}
-        スワイプ{/if}
+    <div id="wrapper" on:click={() => (eng = !eng)}>
+      <Swiper pagination={true} modules={[Pagination]} class="mySwiper">
+        {#if eng}
+          <SwiperSlide>
+            <Fact_1_en />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Fact_1_en />
+          </SwiperSlide>
+        {:else}
+          <SwiperSlide>
+            <Fact_1_jp />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Fact_1_jp />
+          </SwiperSlide>
+        {/if}
+      </Swiper>
     </div>
+
     <div class="bottom_message jp-font">
       <p>次回の更新は次の金曜日です。</p>
       <p>またお会いしましょう！</p>
@@ -26,6 +47,9 @@
 </div>
 
 <style>
+  #wrapper {
+    width: 92vw;
+  }
   .bottom_message {
     margin-top: 6vw;
     font-size: 6vw;
