@@ -35,14 +35,31 @@
   let DOMelements = [];
   $found = false;
 
+  // INITIALIZE WEEKLY MONSTERS
+  if (localStorage.getItem("Weekly_Monsters") == undefined) {
+    localStorage.setItem("Weekly_Monsters", JSON.stringify([]));
+  }
+
+  // GET WEEKLY MONSTER
+  let weeklyMonsters = JSON.parse(localStorage.getItem("Weekly_Monsters"));
+  function getWeeklyMonster(stamp_id) {
+    if (!weeklyMonsters.includes(stamp_id)) {
+      $found = true;
+      console.log("don't have", stamp_id);
+      weeklyMonsters.push(stamp_id);
+      localStorage.setItem("Weekly_Monsters", JSON.stringify(weeklyMonsters));
+      getFoundStamp(stamp_id);
+    }
+  }
+
   // CHECK VERSION NUMBER AND CLEAR LOCAL CACHE
-  if (localStorage.getItem("MSR_version") == undefined) {
+  if (localStorage.getItem("MSR_version") != 4) {
     console.log("clearing cache");
     localStorage.clear();
-
-    // SET VERSION NUMBER
-    localStorage.setItem("MSR_version", JSON.stringify("2.0"));
   }
+
+  // SET VERSION NUMBER
+  localStorage.setItem("MSR_version", JSON.stringify(4));
 
   // DEV MODE: SET STAMPS TO TRUE/FALSE
   if (localStorage.getItem("ViewAllStamps") == undefined) {
@@ -119,6 +136,40 @@
   window.onresize = onResize;
 
   //// ---- FUNCTIONS:
+
+  //// Get Found Stamp
+  function getFoundStamp(stamp) {
+    $found = true;
+    let id = stamp.split("_");
+
+    // SINGLE STAMP
+    if (id.length === 3) {
+      $foundStamp = $stampCollection[id[0]].stamps[id[1]].area_stamps[stamp];
+      $foundStamp.count += 1;
+      $foundStamp.found = true;
+      $foundStampCollection.push($foundStamp);
+    }
+
+    // MULTI STAMP
+    if (id.length === 2) {
+      let items = Object.keys(
+        $stampCollection[id[0]].stamps[id[1]].area_stamps
+      );
+      let random = items[Math.floor(Math.random() * items.length)];
+      $foundStamp = $stampCollection[id[0]].stamps[id[1]].area_stamps[random];
+      $foundStamp.found = true;
+      $foundStampCollection.push($foundStamp);
+      let random_2 = items[Math.floor(Math.random() * items.length)];
+      $foundStamp = $stampCollection[id[0]].stamps[id[1]].area_stamps[random_2];
+      $foundStamp.found = true;
+      $foundStampCollection.push($foundStamp);
+    }
+
+    console.log($foundStampCollection);
+
+    saveResults();
+  }
+
   //// Get Parameter
   const getParameter = (url, eventid) => {
     const params = new URLSearchParams(new URL(url).search);
@@ -129,39 +180,12 @@
     switch (params.get("id")) {
       case eventid:
         let stamp = params.get(stampid);
+        if (stamp == "advertisement") {
+          return false;
+        }
         console.log("Found:", stamp);
-        $found = true;
-        let id = stamp.split("_");
-
-        // SINGLE STAMP
-        if (id.length === 3) {
-          $foundStamp =
-            $stampCollection[id[0]].stamps[id[1]].area_stamps[stamp];
-          $foundStamp.count += 1;
-          $foundStamp.found = true;
-          $foundStampCollection.push($foundStamp);
-        }
-
-        // MULTI STAMP
-        if (id.length === 2) {
-          let items = Object.keys(
-            $stampCollection[id[0]].stamps[id[1]].area_stamps
-          );
-          let random = items[Math.floor(Math.random() * items.length)];
-          $foundStamp =
-            $stampCollection[id[0]].stamps[id[1]].area_stamps[random];
-          $foundStamp.found = true;
-          $foundStampCollection.push($foundStamp);
-          let random_2 = items[Math.floor(Math.random() * items.length)];
-          $foundStamp =
-            $stampCollection[id[0]].stamps[id[1]].area_stamps[random_2];
-          $foundStamp.found = true;
-          $foundStampCollection.push($foundStamp);
-        }
-
-        console.log($foundStampCollection);
-
-        saveResults();
+        ///
+        getFoundStamp(stamp);
         return params.get(stampid);
       case "clear":
         sessionStorage.clear();
@@ -242,12 +266,15 @@
       getParameter(decodedText, eventid);
     };
   });
+
+  // SEP 9 WEEKLY MONSTER
+  getWeeklyMonster("specials_a1_001");
 </script>
 
 <!-- {@debug $found} -->
 
 <div id="main" bind:this={main} class="bg_dark">
-  {#if $current_param !== "advertisement" && $found}
+  {#if $found}
     <Dialog stamp={$foundStampCollection} />
   {/if}
 
