@@ -12,6 +12,7 @@
   --aqua: #00F5D4;
   --grey: #ababab;
   --background: #15304A;
+  --swiper-pagination-color: hsl(0, 0%, 100%);
 }
 
 :root {
@@ -125,7 +126,7 @@ html {
   z-index: 100;
   visibility: hidden;
   height: fit-content;
-  border-radius: 2rem;
+  border-radius: 10vw;
   overflow: hidden;
 }
 
@@ -139,7 +140,6 @@ html {
   height: 25vw;
   width: 25vw;
   border-radius: 50%;
-  margin-top: -2.5rem;
   border: 3vw solid var(--background);
   background-image: linear-gradient(43.6deg, #E84B50 22.24%, #BC76E4 73.52%);
   background-position: center;
@@ -234,7 +234,7 @@ nav {
 
 .title {
   grid-column: span 2;
-  font-size: 1.2rem;
+  font-size: 7vw;
 }
 
 #menu_heading {
@@ -373,4 +373,70 @@ img.monster{
 .swiper {
   width: 100%;
   height: 100%;
+}
+
+.swiper-pagination{
+  pointer-events: none;
+}
+
+/* TRIVIA */
+.reveal{
+  color: black;
+  background-color: white;
+  border-radius: 5vw;
+  padding: 1vw;
+  text-align: center;
+}
+
+.answer{
+  /* color: black; */
+  background-color: var(--green);
+  border-radius: 5vw;
+  padding: 1vw;
+  text-align: center;
+}
+
+.counter {
+  font-family: "Fredoka";
+  font-size: 4vw;
+  font-weight: bold;
+}
+
+.item {
+  margin: 1vw;
+  height: 80vw;
+  grid-column: span 2;
+  border-radius: 4vw;
+  padding: 4vw;
+  font-size: 8vw;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.trivia-title {
+  /* grid-column: span 2; */
+  font-size: 7vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.trivia {
+  font-family: "Fredoka";
+  font-size: 6vw;
+  text-align: center;
+}
+
+.translate {
+  margin-top: 0vw;
+  color: var(--background);
+  background: white;
+  width: fit-content;
+  padding: 1vw;
+  align-self: flex-end;
+  padding-inline: 5vw;
+  border-radius: 5vw;
+  font-size: 4vw;
 }

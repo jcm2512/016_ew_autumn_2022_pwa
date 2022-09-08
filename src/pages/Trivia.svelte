@@ -1,4 +1,8 @@
 <script>
+  import Dialog from "../popups/Dialog.svelte";
+
+  import AnimateCss from "../animateCSS.svelte";
+
   import Fact_1_en from "./Fact_1_en.svelte";
   import Fact_1_jp from "./Fact_1_jp.svelte";
   import Fact_2_en from "./Fact_2_en.svelte";
@@ -7,11 +11,11 @@
   import { Swiper, SwiperSlide } from "swiper/svelte";
 
   // Import Swiper
-  import { Pagination } from "swiper";
+  import { Pagination, Mousewheel, Keyboard } from "swiper";
   import "swiper/css";
   import "swiper/css/pagination";
 
-  let eng = true;
+  import { eng } from "../store.js";
 </script>
 
 <div id="content" class="grid-top grid">
@@ -21,9 +25,17 @@
   </div>
   <div id="menu">
     <!-- <div class="title jp-font bold">知っていましたか?</div> -->
-    <div id="wrapper" on:click={() => (eng = !eng)}>
-      <Swiper pagination={true} modules={[Pagination]} class="mySwiper">
-        {#if eng}
+    <div id="wrapper">
+      <Swiper
+        cssMode={true}
+        navigation={true}
+        pagination={true}
+        mousewheel={true}
+        keyboard={true}
+        modules={[Pagination, Mousewheel, Keyboard]}
+        class="mySwiper"
+      >
+        {#if $eng}
           <SwiperSlide>
             <Fact_1_en />
           </SwiperSlide>
