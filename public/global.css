@@ -354,14 +354,27 @@ img.monster{
   -webkit-filter: drop-shadow(1vw 2vw 1vw rgb(0, 0, 0, 0.5));
   filter: drop-shadow(1vw 2vw 1vw rgb(0, 0, 0, 0.5));}
 
+  img.fullsize.monster{
+    width: 40vw;
+    -webkit-filter: drop-shadow(1vw 2vw 1vw rgb(0, 0, 0, 0.5));
+    filter: drop-shadow(1vw 2vw 1vw rgb(0, 0, 0, 0.5));}
+
 .half-tile{
   width: 30vw;
   display: grid;
-  grid-template-rows: 30vw 10vw;
+  grid-template-rows: 30vw;
   grid-auto-columns: 100%;
   justify-items: center;
-  /* align-items: center; */
 }
+
+.full-tile{
+  width: 40vw;
+  display: grid;
+  grid-template-rows: 40vw;
+  grid-auto-columns: 100%;
+  justify-items: center;
+}
+
 
 .monster_name{
   font-size: 4vw;

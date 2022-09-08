@@ -1,11 +1,20 @@
 <script>
-  import { found, updateStamps, foundStampCollection } from "../store.js";
+  import {
+    found,
+    updateStamps,
+    foundStampCollection,
+    menuState,
+  } from "../store.js";
 
   function button() {
-    console.log("pressed");
+    console.log($foundStampCollection);
+    let id = $foundStampCollection[0].name.split("_");
+    console.log(id[0]);
+    let area = id[0];
     $found = false;
     $updateStamps += 1;
     $foundStampCollection = [];
+    $menuState = area;
   }
 
   export let stamp;
@@ -17,25 +26,24 @@
     <div id="popup_bg" />
     {#if stamp.length > 1}
       <div id="popup_message">YOU FOUND STAMPS</div>
+      <div id="popup_monsters">
+        {#each stamp as stamp}
+          <div class="half-tile">
+            <img src={stamp.img} class="monster" alt={stamp.name} />
+          </div>
+        {/each}
+      </div>
     {:else}
       <div id="popup_message">YOU FOUND A STAMP</div>
+      <div id="popup_monsters">
+        {#each stamp as stamp}
+          <div class="full-tile">
+            <img src={stamp.img} class="fullsize monster" alt={stamp.name} />
+          </div>
+        {/each}
+      </div>
     {/if}
-    <div id="popup_monsters">
-      {#each stamp as stamp}
-        <div class="half-tile">
-          <img src={stamp.img} class="monster" alt="skull" />
-          <div class="monster_name">{stamp.name}</div>
-        </div>
-        <!-- <div class="half-tile">
-        <img
-          src="/assets/icons/monsters/icons8-frankensteins-monster-96.png"
-          class="monster"
-          alt="skull"
-        />
-        <div class="monster_name">name</div>
-      </div> -->
-      {/each}
-    </div>
+
     <div on:click={button} id="ok_button">OK</div>
   </div>
 </div>
