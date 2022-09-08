@@ -16,4 +16,4 @@ https://ew-monster-stamp-rally.netlify.app/?id=ew2022-10&m=special_a1_002
 
 # todo
 
-what happens if the advertising qr gets scanned in app?
+what happens if the advertising qr gets scanned in app? --GOOD

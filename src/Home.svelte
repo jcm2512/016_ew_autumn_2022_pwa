@@ -15,6 +15,7 @@
     foundStamp,
     foundStampCollection,
     advertState,
+    viewAllStamps,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Stamps from "./Stamps.svelte";
@@ -43,15 +44,26 @@
     localStorage.setItem("MSR_version", JSON.stringify("2.0"));
   }
 
+  // DEV MODE: SET STAMPS TO TRUE/FALSE
+  if (localStorage.getItem("ViewAllStamps") == undefined) {
+    // SET VERSION NUMBER
+    localStorage.setItem("ViewAllStamps", "false");
+  }
+  $viewAllStamps = localStorage.getItem("ViewAllStamps");
+
   // Write menu state to localdata
   const loadState = function () {
-    if (localStorage.getItem("state") != null)
+    if (localStorage.getItem("state") != undefined)
       $menuState = JSON.parse(localStorage.getItem("state"));
   };
 
   // Check for advertisement key
-  if (localStorage.getItem("advert") != null)
+  if (localStorage.getItem("advert") != undefined) {
     $advertState = JSON.parse(localStorage.getItem("advert"));
+  } else {
+    $advertState = "false";
+    localStorage.setItem("advert", JSON.stringify($advertState));
+  }
 
   const saveState = function () {
     localStorage.setItem("state", JSON.stringify($menuState));

@@ -4,6 +4,7 @@
     menuState,
     triggerMenuState,
     updateStamps,
+    viewAllStamps,
   } from "../store.js";
 
   let stageCards, next, heading, menu;
@@ -19,7 +20,7 @@
   <div class="menu_item stamps">
     {#key $updateStamps}
       {#each Object.keys($stampCollection[$menuState].stamps[area_name].area_stamps) as stamp}
-        {#if $stampCollection[$menuState].stamps[area_name].area_stamps[stamp].found}
+        {#if $stampCollection[$menuState].stamps[area_name].area_stamps[stamp].found || $viewAllStamps}
           <img
             src={$stampCollection[$menuState].stamps[area_name].area_stamps[
               stamp
