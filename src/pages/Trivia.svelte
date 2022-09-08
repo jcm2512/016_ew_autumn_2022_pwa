@@ -1,6 +1,8 @@
 <script>
   import Fact_1_en from "./Fact_1_en.svelte";
   import Fact_1_jp from "./Fact_1_jp.svelte";
+  import Fact_2_en from "./Fact_2_en.svelte";
+  import Fact_2_jp from "./Fact_2_jp.svelte";
 
   import { Swiper, SwiperSlide } from "swiper/svelte";
 
@@ -26,14 +28,14 @@
             <Fact_1_en />
           </SwiperSlide>
           <SwiperSlide>
-            <Fact_1_en />
+            <Fact_2_en />
           </SwiperSlide>
         {:else}
           <SwiperSlide>
             <Fact_1_jp />
           </SwiperSlide>
           <SwiperSlide>
-            <Fact_1_jp />
+            <Fact_2_jp />
           </SwiperSlide>
         {/if}
       </Swiper>
