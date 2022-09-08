@@ -14,9 +14,9 @@
     <!-- <div class="title jp-font bold">知っていましたか?</div> -->
     <div on:click={() => (eng = !eng)}>
       {#if eng}
-        <Fact_1_en />
+        Swiper
       {:else}
-        <Fact_1_jp />{/if}
+        スワイプ{/if}
     </div>
     <div class="bottom_message jp-font">
       <p>次回の更新は次の金曜日です。</p>
