@@ -4,9 +4,11 @@
     updateStamps,
     foundStampCollection,
     menuState,
+    triggerMenuState,
   } from "../store.js";
 
   function button() {
+    $triggerMenuState += 1;
     console.log($foundStampCollection);
     let id = $foundStampCollection[0].name.split("_");
     console.log(id[0]);

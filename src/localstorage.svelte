@@ -2,7 +2,7 @@
   export const localData = {
     key: "localdata_ew202210",
     value: {
-      version: 4,
+      version: 5,
       found: 0,
       collection: {
         monsters: {
@@ -13,42 +13,42 @@
               title: "Haunted Forest",
               area_stamps: {
                 monsters_a1_001: {
-                  name: "monster1",
+                  name: "monsters_a1_001",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a1_001.png",
                   found: false,
                 },
                 monsters_a1_002: {
-                  name: "monster2",
+                  name: "monsters_a1_002",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a1_002.png",
                   found: false,
                 },
                 monsters_a1_003: {
-                  name: "monster3",
+                  name: "monsters_a1_003",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a1_003.png",
                   found: false,
                 },
                 monsters_a1_004: {
-                  name: "monster4",
+                  name: "monsters_a1_004",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a1_004.png",
                   found: false,
                 },
                 monsters_a1_005: {
-                  name: "monster5",
+                  name: "monsters_a1_005",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a1_005.png",
                   found: false,
                 },
                 monsters_a1_006: {
-                  name: "monster6",
+                  name: "monsters_a1_006",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a1_006.png",
@@ -60,42 +60,42 @@
               title: "Scary Swamp",
               area_stamps: {
                 monsters_a2_001: {
-                  name: "monster1",
+                  name: "monsters_a2_001",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a2_001.png",
                   found: false,
                 },
                 monsters_a2_002: {
-                  name: "monster2",
+                  name: "monsters_a2_002",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a2_002.png",
                   found: false,
                 },
                 monsters_a2_003: {
-                  name: "monster3",
+                  name: "monsters_a2_003",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a2_003.png",
                   found: false,
                 },
                 monsters_a2_004: {
-                  name: "monster4",
+                  name: "monsters_a2_004",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a2_004.png",
                   found: false,
                 },
                 monsters_a2_005: {
-                  name: "monster5",
+                  name: "monsters_a2_005",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a2_005.png",
                   found: false,
                 },
                 monsters_a2_006: {
-                  name: "monster6",
+                  name: "monsters_a2_006",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a2_006.png",
@@ -107,42 +107,42 @@
               title: "Magical Something",
               area_stamps: {
                 monsters_a3_001: {
-                  name: "monster1",
+                  name: "monsters_a3_001",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a3_001.png",
                   found: false,
                 },
                 monsters_a3_002: {
-                  name: "monster2",
+                  name: "monsters_a3_002",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a3_002.png",
                   found: false,
                 },
                 monsters_a3_003: {
-                  name: "monster3",
+                  name: "monsters_a3_003",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a3_003.png",
                   found: false,
                 },
                 monsters_a3_004: {
-                  name: "monster4",
+                  name: "monsters_a3_004",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a3_004.png",
                   found: false,
                 },
                 monsters_a3_005: {
-                  name: "monster5",
+                  name: "monsters_a3_005",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a3_005.png",
                   found: false,
                 },
                 monsters_a3_006: {
-                  name: "monster6",
+                  name: "monsters_a3_006",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a3_006.png",
@@ -154,42 +154,42 @@
               title: "Halloween Craft",
               area_stamps: {
                 monsters_a4_001: {
-                  name: "monster1",
+                  name: "monsters_a4_001",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a4_001.png",
                   found: false,
                 },
                 monsters_a4_002: {
-                  name: "monster2",
+                  name: "monsters_a4_002",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a4_002.png",
                   found: false,
                 },
                 monsters_a4_003: {
-                  name: "monster3",
+                  name: "monsters_a4_003",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a4_003.png",
                   found: false,
                 },
                 monsters_a4_004: {
-                  name: "monster4",
+                  name: "monsters_a4_004",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a4_004.png",
                   found: false,
                 },
                 monsters_a4_005: {
-                  name: "monster5",
+                  name: "monsters_a4_005",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a4_005.png",
                   found: false,
                 },
                 monsters_a4_006: {
-                  name: "monster6",
+                  name: "monsters_a4_006",
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a4_006.png",
@@ -211,6 +211,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/specials_a1_001.png",
+                  bw: "/assets/stamps/specials_a1_001_bw.png",
                   found: false,
                 },
                 specials_a1_002: {
@@ -218,6 +219,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/specials_a1_002.png",
+                  bw: "/assets/stamps/specials_a1_002_bw.png",
                   found: false,
                 },
                 specials_a1_003: {
@@ -225,6 +227,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/specials_a1_003.png",
+                  bw: "/assets/stamps/specials_a1_003_bw.png",
                   found: false,
                 },
                 specials_a1_004: {
@@ -232,6 +235,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/specials_a1_004.png",
+                  bw: "/assets/stamps/specials_a1_004_bw.png",
                   found: false,
                 },
                 specials_a1_005: {
@@ -239,6 +243,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/specials_a1_005.png",
+                  bw: "/assets/stamps/specials_a1_005_bw.png",
                   found: false,
                 },
                 specials_a1_006: {
@@ -246,6 +251,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/specials_a1_006.png",
+                  bw: "/assets/stamps/specials_a1_006_bw.png",
                   found: false,
                 },
               },
@@ -258,6 +264,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/specials_a2_001.png",
+                  bw: "/assets/stamps/specials_a2_001_bw.png",
                   found: false,
                 },
                 specials_a2_002: {
@@ -265,6 +272,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/specials_a2_002.png",
+                  bw: "/assets/stamps/specials_a2_002_bw.png",
                   found: false,
                 },
                 specials_a2_003: {
@@ -272,6 +280,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/specials_a2_003.png",
+                  bw: "/assets/stamps/specials_a2_003_bw.png",
                   found: false,
                 },
                 specials_a2_004: {
@@ -279,6 +288,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/specials_a2_004.png",
+                  bw: "/assets/stamps/specials_a2_004_bw.png",
                   found: false,
                 },
                 specials_a2_005: {
@@ -286,6 +296,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/specials_a2_005.png",
+                  bw: "/assets/stamps/specials_a2_005_bw.png",
                   found: false,
                 },
                 specials_a2_006: {
@@ -293,6 +304,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/specials_a2_006.png",
+                  bw: "/assets/stamps/specials_a2_006_bw.png",
                   found: false,
                 },
                 specials_a2_007: {
@@ -300,6 +312,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/specials_a2_007.png",
+                  bw: "/assets/stamps/specials_a2_007_bw.png",
                   found: false,
                 },
                 specials_a2_008: {
@@ -307,6 +320,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/specials_a2_008.png",
+                  bw: "/assets/stamps/specials_a2_008_bw.png",
                   found: false,
                 },
                 specials_a2_009: {
@@ -314,27 +328,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/specials_a2_009.png",
-                  found: false,
-                },
-                specials_a2_010: {
-                  name: "specials_a2_010",
-                  count: 0,
-                  special: true,
-                  img: "/assets/stamps/specials_a2_010.png",
-                  found: false,
-                },
-                specials_a2_011: {
-                  name: "specials_a2_011",
-                  count: 0,
-                  special: true,
-                  img: "/assets/stamps/specials_a2_011.png",
-                  found: false,
-                },
-                specials_a2_012: {
-                  name: "specials_a2_012",
-                  count: 0,
-                  special: true,
-                  img: "/assets/stamps/specials_a2_012.png",
+                  bw: "/assets/stamps/specials_a2_009_bw.png",
                   found: false,
                 },
               },
@@ -541,6 +535,7 @@
     load: function () {
       if (localStorage.getItem(this.key) != null)
         this.value = JSON.parse(localStorage.getItem(this.key));
+      console.log("Loading data from local storage");
     },
     save: function () {
       localStorage.setItem(this.key, JSON.stringify(this.value));

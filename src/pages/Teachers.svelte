@@ -34,7 +34,7 @@
           <img
             src={$stampCollection[$menuState].stamps[area_name].area_stamps[
               stamp
-            ].img}
+            ].bw}
             alt={$stampCollection[$menuState].stamps[area_name].area_stamps[
               stamp
             ].name}
@@ -65,6 +65,6 @@
   }
 
   .locked {
-    filter: brightness(0) opacity(0.5);
+    opacity: 0.4;
   }
 </style>

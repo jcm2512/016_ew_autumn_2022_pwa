@@ -35,6 +35,10 @@
   let DOMelements = [];
   $found = false;
 
+  // Load local data
+  $sessionStorage = localData;
+  $sessionStorage.load();
+
   // INITIALIZE WEEKLY MONSTERS
   if (localStorage.getItem("Weekly_Monsters") == undefined) {
     localStorage.setItem("Weekly_Monsters", JSON.stringify([]));
@@ -53,26 +57,26 @@
   }
 
   // CHECK VERSION NUMBER AND CLEAR LOCAL CACHE
-  if (localStorage.getItem("MSR_version") != 4) {
+  if (localStorage.getItem("MSR_version") != 5) {
     console.log("clearing cache");
-    localStorage.clear();
+    localStorage.removeItem("localdata_ew202210");
   }
 
   // SET VERSION NUMBER
-  localStorage.setItem("MSR_version", JSON.stringify(4));
+  localStorage.setItem("MSR_version", JSON.stringify(5));
 
   // DEV MODE: SET STAMPS TO TRUE/FALSE
   if (localStorage.getItem("ViewAllStamps") == undefined) {
     // SET VERSION NUMBER
-    localStorage.setItem("ViewAllStamps", "false");
+    localStorage.setItem("ViewAllStamps", false);
   }
-  $viewAllStamps = localStorage.getItem("ViewAllStamps");
+  $viewAllStamps = JSON.parse(localStorage.getItem("ViewAllStamps"));
 
   // Write menu state to localdata
-  const loadState = function () {
-    if (localStorage.getItem("state") != undefined)
-      $menuState = JSON.parse(localStorage.getItem("state"));
-  };
+  // const loadState = function () {
+  //   if (localStorage.getItem("state") != undefined)
+  //     $menuState = JSON.parse(localStorage.getItem("state"));
+  // };
 
   // Check for advertisement key
   if (localStorage.getItem("advert") != undefined) {
@@ -86,36 +90,44 @@
     localStorage.setItem("state", JSON.stringify($menuState));
   };
 
-  // Load local data
-  $sessionStorage = localData;
-  $sessionStorage.load();
-  loadState();
+  // loadState();
 
   function updateState() {
-    saveState();
+    // saveState();
+    console.log("updating menu state");
+    nav_home.classList.remove("active");
+    nav_monsters.classList.remove("active");
+    nav_specials.classList.remove("active");
+    nav_teachers.classList.remove("active");
     if ($menuState === "home") {
       main.setAttribute("class", "");
       main.classList.add("bg_dark");
+      console.log(nav_home);
+      nav_home.classList.add("active");
     }
 
     if ($menuState === "stamps") {
       main.setAttribute("class", "");
       main.classList.add("bg_purple");
+      nav_stamps.classList.add("active");
     }
 
     if ($menuState === "monsters") {
       main.setAttribute("class", "");
       main.classList.add("bg_purple");
+      nav_monsters.classList.add("active");
     }
 
     if ($menuState === "specials") {
       main.setAttribute("class", "");
       main.classList.add("bg_red");
+      nav_specials.classList.add("active");
     }
 
     if ($menuState === "teachers") {
       main.setAttribute("class", "");
       main.classList.add("bg_blue");
+      nav_teachers.classList.add("active");
     }
   }
 
@@ -181,6 +193,9 @@
       case eventid:
         let stamp = params.get(stampid);
         if (stamp == "advertisement") {
+          // localStorage.setItem("state", "home");
+          $advertState = "true";
+          console.log("set advert state: true");
           return false;
         }
         console.log("Found:", stamp);
@@ -203,9 +218,6 @@
   };
 
   function nav(event) {
-    // console.log("PREV:", previous_nav);
-
-    // console.log("NAV EVENT:", event.classList);
     $menuState = event.id;
     previous_nav.classList.remove("active");
     event.classList.add("active");
@@ -292,7 +304,7 @@
       <Unavailable />
     {/if}
     {#if $menuState === "specials"}
-      <Unavailable />
+      <Stamps />
     {/if}
     {#if $menuState === "monsters"}
       <Unavailable />
