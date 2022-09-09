@@ -35,10 +35,6 @@
   let DOMelements = [];
   $found = false;
 
-  // Load local data
-  $sessionStorage = localData;
-  $sessionStorage.load();
-
   // INITIALIZE WEEKLY MONSTERS
   if (localStorage.getItem("Weekly_Monsters") == undefined) {
     localStorage.setItem("Weekly_Monsters", JSON.stringify([]));
@@ -56,11 +52,16 @@
     }
   }
 
+  // Load local data
+  $sessionStorage = localData;
+
   // CHECK VERSION NUMBER AND CLEAR LOCAL CACHE
   if (localStorage.getItem("MSR_version") != 5) {
     console.log("clearing cache");
-    localStorage.removeItem("localdata_ew202210");
+    $sessionStorage.clear();
   }
+
+  $sessionStorage.load();
 
   // SET VERSION NUMBER
   localStorage.setItem("MSR_version", JSON.stringify(5));
