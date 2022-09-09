@@ -338,6 +338,9 @@ nav {
   width: 60%;
   justify-self: center;
   border: solid white 0.8vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   }
 
 #popup_monsters{
