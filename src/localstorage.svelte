@@ -2,7 +2,7 @@
   export const localData = {
     key: "localdata_ew202210",
     value: {
-      version: 5,
+      version: 6,
       found: 0,
       collection: {
         monsters: {
@@ -17,6 +17,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a1_001.png",
+                  bw: "/assets/stamps/monsters_a1_001_bw.png",
                   found: false,
                 },
                 monsters_a1_002: {
@@ -24,6 +25,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a1_002.png",
+                  bw: "/assets/stamps/monsters_a1_002_bw.png",
                   found: false,
                 },
                 monsters_a1_003: {
@@ -31,6 +33,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a1_003.png",
+                  bw: "/assets/stamps/monsters_a1_003_bw.png",
                   found: false,
                 },
                 monsters_a1_004: {
@@ -38,6 +41,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a1_004.png",
+                  bw: "/assets/stamps/monsters_a1_004_bw.png",
                   found: false,
                 },
                 monsters_a1_005: {
@@ -45,6 +49,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a1_005.png",
+                  bw: "/assets/stamps/monsters_a1_005_bw.png",
                   found: false,
                 },
                 monsters_a1_006: {
@@ -52,6 +57,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a1_006.png",
+                  bw: "/assets/stamps/monsters_a1_006_bw.png",
                   found: false,
                 },
               },
@@ -64,6 +70,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a2_001.png",
+                  bw: "/assets/stamps/monsters_a2_001_bw.png",
                   found: false,
                 },
                 monsters_a2_002: {
@@ -71,6 +78,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a2_002.png",
+                  bw: "/assets/stamps/monsters_a2_002_bw.png",
                   found: false,
                 },
                 monsters_a2_003: {
@@ -78,6 +86,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a2_003.png",
+                  bw: "/assets/stamps/monsters_a2_003_bw.png",
                   found: false,
                 },
                 monsters_a2_004: {
@@ -85,6 +94,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a2_004.png",
+                  bw: "/assets/stamps/monsters_a2_004_bw.png",
                   found: false,
                 },
                 monsters_a2_005: {
@@ -92,6 +102,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a2_005.png",
+                  bw: "/assets/stamps/monsters_a2_005_bw.png",
                   found: false,
                 },
                 monsters_a2_006: {
@@ -99,6 +110,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a2_006.png",
+                  bw: "/assets/stamps/monsters_a2_006_bw.png",
                   found: false,
                 },
               },
@@ -111,6 +123,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a3_001.png",
+                  bw: "/assets/stamps/monsters_a3_001_bw.png",
                   found: false,
                 },
                 monsters_a3_002: {
@@ -118,6 +131,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a3_002.png",
+                  bw: "/assets/stamps/monsters_a3_002_bw.png",
                   found: false,
                 },
                 monsters_a3_003: {
@@ -125,6 +139,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a3_003.png",
+                  bw: "/assets/stamps/monsters_a3_003_bw.png",
                   found: false,
                 },
                 monsters_a3_004: {
@@ -132,6 +147,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a3_004.png",
+                  bw: "/assets/stamps/monsters_a3_004_bw.png",
                   found: false,
                 },
                 monsters_a3_005: {
@@ -139,6 +155,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a3_005.png",
+                  bw: "/assets/stamps/monsters_a3_005_bw.png",
                   found: false,
                 },
                 monsters_a3_006: {
@@ -146,6 +163,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a3_006.png",
+                  bw: "/assets/stamps/monsters_a3_006_bw.png",
                   found: false,
                 },
               },
@@ -158,6 +176,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a4_001.png",
+                  bw: "/assets/stamps/monsters_a4_001_bw.png",
                   found: false,
                 },
                 monsters_a4_002: {
@@ -165,6 +184,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a4_002.png",
+                  bw: "/assets/stamps/monsters_a4_002_bw.png",
                   found: false,
                 },
                 monsters_a4_003: {
@@ -172,6 +192,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a4_003.png",
+                  bw: "/assets/stamps/monsters_a4_003_bw.png",
                   found: false,
                 },
                 monsters_a4_004: {
@@ -179,6 +200,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a4_004.png",
+                  bw: "/assets/stamps/monsters_a4_004_bw.png",
                   found: false,
                 },
                 monsters_a4_005: {
@@ -186,6 +208,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a4_005.png",
+                  bw: "/assets/stamps/monsters_a4_005_bw.png",
                   found: false,
                 },
                 monsters_a4_006: {
@@ -193,6 +216,7 @@
                   count: 0,
                   special: false,
                   img: "/assets/stamps/monsters_a4_006.png",
+                  bw: "/assets/stamps/monsters_a4_006_bw.png",
                   found: false,
                 },
               },
@@ -347,6 +371,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_001.png",
+                  bw: "/assets/stamps/teachers_a1_001_bw.png",
                   found: false,
                 },
                 teachers_a1_002: {
@@ -354,6 +379,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_002.png",
+                  bw: "/assets/stamps/teachers_a1_002_bw.png",
                   found: false,
                 },
                 teachers_a1_003: {
@@ -361,6 +387,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_003.png",
+                  bw: "/assets/stamps/teachers_a1_003_bw.png",
                   found: false,
                 },
                 teachers_a1_004: {
@@ -368,6 +395,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_004.png",
+                  bw: "/assets/stamps/teachers_a1_004_bw.png",
                   found: false,
                 },
                 teachers_a1_005: {
@@ -375,6 +403,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_005.png",
+                  bw: "/assets/stamps/teachers_a1_005_bw.png",
                   found: false,
                 },
                 teachers_a1_006: {
@@ -382,6 +411,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_006.png",
+                  bw: "/assets/stamps/teachers_a1_006_bw.png",
                   found: false,
                 },
                 teachers_a1_007: {
@@ -389,6 +419,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_007.png",
+                  bw: "/assets/stamps/teachers_a1_007_bw.png",
                   found: false,
                 },
                 teachers_a1_008: {
@@ -396,6 +427,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_008.png",
+                  bw: "/assets/stamps/teachers_a1_008_bw.png",
                   found: false,
                 },
                 teachers_a1_009: {
@@ -403,6 +435,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_009.png",
+                  bw: "/assets/stamps/teachers_a1_009_bw.png",
                   found: false,
                 },
                 teachers_a1_010: {
@@ -410,6 +443,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_010.png",
+                  bw: "/assets/stamps/teachers_a1_010_bw.png",
                   found: false,
                 },
                 teachers_a1_011: {
@@ -417,6 +451,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_011.png",
+                  bw: "/assets/stamps/teachers_a1_011_bw.png",
                   found: false,
                 },
                 teachers_a1_012: {
@@ -424,6 +459,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_012.png",
+                  bw: "/assets/stamps/teachers_a1_012_bw.png",
                   found: false,
                 },
                 teachers_a1_013: {
@@ -431,6 +467,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_013.png",
+                  bw: "/assets/stamps/teachers_a1_013_bw.png",
                   found: false,
                 },
                 teachers_a1_014: {
@@ -438,6 +475,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_014.png",
+                  bw: "/assets/stamps/teachers_a1_014_bw.png",
                   found: false,
                 },
                 teachers_a1_015: {
@@ -445,6 +483,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_015.png",
+                  bw: "/assets/stamps/teachers_a1_015_bw.png",
                   found: false,
                 },
                 teachers_a1_016: {
@@ -452,6 +491,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_016.png",
+                  bw: "/assets/stamps/teachers_a1_016_bw.png",
                   found: false,
                 },
                 teachers_a1_017: {
@@ -459,6 +499,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_017.png",
+                  bw: "/assets/stamps/teachers_a1_017_bw.png",
                   found: false,
                 },
                 teachers_a1_018: {
@@ -466,6 +507,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_018.png",
+                  bw: "/assets/stamps/teachers_a1_018_bw.png",
                   found: false,
                 },
                 teachers_a1_019: {
@@ -473,6 +515,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_019.png",
+                  bw: "/assets/stamps/teachers_a1_019_bw.png",
                   found: false,
                 },
                 teachers_a1_020: {
@@ -480,6 +523,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_010.png",
+                  bw: "/assets/stamps/teachers_a1_020_bw.png",
                   found: false,
                 },
                 teachers_a1_021: {
@@ -487,6 +531,7 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_a1_021.png",
+                  bw: "/assets/stamps/teachers_a1_021_bw.png",
                   found: false,
                 },
               },

@@ -16,6 +16,7 @@
     foundStampCollection,
     advertState,
     viewAllStamps,
+    stampCount,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Stamps from "./Stamps.svelte";
@@ -24,6 +25,8 @@
   import Unavailable from "./pages/Unavailable.svelte";
   import Trivia from "./pages/Trivia.svelte";
   import Dialog from "./popups/Dialog.svelte";
+
+  let versionNum = 6;
 
   // Global Variables
   let eventid = "ew2022-10",
@@ -55,16 +58,30 @@
   // Load local data
   $sessionStorage = localData;
 
-  // CHECK VERSION NUMBER AND CLEAR LOCAL CACHE
-  if (localStorage.getItem("MSR_version") != 5) {
-    console.log("clearing cache");
-    $sessionStorage.clear();
+  // Set collected monsters to local data
+  function updateStampCollection() {
+    $stampCollection = $sessionStorage.get("collection").collection;
   }
 
-  $sessionStorage.load();
+  // CHECK VERSION NUMBER AND CLEAR LOCAL CACHE
+  if (localStorage.getItem("MSR_version") != versionNum) {
+    console.log("clearing cache");
+    $sessionStorage.clear();
+    $sessionStorage.load();
+    updateStampCollection();
 
-  // SET VERSION NUMBER
-  localStorage.setItem("MSR_version", JSON.stringify(5));
+    // SET VERSION NUMBER
+    localStorage.setItem("MSR_version", JSON.stringify(versionNum));
+
+    // Load weekly monster from local localStorage
+    // (We do this here because localStorage will get wiped when updating the database)
+    weeklyMonsters.forEach((stamp_id) => loadWeeklyStamps(stamp_id));
+  } else {
+    $sessionStorage.load();
+    updateStampCollection();
+  }
+
+  $stampCount = $sessionStorage.get("found").found;
 
   // DEV MODE: SET STAMPS TO TRUE/FALSE
   if (localStorage.getItem("ViewAllStamps") == undefined) {
@@ -132,8 +149,7 @@
     }
   }
 
-  // Set collected monsters to local data
-  $stampCollection = $sessionStorage.get("collection").collection;
+  // EVENT TRIGGERS
   $: $trigger && $sessionStorage.set({ stamps: $stampCollection }),
     $sessionStorage.save();
   $: $triggerMenuState && updateState();
@@ -152,8 +168,10 @@
 
   //// Get Found Stamp
   function getFoundStamp(stamp) {
+    console.log(stamp);
     $found = true;
     let id = stamp.split("_");
+    console.log($stampCollection);
 
     // SINGLE STAMP
     if (id.length === 3) {
@@ -161,6 +179,7 @@
       $foundStamp.count += 1;
       $foundStamp.found = true;
       $foundStampCollection.push($foundStamp);
+      $stampCount += 1;
     }
 
     // MULTI STAMP
@@ -176,10 +195,29 @@
       $foundStamp = $stampCollection[id[0]].stamps[id[1]].area_stamps[random_2];
       $foundStamp.found = true;
       $foundStampCollection.push($foundStamp);
+      $stampCount += 2;
     }
 
     console.log($foundStampCollection);
 
+    $sessionStorage.set({ found: $stampCount });
+    $sessionStorage.save();
+
+    saveResults();
+  }
+
+  //// Load Weekly Stamps
+  function loadWeeklyStamps(stamp_id) {
+    $stampCount += 1;
+    let id = stamp_id.split("_");
+    let stamp;
+    stamp = $stampCollection[id[0]].stamps[id[1]].area_stamps[stamp_id];
+    stamp.count += 1;
+    stamp.found = true;
+    $foundStampCollection.push(stamp);
+    console.log($stampCount);
+    $sessionStorage.set({ found: $stampCount });
+    $sessionStorage.save();
     saveResults();
   }
 
@@ -213,10 +251,10 @@
   };
 
   //// Save Results
-  const saveResults = () => {
+  function saveResults() {
     console.log("save results");
     $trigger += 1;
-  };
+  }
 
   function nav(event) {
     $menuState = event.id;
