@@ -27,7 +27,7 @@
   import Trivia from "./pages/Trivia.svelte";
   import Dialog from "./popups/Dialog.svelte";
 
-  let versionNum = 6;
+  let versionNum = 7;
 
   // Global Variables
   let eventid = "ew2022-10",

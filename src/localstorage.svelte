@@ -2,7 +2,7 @@
   export const localData = {
     key: "localdata_ew202210",
     value: {
-      version: 6,
+      version: 7,
       found: 0,
       collection: {
         monsters: {
@@ -63,7 +63,7 @@
               },
             },
             a2: {
-              title: "Scary Swamp",
+              title: "Frankenstein's Kitchen",
               area_stamps: {
                 monsters_a2_001: {
                   name: "monsters_a2_001",
@@ -116,7 +116,7 @@
               },
             },
             a3: {
-              title: "Magical Something",
+              title: "Cursed Graveyard",
               area_stamps: {
                 monsters_a3_001: {
                   name: "monsters_a3_001",
@@ -169,7 +169,7 @@
               },
             },
             a4: {
-              title: "Halloween Craft",
+              title: "Witches Garden",
               area_stamps: {
                 monsters_a4_001: {
                   name: "monsters_a4_001",
