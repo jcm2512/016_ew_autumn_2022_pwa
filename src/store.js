@@ -16,6 +16,7 @@ export const advertState = writable("");
 export const viewAllStamps = writable();
 export const eng = writable(true);
 export const stampCount = writable(0);
+export const devMode = writable(false);
 
 // MONSTER LIST
 export const stampCollection = writable({});

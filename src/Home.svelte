@@ -17,6 +17,7 @@
     advertState,
     viewAllStamps,
     stampCount,
+    devMode,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Stamps from "./Stamps.svelte";
@@ -226,7 +227,6 @@
     const params = new URLSearchParams(new URL(url).search);
     if (!params.get(stampid)) {
       console.log("Stamp not found in URL");
-      return false;
     }
     switch (params.get("id")) {
       case eventid:
@@ -244,10 +244,14 @@
       case "clear":
         sessionStorage.clear();
         return false;
+      case "admin":
+        $devMode = true;
+        console.log("/// DEV MODE ///");
       default:
         console.log("Please add 'id' parameter to url");
         return false;
     }
+    return false;
   };
 
   //// Save Results
@@ -333,7 +337,7 @@
   <div bind:this={overlay} id="overlay" class="grid-top " />
   <div id="bg" class="grid-top " />
 
-  {#if $advertState === "true"}
+  {#if $advertState === "true" || $devMode === false}
     <!-- AD CONTENT START-->
 
     {#if $menuState === "home"}
@@ -355,7 +359,7 @@
       <Menu />
     {/if}
     {#if $menuState === "teachers"}
-      <Stamps />
+      <Unavailable />
     {/if}
     {#if $menuState === "specials"}
       <Stamps />
