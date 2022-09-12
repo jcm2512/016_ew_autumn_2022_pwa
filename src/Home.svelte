@@ -84,12 +84,7 @@
 
   $stampCount = $sessionStorage.get("found").found;
 
-  // DEV MODE: SET STAMPS TO TRUE/FALSE
-  if (localStorage.getItem("ViewAllStamps") == undefined) {
-    // SET VERSION NUMBER
-    localStorage.setItem("ViewAllStamps", false);
-  }
-  $viewAllStamps = JSON.parse(localStorage.getItem("ViewAllStamps"));
+  $viewAllStamps = false;
 
   // Write menu state to localdata
   // const loadState = function () {
@@ -247,6 +242,7 @@
       case "admin":
         $devMode = true;
         console.log("/// DEV MODE ///");
+        $viewAllStamps = true;
       default:
         console.log("Please add 'id' parameter to url");
         return false;
