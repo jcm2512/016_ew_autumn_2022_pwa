@@ -19,6 +19,7 @@
     stampCount,
     devMode,
     notifyMonsters,
+    showNotification,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Stamps from "./Stamps.svelte";
@@ -447,7 +448,7 @@
       </div>
     {:else}
       <div class="nav_notification">
-        {#if $notifyMonsters}
+        {#if $notifyMonsters && $showNotification}
           <div
             class="animate__animated animate__heartBeat animate__infinite"
             id="notification"

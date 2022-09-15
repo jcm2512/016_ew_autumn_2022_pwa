@@ -18,6 +18,7 @@ export const eng = writable(true);
 export const stampCount = writable(0);
 export const devMode = writable(false);
 export const notifyMonsters = writable();
+export const showNotification = writable(false);
 
 // MONSTER LIST
 export const stampCollection = writable({});

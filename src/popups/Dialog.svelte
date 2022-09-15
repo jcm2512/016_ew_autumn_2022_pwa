@@ -5,6 +5,7 @@
     foundStampCollection,
     menuState,
     triggerMenuState,
+    showNotification,
   } from "../store.js";
 
   function button() {
@@ -17,6 +18,9 @@
     $updateStamps += 1;
     $foundStampCollection = [];
     $menuState = area;
+
+    // SHOW ANY NOTIFICATIONS IF ANY
+    $showNotification = true;
   }
 
   export let stamp;
