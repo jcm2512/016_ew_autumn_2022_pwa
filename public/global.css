@@ -472,7 +472,7 @@ img.monster{
   margin-bottom: 2vw;
   justify-self: center;
   z-index: 100;
-  --animate-repeat: 2
+  right: 1vw;
 }
 
 .nav_notification {
