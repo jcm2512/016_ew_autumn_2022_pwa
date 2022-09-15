@@ -18,6 +18,7 @@
     viewAllStamps,
     stampCount,
     devMode,
+    notifyMonsters,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Stamps from "./Stamps.svelte";
@@ -26,6 +27,7 @@
   import Unavailable from "./pages/Unavailable.svelte";
   import Trivia from "./pages/Trivia.svelte";
   import Dialog from "./popups/Dialog.svelte";
+  import "animate.css";
 
   let versionNum = 8;
 
@@ -82,15 +84,16 @@
     updateStampCollection();
   }
 
+  // CHECK FOR NEW NOTIFICATIONS
+  if (localStorage.getItem("notifyMonsters") == undefined) {
+    localStorage.setItem("notifyMonsters", JSON.stringify(true));
+  }
+
+  $notifyMonsters = JSON.parse(localStorage.getItem("notifyMonsters"));
+
   $stampCount = $sessionStorage.get("found").found;
 
   $viewAllStamps = false;
-
-  // Write menu state to localdata
-  // const loadState = function () {
-  //   if (localStorage.getItem("state") != undefined)
-  //     $menuState = JSON.parse(localStorage.getItem("state"));
-  // };
 
   // Check for advertisement key
   if (localStorage.getItem("advert") != undefined) {
@@ -130,6 +133,10 @@
       main.setAttribute("class", "");
       main.classList.add("bg_purple");
       nav_monsters.classList.add("active");
+
+      // REMOVE NOTIFICATIONS
+      $notifyMonsters = false;
+      localStorage.setItem("notifyMonsters", JSON.stringify(false));
     }
 
     if ($menuState === "specials") {
@@ -377,9 +384,9 @@
     on:click={() => nav(nav_home)}
   >
     {#if $menuState === "home"}
-      <img src="assets/icons/nav/home-active.svg" alt="home" />
+      <img class="nav_img" src="assets/icons/nav/home-active.svg" alt="home" />
     {:else}
-      <img src="assets/icons/nav/home.svg" alt="home" />
+      <img class="nav_img" src="assets/icons/nav/home.svg" alt="home" />
     {/if}
   </div>
 
@@ -390,9 +397,17 @@
     on:click={() => nav(nav_teachers)}
   >
     {#if $menuState === "teachers"}
-      <img src="assets/icons/nav/user-square-active.svg" alt="teachers" />
+      <img
+        class="nav_img"
+        src="assets/icons/nav/user-square-active.svg"
+        alt="teachers"
+      />
     {:else}
-      <img src="assets/icons/nav/user-square.svg" alt="teachers" />
+      <img
+        class="nav_img"
+        src="assets/icons/nav/user-square.svg"
+        alt="teachers"
+      />
     {/if}
   </div>
   {#if !$scanning}
@@ -411,9 +426,13 @@
     on:click={() => nav(nav_specials)}
   >
     {#if $menuState === "specials"}
-      <img src="assets/icons/nav/verify-active.svg" alt="specials" />
+      <img
+        class="nav_img"
+        src="assets/icons/nav/verify-active.svg"
+        alt="specials"
+      />
     {:else}
-      <img src="assets/icons/nav/verify.svg" alt="specials" />
+      <img class="nav_img" src="assets/icons/nav/verify.svg" alt="specials" />
     {/if}
   </div>
   <div
@@ -423,9 +442,26 @@
     on:click={() => nav(nav_monsters)}
   >
     {#if $menuState === "monsters"}
-      <img src="assets/icons/nav/monsters-active.svg" alt="monsters" />
+      <div class="nav_notification">
+        <img src="assets/icons/nav/monsters-active.svg" alt="monsters" />
+      </div>
     {:else}
-      <img src="assets/icons/nav/monsters.svg" alt="monsters" />
+      <div class="nav_notification">
+        {#if $notifyMonsters}
+          <div
+            class="animate__animated animate__heartBeat animate__infinite"
+            id="notification"
+          >
+            NEW!
+          </div>
+        {/if}
+
+        <img
+          class="nav_img "
+          src="assets/icons/nav/monsters.svg"
+          alt="monsters"
+        />
+      </div>
     {/if}
   </div>
 </nav>

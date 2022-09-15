@@ -316,7 +316,7 @@ nav {
 #popup_message{
   grid-column: 1;
   grid-row: 1;
-  font-size: 12vw;
+  font-size: 10vw;
   text-align: center;
   margin-top: 8vw;
 }
@@ -456,4 +456,32 @@ img.monster{
   padding-inline: 5vw;
   border-radius: 5vw;
   font-size: 4vw;
+}
+
+#notification {
+  grid-row: 1;
+  grid-column: 1;
+  position: absolute;
+  bottom: var(--nav-height);
+  color: white;
+  z-index: 100;
+  background-color: var(--red);
+  border-radius: 5vw;
+  padding: 2vw;
+  font-family: 'Luckiest Guy';
+  font-size: 5vw;
+  margin-bottom: 2vw;
+  justify-self: center;
+  z-index: 100;
+  --animate-repeat: 2
+}
+
+.nav_notification {
+  display: grid;
+}
+
+.nav_img{
+  grid-row: 1;
+  grid-column: 1;
+  z-index: 90;
 }
