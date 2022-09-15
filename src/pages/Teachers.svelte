@@ -24,9 +24,9 @@
       {#each Object.keys($stampCollection[$menuState].stamps[area_name].area_stamps) as stamp, index}
         {#if $stampCollection[$menuState].stamps[area_name].area_stamps[stamp].found || $viewAllStamps}
           <img
-            bind:this={DOMelements[index]}
+            bind:this={DOMelements[stamp]}
             on:click|preventDefault={() => {
-              animateCSS(DOMelements[index], "rubberBand");
+              animateCSS(DOMelements[stamp], "tada");
             }}
             src={$stampCollection[$menuState].stamps[area_name].area_stamps[
               stamp
@@ -34,10 +34,14 @@
             alt={$stampCollection[$menuState].stamps[area_name].area_stamps[
               stamp
             ].name}
-            class="stamp animate__faster"
+            class="stamp"
           />
         {:else}
           <img
+            bind:this={DOMelements[stamp]}
+            on:click|preventDefault={() => {
+              animateCSS(DOMelements[stamp], "headShake");
+            }}
             src={$stampCollection[$menuState].stamps[area_name].area_stamps[
               stamp
             ].bw}
