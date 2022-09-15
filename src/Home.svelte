@@ -447,7 +447,7 @@
     {:else if $notifyMonsters && $showNotification}
       <div class="nav_notification">
         <div
-          class="animate__animated animate__heartBeat animate__infinite"
+          class="animate__animated animate__delay-1s animate__heartBeat animate__infinite"
           id="notification"
         >
           NEW!
