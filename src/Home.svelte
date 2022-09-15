@@ -443,26 +443,29 @@
     on:click={() => nav(nav_monsters)}
   >
     {#if $menuState === "monsters"}
-      <div class="nav_notification">
-        <img src="assets/icons/nav/monsters-active.svg" alt="monsters" />
-      </div>
+      <img src="assets/icons/nav/monsters-active.svg" alt="monsters" />
     {:else}
-      <div class="nav_notification">
-        {#if $notifyMonsters && $showNotification}
+      {#if $notifyMonsters && $showNotification}
+        <div class="nav_notification">
           <div
             class="animate__animated animate__heartBeat animate__infinite"
             id="notification"
           >
             NEW!
           </div>
-        {/if}
+          <img
+            class="nav_img "
+            src="assets/icons/nav/monsters.svg"
+            alt="monsters"
+          />
+        </div>
+      {/if}
 
-        <img
-          class="nav_img "
-          src="assets/icons/nav/monsters.svg"
-          alt="monsters"
-        />
-      </div>
+      <img
+        class="nav_img "
+        src="assets/icons/nav/monsters.svg"
+        alt="monsters"
+      />
     {/if}
   </div>
 </nav>
