@@ -9,7 +9,7 @@
       <div>DID YOU KNOW?</div>
       <span class="counter">#3 / 7</span>
     </div>
-    <p class="trivia">What are jackolanterns usually made from?</p>
+    <p class="trivia">What are jack o'lanterns usually made from?</p>
     {#if answer == false}
       <p class="trivia reveal" on:click={() => (answer = true)}>Answer</p>
     {:else}
