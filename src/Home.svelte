@@ -27,7 +27,7 @@
   import Trivia from "./pages/Trivia.svelte";
   import Dialog from "./popups/Dialog.svelte";
 
-  let versionNum = 7;
+  let versionNum = 8;
 
   // Global Variables
   let eventid = "ew2022-10",
@@ -346,7 +346,7 @@
       <Stamps />
     {/if}
     {#if $menuState === "monsters"}
-      <Unavailable />
+      <Stamps />
     {/if}
     <!-- AD CONTENT END  -->
   {:else}
