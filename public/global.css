@@ -159,11 +159,12 @@ html {
 
 
 .nav_button {
-  /* margin: auto; */
   height: 15vw;
   width: 15vw;
   display: flex;
   border-radius: 50%;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav_button img,
