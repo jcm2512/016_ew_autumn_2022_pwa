@@ -444,23 +444,21 @@
   >
     {#if $menuState === "monsters"}
       <img src="assets/icons/nav/monsters-active.svg" alt="monsters" />
-    {:else}
-      {#if $notifyMonsters && $showNotification}
-        <div class="nav_notification">
-          <div
-            class="animate__animated animate__heartBeat animate__infinite"
-            id="notification"
-          >
-            NEW!
-          </div>
-          <img
-            class="nav_img "
-            src="assets/icons/nav/monsters.svg"
-            alt="monsters"
-          />
+    {:else if $notifyMonsters && $showNotification}
+      <div class="nav_notification">
+        <div
+          class="animate__animated animate__heartBeat animate__infinite"
+          id="notification"
+        >
+          NEW!
         </div>
-      {/if}
-
+        <img
+          class="nav_img "
+          src="assets/icons/nav/monsters.svg"
+          alt="monsters"
+        />
+      </div>
+    {:else}
       <img
         class="nav_img "
         src="assets/icons/nav/monsters.svg"
