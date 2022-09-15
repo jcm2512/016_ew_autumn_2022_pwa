@@ -8,6 +8,8 @@
     showNotification,
   } from "../store.js";
 
+  $showNotification = false;
+
   function button() {
     $triggerMenuState += 1;
     console.log($foundStampCollection);
