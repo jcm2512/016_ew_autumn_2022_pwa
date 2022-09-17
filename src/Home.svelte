@@ -32,6 +32,27 @@
 
   let versionNum = 8;
 
+  //// Google Analytics
+
+  // Check for admin key
+  const searchParams = new URLSearchParams(
+    new URL(window.location.href).search
+  );
+  if (searchParams.get("login") !== "admin") {
+    console.log("Running Google Analytics");
+    window.dataLayer = window.dataLayer || [];
+
+    // Run Google Analytics only if not logged in as admin
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-2QLN8HM2DM");
+  } else {
+    console.log("Logged in as admin; Google Analytics disabled");
+  }
+
   // Global Variables
   let eventid = "ew2022-10",
     stampid = "m";
