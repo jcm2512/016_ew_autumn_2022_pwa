@@ -220,8 +220,8 @@
   function getFoundStamp(stamp) {
     let id = stamp.split("_");
     let current_stamp = $stampCollection[id[0]].stamps[id[1]].area_stamps;
+    let items;
     console.log(stamp);
-    $found = true;
 
     // SINGLE STAMP
     if (id.length === 3) {
@@ -234,7 +234,7 @@
 
     // MULTI STAMP
     if (id.length === 2) {
-      let items = Object.keys(current_stamp);
+      items = Object.keys(current_stamp);
       let count = 2;
       if (id[0] == "teachers") {
         let filtered_stamps = Object.fromEntries(
@@ -243,7 +243,9 @@
           )
         );
         items = Object.keys(filtered_stamps);
+        console.log(items.length);
         count = 1;
+        if (items.length == 0) return;
       }
       for (let i = 0; i < count; i++) {
         let random = items[Math.floor(Math.random() * items.length)];
@@ -254,6 +256,8 @@
         $stampCount += 1;
       }
     }
+    if (items.length == 0) return;
+    $found = true;
 
     console.log($foundStampCollection);
 

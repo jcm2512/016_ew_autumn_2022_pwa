@@ -16,4 +16,29 @@ https://ew-monster-stamp-rally.netlify.app/?id=ew2022-10&m=special_a1_002
 
 # todo
 
-what happens if the advertising qr gets scanned in app? --GOOD
+            teacher_placeholder: {
+              title: "teacher_placeholder",
+              area_stamps: {
+                teachers_teacher_placeholder_01: {
+                  name: "teachers_teacher_placeholder_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_teacher_placeholder_01.png",
+                  found: false,
+                },
+                teachers_teacher_placeholder_02: {
+                  name: "teachers_teacher_placeholder_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_teacher_placeholder_02.png",
+                  found: false,
+                },
+                teachers_teacher_placeholder_03: {
+                  name: "teachers_teacher_placeholder_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_teacher_placeholder_03.png",
+                  found: false,
+                },
+              },
+            },

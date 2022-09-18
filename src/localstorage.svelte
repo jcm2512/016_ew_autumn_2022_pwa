@@ -364,7 +364,7 @@
           subheading: "先生たちのスタンプ",
           stamps: {
             joe: {
-              title: "Joe",
+              title: "joe",
               area_stamps: {
                 teachers_joe_01: {
                   name: "teachers_joe_01",
@@ -385,6 +385,110 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_joe_03.png",
+                  found: false,
+                },
+              },
+            },
+            michi: {
+              title: "michi",
+              area_stamps: {
+                teachers_michi_01: {
+                  name: "teachers_michi_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_michi_01.png",
+                  found: false,
+                },
+                teachers_michi_02: {
+                  name: "teachers_michi_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_michi_02.png",
+                  found: false,
+                },
+                teachers_michi_03: {
+                  name: "teachers_michi_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_michi_03.png",
+                  found: false,
+                },
+              },
+            },
+            anna: {
+              title: "anna",
+              area_stamps: {
+                teachers_anna_01: {
+                  name: "teachers_anna_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_anna_01.png",
+                  found: false,
+                },
+                teachers_anna_02: {
+                  name: "teachers_anna_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_anna_02.png",
+                  found: false,
+                },
+                teachers_anna_03: {
+                  name: "teachers_anna_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_anna_03.png",
+                  found: false,
+                },
+              },
+            },
+            georgia: {
+              title: "georgia",
+              area_stamps: {
+                teachers_georgia_01: {
+                  name: "teachers_georgia_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_georgia_01.png",
+                  found: false,
+                },
+                teachers_georgia_02: {
+                  name: "teachers_georgia_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_georgia_02.png",
+                  found: false,
+                },
+                teachers_georgia_03: {
+                  name: "teachers_georgia_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_georgia_03.png",
+                  found: false,
+                },
+              },
+            },
+            rika: {
+              title: "rika",
+              area_stamps: {
+                teachers_rika_01: {
+                  name: "teachers_rika_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_rika_01.png",
+                  found: false,
+                },
+                teachers_rika_02: {
+                  name: "teachers_rika_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_rika_02.png",
+                  found: false,
+                },
+                teachers_rika_03: {
+                  name: "teachers_rika_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_rika_03.png",
                   found: false,
                 },
               },
