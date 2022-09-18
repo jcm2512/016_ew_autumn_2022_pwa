@@ -63,6 +63,15 @@
   let DOMelements = [];
   $found = false;
 
+  // INITIALIZE DEVMODE
+  if (localStorage.getItem("DEV_MODE") == undefined) {
+    localStorage.setItem("DEV_MODE", JSON.stringify(false));
+  }
+  if (JSON.parse(localStorage.getItem("DEV_MODE")) == true) {
+    console.log("DEV MODE");
+    $devMode = true;
+  }
+
   // INITIALIZE WEEKLY MONSTERS STAMPS
   if (localStorage.getItem("Weekly_Monsters") == undefined) {
     localStorage.setItem("Weekly_Monsters", JSON.stringify([]));
@@ -146,7 +155,6 @@
   if (localStorage.getItem("advert") != undefined) {
     $advertState = JSON.parse(localStorage.getItem("advert"));
   } else {
-    $advertState = "false";
     localStorage.setItem("advert", JSON.stringify($advertState));
   }
 
@@ -278,7 +286,7 @@
           let stamp = params.get(stampid);
           if (stamp == "advertisement") {
             // localStorage.setItem("state", "home");
-            $advertState = "true";
+            $advertState = true;
             console.log("set advert state: true");
             return false;
           }
@@ -327,7 +335,7 @@
     $current_param = getParameter(window.location.href, eventid);
     if ($current_param === "advertisement") {
       localStorage.setItem("advert", JSON.stringify("true"));
-      $advertState = "true";
+      $advertState = true;
       $menuState = "home";
     }
     previous_nav = getNav($menuState);
@@ -384,7 +392,7 @@
   <div bind:this={overlay} id="overlay" class="grid-top " />
   <div id="bg" class="grid-top " />
 
-  {#if $advertState === "true" || $devMode === false}
+  {#if $advertState}
     <!-- AD CONTENT START-->
 
     {#if $menuState === "home"}
