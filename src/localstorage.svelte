@@ -2,7 +2,7 @@
   export const localData = {
     key: "localdata_ew202210",
     value: {
-      version: 9,
+      version: 10,
       found: 0,
       stamps: {
         monsters: {

@@ -122,7 +122,7 @@
 
     stamp.count += 1;
     stamp.found = true;
-    $foundStampCollection.push(stamp);
+    // $foundStampCollection.push(stamp);
     console.log($stampCount);
 
     console.log(stamp);
@@ -220,7 +220,7 @@
   function getFoundStamp(stamp) {
     let id = stamp.split("_");
     let current_stamp = $stampCollection[id[0]].stamps[id[1]].area_stamps;
-    let items;
+    let items = [];
     console.log(stamp);
 
     // SINGLE STAMP
@@ -256,7 +256,7 @@
         $stampCount += 1;
       }
     }
-    if (items.length == 0) return;
+    // if (items.length == 0) return;
     $found = true;
 
     console.log($foundStampCollection);
@@ -370,7 +370,7 @@
   });
 
   // SEP 9 WEEKLY MONSTER
-  getWeeklyMonster("specials_a1_001");
+  getWeeklyMonster("specials_a1_002");
 </script>
 
 <!-- {@debug $found} -->
