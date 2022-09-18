@@ -30,7 +30,7 @@
   import Dialog from "./popups/Dialog.svelte";
   import "animate.css";
 
-  let versionNum = 8;
+  let versionNum = 9;
 
   //// Google Analytics
 
@@ -63,9 +63,14 @@
   let DOMelements = [];
   $found = false;
 
-  // INITIALIZE WEEKLY MONSTERS
+  // INITIALIZE WEEKLY MONSTERS STAMPS
   if (localStorage.getItem("Weekly_Monsters") == undefined) {
     localStorage.setItem("Weekly_Monsters", JSON.stringify([]));
+  }
+
+  // INITIALIZE TEACHER STAMPS
+  if (localStorage.getItem("Teacher_Stamps") == undefined) {
+    localStorage.setItem("Teacher_Stamps", JSON.stringify([]));
   }
 
   // GET WEEKLY MONSTER
@@ -85,7 +90,7 @@
 
   // Set collected monsters to local data
   function updateStampCollection() {
-    $stampCollection = $sessionStorage.get("collection").collection;
+    $stampCollection = $sessionStorage.get("stamps").stamps;
   }
 
   // CHECK VERSION NUMBER AND CLEAR LOCAL CACHE
@@ -100,10 +105,30 @@
 
     // Load weekly monster from local localStorage
     // (We do this here because localStorage will get wiped when updating the database)
+    console.log("Reloading weekly stamps");
     weeklyMonsters.forEach((stamp_id) => loadWeeklyStamps(stamp_id));
   } else {
     $sessionStorage.load();
     updateStampCollection();
+  }
+
+  //// Load Weekly Stamps
+  function loadWeeklyStamps(stamp_id) {
+    $stampCount += 1;
+    let id = stamp_id.split("_");
+    let stamp;
+
+    stamp = $stampCollection[id[0]].stamps[id[1]].area_stamps[stamp_id];
+
+    stamp.count += 1;
+    stamp.found = true;
+    $foundStampCollection.push(stamp);
+    console.log($stampCount);
+
+    console.log(stamp);
+    $sessionStorage.set({ found: $stampCount });
+    $sessionStorage.save();
+    saveResults();
   }
 
   // CHECK FOR NEW NOTIFICATIONS
@@ -196,7 +221,6 @@
     console.log(stamp);
     $found = true;
     let id = stamp.split("_");
-    console.log($stampCollection);
 
     // SINGLE STAMP
     if (id.length === 3) {
@@ -212,15 +236,34 @@
       let items = Object.keys(
         $stampCollection[id[0]].stamps[id[1]].area_stamps
       );
-      let random = items[Math.floor(Math.random() * items.length)];
-      $foundStamp = $stampCollection[id[0]].stamps[id[1]].area_stamps[random];
-      $foundStamp.found = true;
-      $foundStampCollection.push($foundStamp);
-      let random_2 = items[Math.floor(Math.random() * items.length)];
-      $foundStamp = $stampCollection[id[0]].stamps[id[1]].area_stamps[random_2];
-      $foundStamp.found = true;
-      $foundStampCollection.push($foundStamp);
-      $stampCount += 2;
+      if (id[0] == "teachers") {
+        let current_collection =
+          $stampCollection[id[0]].stamps[id[1]].area_stamps;
+        // let filtered = Object.fromEntries(
+        //   Object.entries(current_collection).filter(([key]) =>
+        //     console.log(key.found)
+        //   )
+        // );
+        console.log(current_collection);
+        console.log(
+          Object.fromEntries(
+            Object.entries(current_collection).filter(
+              ([key, value]) => value.found == false
+            )
+          )
+        );
+      } else {
+        let random = items[Math.floor(Math.random() * items.length)];
+        $foundStamp = $stampCollection[id[0]].stamps[id[1]].area_stamps[random];
+        $foundStamp.found = true;
+        $foundStampCollection.push($foundStamp);
+        let random_2 = items[Math.floor(Math.random() * items.length)];
+        $foundStamp =
+          $stampCollection[id[0]].stamps[id[1]].area_stamps[random_2];
+        $foundStamp.found = true;
+        $foundStampCollection.push($foundStamp);
+        $stampCount += 2;
+      }
     }
 
     console.log($foundStampCollection);
@@ -231,52 +274,38 @@
     saveResults();
   }
 
-  //// Load Weekly Stamps
-  function loadWeeklyStamps(stamp_id) {
-    $stampCount += 1;
-    let id = stamp_id.split("_");
-    let stamp;
-    stamp = $stampCollection[id[0]].stamps[id[1]].area_stamps[stamp_id];
-    stamp.count += 1;
-    stamp.found = true;
-    $foundStampCollection.push(stamp);
-    console.log($stampCount);
-    $sessionStorage.set({ found: $stampCount });
-    $sessionStorage.save();
-    saveResults();
-  }
-
   //// Get Parameter
   const getParameter = (url, eventid) => {
     const params = new URLSearchParams(new URL(url).search);
     if (!params.get(stampid)) {
       console.log("Stamp not found in URL");
-    }
-    switch (params.get("id")) {
-      case eventid:
-        let stamp = params.get(stampid);
-        if (stamp == "advertisement") {
-          // localStorage.setItem("state", "home");
-          $advertState = "true";
-          console.log("set advert state: true");
+    } else {
+      switch (params.get("id")) {
+        case eventid:
+          let stamp = params.get(stampid);
+          if (stamp == "advertisement") {
+            // localStorage.setItem("state", "home");
+            $advertState = "true";
+            console.log("set advert state: true");
+            return false;
+          }
+          console.log("Found:", stamp);
+          ///
+          getFoundStamp(stamp);
+          return params.get(stampid);
+        case "clear":
+          sessionStorage.clear();
           return false;
-        }
-        console.log("Found:", stamp);
-        ///
-        getFoundStamp(stamp);
-        return params.get(stampid);
-      case "clear":
-        sessionStorage.clear();
-        return false;
-      case "admin":
-        $devMode = true;
-        console.log("/// DEV MODE ///");
-        $viewAllStamps = true;
-      default:
-        console.log("Please add 'id' parameter to url");
-        return false;
+        case "admin":
+          $devMode = true;
+          console.log("/// DEV MODE ///");
+          $viewAllStamps = true;
+        default:
+          console.log("Please add 'id' parameter to url");
+          return false;
+      }
+      return false;
     }
-    return false;
   };
 
   //// Save Results
