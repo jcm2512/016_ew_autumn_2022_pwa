@@ -218,13 +218,14 @@
 
   //// Get Found Stamp
   function getFoundStamp(stamp) {
+    let id = stamp.split("_");
+    let current_stamp = $stampCollection[id[0]].stamps[id[1]].area_stamps;
     console.log(stamp);
     $found = true;
-    let id = stamp.split("_");
 
     // SINGLE STAMP
     if (id.length === 3) {
-      $foundStamp = $stampCollection[id[0]].stamps[id[1]].area_stamps[stamp];
+      $foundStamp = current_stamp[stamp];
       $foundStamp.count += 1;
       $foundStamp.found = true;
       $foundStampCollection.push($foundStamp);
@@ -233,36 +234,24 @@
 
     // MULTI STAMP
     if (id.length === 2) {
-      let items = Object.keys(
-        $stampCollection[id[0]].stamps[id[1]].area_stamps
-      );
+      let items = Object.keys(current_stamp);
+      let count = 2;
       if (id[0] == "teachers") {
-        let current_collection =
-          $stampCollection[id[0]].stamps[id[1]].area_stamps;
-        // let filtered = Object.fromEntries(
-        //   Object.entries(current_collection).filter(([key]) =>
-        //     console.log(key.found)
-        //   )
-        // );
-        console.log(current_collection);
-        console.log(
-          Object.fromEntries(
-            Object.entries(current_collection).filter(
-              ([key, value]) => value.found == false
-            )
+        let filtered_stamps = Object.fromEntries(
+          Object.entries(current_stamp).filter(
+            ([key, value]) => value.found == false
           )
         );
-      } else {
+        items = Object.keys(filtered_stamps);
+        count = 1;
+      }
+      for (let i = 0; i < count; i++) {
         let random = items[Math.floor(Math.random() * items.length)];
-        $foundStamp = $stampCollection[id[0]].stamps[id[1]].area_stamps[random];
+        $foundStamp = current_stamp[random];
         $foundStamp.found = true;
+        $foundStamp.count += 1;
         $foundStampCollection.push($foundStamp);
-        let random_2 = items[Math.floor(Math.random() * items.length)];
-        $foundStamp =
-          $stampCollection[id[0]].stamps[id[1]].area_stamps[random_2];
-        $foundStamp.found = true;
-        $foundStampCollection.push($foundStamp);
-        $stampCount += 2;
+        $stampCount += 1;
       }
     }
 
