@@ -30,9 +30,7 @@
   import Dialog from "./popups/Dialog.svelte";
   import "animate.css";
 
-  let versionNum = 9;
-
-  //// Google Analytics
+  let versionNum = 10;
 
   // Check for admin key
   const searchParams = new URLSearchParams(
