@@ -29,8 +29,9 @@
   import Trivia from "./pages/Trivia.svelte";
   import Dialog from "./popups/Dialog.svelte";
   import "animate.css";
+  import Teachers from "./Teachers.svelte";
 
-  let versionNum = 10;
+  let versionNum = 12;
 
   // Check for admin key
   const searchParams = new URLSearchParams(
@@ -394,7 +395,7 @@
     <Trivia />
   {/if}
   {#if $menuState === "teachers"}
-    <Stamps />
+    <Teachers />
   {/if}
   {#if $menuState === "specials"}
     <Stamps />

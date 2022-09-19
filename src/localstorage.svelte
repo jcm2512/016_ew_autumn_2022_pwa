@@ -2,7 +2,7 @@
   export const localData = {
     key: "localdata_ew202210",
     value: {
-      version: 10,
+      version: 12,
       found: 0,
       stamps: {
         monsters: {
@@ -363,58 +363,6 @@
           heading: "TEACHER STAMPS",
           subheading: "先生たちのスタンプ",
           stamps: {
-            joe: {
-              title: "joe",
-              area_stamps: {
-                teachers_joe_01: {
-                  name: "teachers_joe_01",
-                  count: 0,
-                  special: true,
-                  img: "/assets/stamps/teachers_joe_01.png",
-                  found: false,
-                },
-                teachers_joe_02: {
-                  name: "teachers_joe_02",
-                  count: 0,
-                  special: true,
-                  img: "/assets/stamps/teachers_joe_02.png",
-                  found: false,
-                },
-                teachers_joe_03: {
-                  name: "teachers_joe_03",
-                  count: 0,
-                  special: true,
-                  img: "/assets/stamps/teachers_joe_03.png",
-                  found: false,
-                },
-              },
-            },
-            michi: {
-              title: "michi",
-              area_stamps: {
-                teachers_michi_01: {
-                  name: "teachers_michi_01",
-                  count: 0,
-                  special: true,
-                  img: "/assets/stamps/teachers_michi_01.png",
-                  found: false,
-                },
-                teachers_michi_02: {
-                  name: "teachers_michi_02",
-                  count: 0,
-                  special: true,
-                  img: "/assets/stamps/teachers_michi_02.png",
-                  found: false,
-                },
-                teachers_michi_03: {
-                  name: "teachers_michi_03",
-                  count: 0,
-                  special: true,
-                  img: "/assets/stamps/teachers_michi_03.png",
-                  found: false,
-                },
-              },
-            },
             anna: {
               title: "anna",
               area_stamps: {
@@ -437,6 +385,188 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_anna_03.png",
+                  found: false,
+                },
+              },
+            },
+            anthony: {
+              title: "anthony",
+              area_stamps: {
+                teachers_anthony_01: {
+                  name: "teachers_anthony_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_anthony_01.png",
+                  found: false,
+                },
+                teachers_anthony_02: {
+                  name: "teachers_anthony_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_anthony_02.png",
+                  found: false,
+                },
+                teachers_anthony_03: {
+                  name: "teachers_anthony_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_anthony_03.png",
+                  found: false,
+                },
+              },
+            },
+            avery: {
+              title: "avery",
+              area_stamps: {
+                teachers_avery_01: {
+                  name: "teachers_avery_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_avery_01.png",
+                  found: false,
+                },
+                teachers_avery_02: {
+                  name: "teachers_avery_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_avery_02.png",
+                  found: false,
+                },
+                teachers_avery_03: {
+                  name: "teachers_avery_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_avery_03.png",
+                  found: false,
+                },
+              },
+            },
+            ayako: {
+              title: "ayako",
+              area_stamps: {
+                teachers_ayako_01: {
+                  name: "teachers_ayako_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_ayako_01.png",
+                  found: false,
+                },
+                teachers_ayako_02: {
+                  name: "teachers_ayako_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_ayako_02.png",
+                  found: false,
+                },
+                teachers_ayako_03: {
+                  name: "teachers_ayako_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_ayako_03.png",
+                  found: false,
+                },
+              },
+            },
+            brandon: {
+              title: "brandon",
+              area_stamps: {
+                teachers_brandon_01: {
+                  name: "teachers_brandon_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_brandon_01.png",
+                  found: false,
+                },
+                teachers_brandon_02: {
+                  name: "teachers_brandon_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_brandon_02.png",
+                  found: false,
+                },
+                teachers_brandon_03: {
+                  name: "teachers_brandon_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_brandon_03.png",
+                  found: false,
+                },
+              },
+            },
+            cameron: {
+              title: "cameron",
+              area_stamps: {
+                teachers_cameron_01: {
+                  name: "teachers_cameron_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_cameron_01.png",
+                  found: false,
+                },
+                teachers_cameron_02: {
+                  name: "teachers_cameron_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_cameron_02.png",
+                  found: false,
+                },
+                teachers_cameron_03: {
+                  name: "teachers_cameron_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_cameron_03.png",
+                  found: false,
+                },
+              },
+            },
+            chance: {
+              title: "chance",
+              area_stamps: {
+                teachers_chance_01: {
+                  name: "teachers_chance_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_chance_01.png",
+                  found: false,
+                },
+                teachers_chance_02: {
+                  name: "teachers_chance_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_chance_02.png",
+                  found: false,
+                },
+                teachers_chance_03: {
+                  name: "teachers_chance_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_chance_03.png",
+                  found: false,
+                },
+              },
+            },
+            chris: {
+              title: "chris",
+              area_stamps: {
+                teachers_chris_01: {
+                  name: "teachers_chris_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_chris_01.png",
+                  found: false,
+                },
+                teachers_chris_02: {
+                  name: "teachers_chris_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_chris_02.png",
+                  found: false,
+                },
+                teachers_chris_03: {
+                  name: "teachers_chris_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_chris_03.png",
                   found: false,
                 },
               },
@@ -467,6 +597,294 @@
                 },
               },
             },
+            haruka: {
+              title: "haruka",
+              area_stamps: {
+                teachers_haruka_01: {
+                  name: "teachers_haruka_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_haruka_01.png",
+                  found: false,
+                },
+                teachers_haruka_02: {
+                  name: "teachers_haruka_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_haruka_02.png",
+                  found: false,
+                },
+                teachers_haruka_03: {
+                  name: "teachers_haruka_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_haruka_03.png",
+                  found: false,
+                },
+              },
+            },
+            isaac: {
+              title: "isaac",
+              area_stamps: {
+                teachers_isaac_01: {
+                  name: "teachers_isaac_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_isaac_01.png",
+                  found: false,
+                },
+                teachers_isaac_02: {
+                  name: "teachers_isaac_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_isaac_02.png",
+                  found: false,
+                },
+                teachers_isaac_03: {
+                  name: "teachers_isaac_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_isaac_03.png",
+                  found: false,
+                },
+              },
+            },
+            james: {
+              title: "james",
+              area_stamps: {
+                teachers_james_01: {
+                  name: "teachers_james_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_james_01.png",
+                  found: false,
+                },
+                teachers_james_02: {
+                  name: "teachers_james_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_james_02.png",
+                  found: false,
+                },
+                teachers_james_03: {
+                  name: "teachers_james_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_james_03.png",
+                  found: false,
+                },
+              },
+            },
+            jason: {
+              title: "jason",
+              area_stamps: {
+                teachers_jason_01: {
+                  name: "teachers_jason_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_jason_01.png",
+                  found: false,
+                },
+                teachers_jason_02: {
+                  name: "teachers_jason_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_jason_02.png",
+                  found: false,
+                },
+                teachers_jason_03: {
+                  name: "teachers_jason_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_jason_03.png",
+                  found: false,
+                },
+              },
+            },
+
+            joe: {
+              title: "joe",
+              area_stamps: {
+                teachers_joe_01: {
+                  name: "teachers_joe_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_joe_01.png",
+                  found: false,
+                },
+                teachers_joe_02: {
+                  name: "teachers_joe_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_joe_02.png",
+                  found: false,
+                },
+                teachers_joe_03: {
+                  name: "teachers_joe_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_joe_03.png",
+                  found: false,
+                },
+              },
+            },
+            joey: {
+              title: "joey",
+              area_stamps: {
+                teachers_joey_01: {
+                  name: "teachers_joey_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_joey_01.png",
+                  found: false,
+                },
+                teachers_joey_02: {
+                  name: "teachers_joey_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_joey_02.png",
+                  found: false,
+                },
+                teachers_joey_03: {
+                  name: "teachers_joey_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_joey_03.png",
+                  found: false,
+                },
+              },
+            },
+            katrina: {
+              title: "katrina",
+              area_stamps: {
+                teachers_katrina_01: {
+                  name: "teachers_katrina_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_katrina_01.png",
+                  found: false,
+                },
+                teachers_katrina_02: {
+                  name: "teachers_katrina_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_katrina_02.png",
+                  found: false,
+                },
+                teachers_katrina_03: {
+                  name: "teachers_katrina_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_katrina_03.png",
+                  found: false,
+                },
+              },
+            },
+            kuni: {
+              title: "kuni",
+              area_stamps: {
+                teachers_kuni_01: {
+                  name: "teachers_kuni_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_kuni_01.png",
+                  found: false,
+                },
+                teachers_kuni_02: {
+                  name: "teachers_kuni_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_kuni_02.png",
+                  found: false,
+                },
+                teachers_kuni_03: {
+                  name: "teachers_kuni_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_kuni_03.png",
+                  found: false,
+                },
+              },
+            },
+            mari: {
+              title: "mari",
+              area_stamps: {
+                teachers_mari_01: {
+                  name: "teachers_mari_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_mari_01.png",
+                  found: false,
+                },
+                teachers_mari_02: {
+                  name: "teachers_mari_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_mari_02.png",
+                  found: false,
+                },
+                teachers_mari_03: {
+                  name: "teachers_mari_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_mari_03.png",
+                  found: false,
+                },
+              },
+            },
+            michi: {
+              title: "michi",
+              area_stamps: {
+                teachers_michi_01: {
+                  name: "teachers_michi_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_michi_01.png",
+                  found: false,
+                },
+                teachers_michi_02: {
+                  name: "teachers_michi_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_michi_02.png",
+                  found: false,
+                },
+                teachers_michi_03: {
+                  name: "teachers_michi_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_michi_03.png",
+                  found: false,
+                },
+              },
+            },
+            mike: {
+              title: "mike",
+              area_stamps: {
+                teachers_mike_01: {
+                  name: "teachers_mike_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_mike_01.png",
+                  found: false,
+                },
+                teachers_mike_02: {
+                  name: "teachers_mike_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_mike_02.png",
+                  found: false,
+                },
+                teachers_mike_03: {
+                  name: "teachers_mike_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_mike_03.png",
+                  found: false,
+                },
+              },
+            },
+
             rika: {
               title: "rika",
               area_stamps: {
@@ -489,6 +907,32 @@
                   count: 0,
                   special: true,
                   img: "/assets/stamps/teachers_rika_03.png",
+                  found: false,
+                },
+              },
+            },
+            sakurako: {
+              title: "sakurako",
+              area_stamps: {
+                teachers_sakurako_01: {
+                  name: "teachers_sakurako_01",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_sakurako_01.png",
+                  found: false,
+                },
+                teachers_sakurako_02: {
+                  name: "teachers_sakurako_02",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_sakurako_02.png",
+                  found: false,
+                },
+                teachers_sakurako_03: {
+                  name: "teachers_sakurako_03",
+                  count: 0,
+                  special: true,
+                  img: "/assets/stamps/teachers_sakurako_03.png",
                   found: false,
                 },
               },
