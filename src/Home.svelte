@@ -390,37 +390,17 @@
   <div bind:this={overlay} id="overlay" class="grid-top " />
   <div id="bg" class="grid-top " />
 
-  {#if $advertState}
-    <!-- AD CONTENT START-->
-
-    {#if $menuState === "home"}
-      <Trivia />
-    {/if}
-    {#if $menuState === "teachers"}
-      <Unavailable />
-    {/if}
-    {#if $menuState === "specials"}
-      <Stamps />
-    {/if}
-    {#if $menuState === "monsters"}
-      <Stamps />
-    {/if}
-    <!-- AD CONTENT END  -->
-  {:else}
-    <!-- MAIN CONTENT START-->
-    {#if $menuState === "home"}
-      <Menu />
-    {/if}
-    {#if $menuState === "teachers"}
-      <Unavailable />
-    {/if}
-    {#if $menuState === "specials"}
-      <Stamps />
-    {/if}
-    {#if $menuState === "monsters"}
-      <Stamps />
-    {/if}
-    <!-- MAIN CONTENT END  -->
+  {#if $menuState === "home"}
+    <Trivia />
+  {/if}
+  {#if $menuState === "teachers"}
+    <Stamps />
+  {/if}
+  {#if $menuState === "specials"}
+    <Stamps />
+  {/if}
+  {#if $menuState === "monsters"}
+    <Stamps />
   {/if}
 
   <div id="shadow" />
