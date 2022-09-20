@@ -17,6 +17,7 @@
   let DOM_Content;
 
   onMount(() => {
+    // console.log($stampArea);
     // SCROLL TO STAMP
     DOM_Content.scrollTop = DOM_Headings[$stampArea].offsetTop;
     $stampArea = "top"; // Revert to default position
