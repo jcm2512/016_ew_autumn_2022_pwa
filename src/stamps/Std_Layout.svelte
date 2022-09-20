@@ -2,24 +2,37 @@
   import {
     stampCollection,
     menuState,
+    triggerMenuState,
     updateStamps,
     viewAllStamps,
-  } from "./store.js";
+    stampArea,
+  } from "../store.js";
+  import { animateCSS } from "../animateCSS.svelte";
+  import { onMount } from "svelte";
 
-  import { animateCSS } from "./animateCSS.svelte";
+  let heading, menu;
 
-  let DOMelements = [];
+  let DOM_Stamps = [];
+  let DOM_Headings = [];
+  let DOM_Content;
+
+  onMount(() => {
+    // SCROLL TO STAMP
+    DOM_Content.scrollTop = DOM_Headings[$stampArea].offsetTop;
+    $stampArea = "top"; // Revert to default
+  });
 </script>
 
-<div id="content" class="grid-top grid">
-  <div id="stamp_card">
-    <div id="heading">
+<div id="content" bind:this={DOM_Content} class="grid-top grid">
+  <div bind:this={DOM_Headings["top"]} id="stamp_card">
+    <div id="heading" bind:this={heading}>
       <div class="sub jp-font">{$stampCollection[$menuState].subheading}</div>
       <div class="main">{$stampCollection[$menuState].heading}</div>
     </div>
+
     <div id="menu">
       {#each Object.keys($stampCollection[$menuState].stamps) as area_name}
-        <div class="title">
+        <div class="title" id={area_name} bind:this={DOM_Headings[area_name]}>
           {$stampCollection[$menuState].stamps[area_name].title}
         </div>
         <div class="menu_item stamps">
@@ -27,9 +40,9 @@
             {#each Object.keys($stampCollection[$menuState].stamps[area_name].area_stamps) as stamp, index}
               {#if $stampCollection[$menuState].stamps[area_name].area_stamps[stamp].found || $viewAllStamps}
                 <img
-                  bind:this={DOMelements[stamp]}
+                  bind:this={DOM_Stamps[stamp]}
                   on:click|preventDefault={() => {
-                    animateCSS(DOMelements[stamp], "tada");
+                    animateCSS(DOM_Stamps[stamp], "tada");
                   }}
                   src={$stampCollection[$menuState].stamps[area_name]
                     .area_stamps[stamp].img}
@@ -39,11 +52,12 @@
                 />
               {:else}
                 <img
-                  bind:this={DOMelements[stamp]}
+                  bind:this={DOM_Stamps[stamp]}
                   on:click|preventDefault={() => {
-                    animateCSS(DOMelements[stamp], "headShake");
+                    animateCSS(DOM_Stamps[stamp], "headShake");
                   }}
-                  src="/assets/stamps/teachers_profile_bw.png"
+                  src={$stampCollection[$menuState].stamps[area_name]
+                    .area_stamps[stamp].bw}
                   alt={$stampCollection[$menuState].stamps[area_name]
                     .area_stamps[stamp].name}
                   class="stamp locked"
@@ -60,7 +74,8 @@
 <style>
   .menu_item.stamps {
     display: grid;
-    grid-template-rows: 7rem;
+
+    grid-template-rows: repeat(2, 7rem);
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     align-items: center;

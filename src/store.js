@@ -19,6 +19,7 @@ export const stampCount = writable(0);
 export const devMode = writable(false);
 export const notifyMonsters = writable();
 export const showNotification = writable(true);
+export const stampArea = writable("stamp_card");
 
 // MONSTER LIST
 export const stampCollection = writable({});

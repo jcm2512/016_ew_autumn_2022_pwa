@@ -20,16 +20,17 @@
     devMode,
     notifyMonsters,
     showNotification,
+    stampArea,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
-  import Stamps from "./Stamps.svelte";
+  import Std_Layout from "./stamps/Std_Layout.svelte";
   import Menu from "./Menu.svelte";
   import QR from "./components/QR.svelte";
-  import Unavailable from "./pages/Unavailable.svelte";
+  // import Unavailable from "./pages/Unavailable.svelte";
   import Trivia from "./pages/Trivia.svelte";
   import Dialog from "./popups/Dialog.svelte";
   import "animate.css";
-  import Teachers from "./Teachers.svelte";
+  import Teachers from "./stamps/Teachers.svelte";
 
   let versionNum = 12;
 
@@ -228,6 +229,8 @@
     let id = stamp.split("_");
     let current_stamp = $stampCollection[id[0]].stamps[id[1]].area_stamps;
     let items = [];
+    $stampArea = id[1];
+    console.log($stampArea);
     console.log(stamp);
 
     // SINGLE STAMP
@@ -384,7 +387,7 @@
 
 <div id="main" bind:this={main} class="bg_dark">
   {#if $found}
-    <Dialog stamp={$foundStampCollection} />
+    <Dialog STAMP={$foundStampCollection} />
   {/if}
 
   <div bind:this={reader} id="reader" width="600px" class="grid-top" />
@@ -398,10 +401,10 @@
     <Teachers />
   {/if}
   {#if $menuState === "specials"}
-    <Stamps />
+    <Std_Layout />
   {/if}
   {#if $menuState === "monsters"}
-    <Stamps />
+    <Std_Layout />
   {/if}
 
   <div id="shadow" />
