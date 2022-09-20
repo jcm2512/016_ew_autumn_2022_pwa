@@ -8,6 +8,18 @@
     showNotification,
   } from "../store.js";
 
+  import { onMount } from "svelte";
+
+  import { animateCSS } from "../animateCSS.svelte";
+
+  let DOM_Stamps = [];
+
+  onMount(() => {
+    STAMP.forEach((stamp, index) => {
+      animateCSS(DOM_Stamps[index], "flip");
+    });
+  });
+
   $showNotification = false;
 
   function button() {
@@ -25,18 +37,18 @@
     $showNotification = true;
   }
 
-  export let stamp;
-  console.log(stamp);
+  export let STAMP;
+  console.log(STAMP);
 </script>
 
 <div id="popup">
   <div id="popup_dialog">
     <div id="popup_bg" />
-    {#if stamp.length > 1}
+    {#if STAMP.length > 1}
       <div id="popup_message">YOU FOUND STAMPS</div>
       <div id="popup_monsters">
-        {#each stamp as stamp}
-          <div class="half-tile">
+        {#each STAMP as stamp, index}
+          <div class="half-tile" bind:this={DOM_Stamps[index]}>
             <img src={stamp.img} class="monster" alt={stamp.name} />
           </div>
         {/each}
@@ -44,8 +56,8 @@
     {:else}
       <div id="popup_message">YOU FOUND A STAMP</div>
       <div id="popup_monsters">
-        {#each stamp as stamp}
-          <div class="full-tile">
+        {#each STAMP as stamp, index}
+          <div class="full-tile" bind:this={DOM_Stamps[index]}>
             <img src={stamp.img} class="fullsize monster" alt={stamp.name} />
           </div>
         {/each}
