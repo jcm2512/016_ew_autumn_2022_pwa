@@ -123,6 +123,7 @@ html {
 }
 
 #reader {
+  font-size: 0rem;
   z-index: 100;
   visibility: hidden;
   height: fit-content;
@@ -484,4 +485,8 @@ img.monster{
   grid-row: 1;
   grid-column: 1;
   z-index: 90;
+}
+
+.disabled {
+  background: linear-gradient(180deg, hsl(225, 8%, 41%) 32.81%, hsl(204, 25%, 26%) 100%);
 }

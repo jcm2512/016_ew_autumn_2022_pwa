@@ -6,6 +6,7 @@
     menuState,
     triggerMenuState,
     showNotification,
+    scrollToStamp,
   } from "../store.js";
 
   import { onMount } from "svelte";
@@ -32,6 +33,8 @@
     $updateStamps += 1;
     $foundStampCollection = [];
     $menuState = area;
+    $scrollToStamp = true;
+    console.log("scrolltostamp: ", $scrollToStamp);
 
     // SHOW ANY NOTIFICATIONS IF ANY
     $showNotification = true;

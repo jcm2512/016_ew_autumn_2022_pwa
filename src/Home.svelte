@@ -8,6 +8,7 @@
     trigger,
     stampCollection,
     menuState,
+    menuStatePrevious,
     triggerMenuState,
     qr_state,
     sessionStorage,
@@ -21,6 +22,7 @@
     notifyMonsters,
     showNotification,
     stampArea,
+    scrollToStamp,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Std_Layout from "./stamps/Std_Layout.svelte";
@@ -28,6 +30,7 @@
   import QR from "./components/QR.svelte";
   // import Unavailable from "./pages/Unavailable.svelte";
   import Trivia from "./pages/Trivia.svelte";
+  import Scan from "./Scan.svelte";
   import Dialog from "./popups/Dialog.svelte";
   import "animate.css";
   import Teachers from "./stamps/Teachers.svelte";
@@ -57,10 +60,9 @@
   let eventid = "ew2022-10",
     stampid = "m";
   let reader, button, overlay, main, next; // Reference to DOM element
-  let nav_home, nav_teachers, nav_specials, nav_monsters; // Reference to DOM Nav elements
+  let nav_menu, nav_home, nav_teachers, nav_specials, nav_monsters; // Reference to DOM Nav elements
   let previous_nav = nav_home;
   let start, stop; // Functions loaded on Mount
-  let DOMelements = [];
   $found = false;
 
   // INITIALIZE DEVMODE
@@ -174,7 +176,6 @@
     if ($menuState === "home") {
       main.setAttribute("class", "");
       main.classList.add("bg_dark");
-      console.log(nav_home);
       nav_home.classList.add("active");
     }
 
@@ -278,7 +279,7 @@
   }
 
   //// Get Parameter
-  const getParameter = (url, eventid) => {
+  function getParameter(url, eventid) {
     const params = new URLSearchParams(new URL(url).search);
     if (!params.get(stampid)) {
       console.log("Stamp not found in URL");
@@ -309,7 +310,7 @@
       }
       return false;
     }
-  };
+  }
 
   //// Save Results
   function saveResults() {
@@ -318,6 +319,7 @@
   }
 
   function nav(event) {
+    $menuStatePrevious = $menuState;
     $menuState = event.id;
     previous_nav.classList.remove("active");
     event.classList.add("active");
@@ -344,16 +346,26 @@
     nav(previous_nav);
 
     const html5QrCode = new Html5Qrcode("reader");
-    const config = { fps: 10, qrbox: { width: 250, height: 250 } };
+    const config = {
+      fps: 10,
+      qrbox: { width: "20vw", height: "20vw" },
+    };
     start = function () {
       $loading = true;
       $qr_state = "loading";
       reader.style.visibility = "visible";
       overlay.style.visibility = "visible";
+
       html5QrCode
         .start({ facingMode: "environment" }, config, qrCodeSuccessCallback)
         .then((ignore) => {
+          // NAV Styling
+          nav_menu.classList.add("disabled");
+          previous_nav = getNav($menuState);
+          previous_nav.classList.remove("active");
+
           // QR Code scanning has started.
+          $menuState = "scanning";
           $scanning = true;
           $loading = false;
           $qr_state = "scanning";
@@ -368,6 +380,8 @@
           // QR Code scanning is stopped.
           $scanning = false;
           $qr_state = "ready";
+          nav_menu.classList.remove("disabled");
+          nav(previous_nav);
         })
         .catch((err) => {
           // Stop failed, handle it.
@@ -379,11 +393,17 @@
     };
   });
 
+  function checkIfNotScanning(target) {
+    if (!($loading || $scanning)) {
+      nav(target);
+    }
+  }
+
   // SEP 9 WEEKLY MONSTER
   getWeeklyMonster("specials_a1_002");
 </script>
 
-<!-- {@debug $found} -->
+<!-- {@debug $scrollToStamp} -->
 
 <div id="main" bind:this={main} class="bg_dark">
   {#if $found}
@@ -406,16 +426,19 @@
   {#if $menuState === "monsters"}
     <Std_Layout />
   {/if}
+  {#if $menuState === "scanning"}
+    <Scan />
+  {/if}
 
   <div id="shadow" />
 </div>
 
-<nav>
+<nav bind:this={nav_menu}>
   <div
     bind:this={nav_home}
     class="nav_button"
     id="home"
-    on:click={() => nav(nav_home)}
+    on:click={() => checkIfNotScanning(nav_home)}
   >
     {#if $menuState === "home"}
       <img class="nav_img" src="assets/icons/nav/home-active.svg" alt="home" />
@@ -426,7 +449,7 @@
 
   {#if $notifyMonsters && $showNotification}
     <div
-      on:click={() => nav(nav_monsters)}
+      on:click={() => checkIfNotScanning(nav_monsters)}
       class="animate__animated animate__delay-1s animate__heartBeat animate__infinite"
       id="notification"
     >
@@ -438,7 +461,7 @@
     bind:this={nav_teachers}
     class="nav_button"
     id="teachers"
-    on:click={() => nav(nav_teachers)}
+    on:click={() => checkIfNotScanning(nav_teachers)}
   >
     {#if $menuState === "teachers"}
       <img
@@ -467,7 +490,7 @@
     bind:this={nav_specials}
     id="specials"
     class="nav_button"
-    on:click={() => nav(nav_specials)}
+    on:click={() => checkIfNotScanning(nav_specials)}
   >
     {#if $menuState === "specials"}
       <img
@@ -483,7 +506,7 @@
     bind:this={nav_monsters}
     class="nav_button"
     id="monsters"
-    on:click={() => nav(nav_monsters)}
+    on:click={() => checkIfNotScanning(nav_monsters)}
   >
     {#if $menuState === "monsters"}
       <img
