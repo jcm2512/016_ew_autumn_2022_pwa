@@ -22,7 +22,6 @@
     notifyMonsters,
     showNotification,
     stampArea,
-    scrollToStamp,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Std_Layout from "./stamps/Std_Layout.svelte";
@@ -30,7 +29,6 @@
   import QR from "./components/QR.svelte";
   // import Unavailable from "./pages/Unavailable.svelte";
   import Trivia from "./pages/Trivia.svelte";
-  import Scan from "./Scan.svelte";
   import Dialog from "./popups/Dialog.svelte";
   import "animate.css";
   import Teachers from "./stamps/Teachers.svelte";
@@ -403,8 +401,6 @@
   getWeeklyMonster("specials_a1_002");
 </script>
 
-<!-- {@debug $scrollToStamp} -->
-
 <div id="main" bind:this={main} class="bg_dark">
   {#if $found}
     <Dialog STAMP={$foundStampCollection} />
@@ -427,7 +423,7 @@
     <Std_Layout />
   {/if}
   {#if $menuState === "scanning"}
-    <Scan />
+    <!-- Do not show anything -->
   {/if}
 
   <div id="shadow" />

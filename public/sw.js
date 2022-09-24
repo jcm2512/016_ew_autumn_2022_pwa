@@ -11,48 +11,8 @@ if (workbox) {
     "revision": "1332cc6970631de1f570e14dc842e978"
   },
   {
-    "url": "assets/bg/Untitled.png",
-    "revision": "6b8b73b6abdf5ff374711b2161ad3bb6"
-  },
-  {
     "url": "assets/elements/dialog.svg",
     "revision": "bb8b962734e63e1c5e9b2c85515f88b8"
-  },
-  {
-    "url": "assets/icons/home-active.svg",
-    "revision": "76e8f551a2ddb5d8e35f9ceaaab683aa"
-  },
-  {
-    "url": "assets/icons/home.svg",
-    "revision": "62ac5fcddc5c3b93e3ddbf56ef99c513"
-  },
-  {
-    "url": "assets/icons/icons8-qr-code-64.png",
-    "revision": "6473ef66e401b7f1716447d7e338a896"
-  },
-  {
-    "url": "assets/icons/icons8-stop-64.png",
-    "revision": "aa58d00b524e85d7b21ce1e8053e9eae"
-  },
-  {
-    "url": "assets/icons/image5.png",
-    "revision": "d6ba7418eb656ed155066144f6430dc6"
-  },
-  {
-    "url": "assets/icons/loading.bk2.svg",
-    "revision": "18c5e5596664645eb2e1982657cd7ed9"
-  },
-  {
-    "url": "assets/icons/loading.svg",
-    "revision": "ca42ffa72e0709fd425d7ad3a7b490a1"
-  },
-  {
-    "url": "assets/icons/monsters-active.svg",
-    "revision": "7f1503c0ccf56e3b3ed2bf4cf37ca9a9"
-  },
-  {
-    "url": "assets/icons/monsters.svg",
-    "revision": "c7e1d900606d06709eeb0c093c20ab03"
   },
   {
     "url": "assets/icons/nav/ghost-active.svg",
@@ -71,12 +31,24 @@ if (workbox) {
     "revision": "62ac5fcddc5c3b93e3ddbf56ef99c513"
   },
   {
+    "url": "assets/icons/nav/loading.svg",
+    "revision": "ca42ffa72e0709fd425d7ad3a7b490a1"
+  },
+  {
     "url": "assets/icons/nav/monsters-active.svg",
     "revision": "7f1503c0ccf56e3b3ed2bf4cf37ca9a9"
   },
   {
     "url": "assets/icons/nav/monsters.svg",
     "revision": "c7e1d900606d06709eeb0c093c20ab03"
+  },
+  {
+    "url": "assets/icons/nav/scan-barcode.svg",
+    "revision": "29e73cbffb69d9a706c9184dff33c3d5"
+  },
+  {
+    "url": "assets/icons/nav/stop.svg",
+    "revision": "e3d0da25372c32b390a4a554215df628"
   },
   {
     "url": "assets/icons/nav/user-square-active.svg",
@@ -93,18 +65,6 @@ if (workbox) {
   {
     "url": "assets/icons/nav/verify.svg",
     "revision": "3097887145fa434401654d98f9fcfd4b"
-  },
-  {
-    "url": "assets/icons/scan-barcode.svg",
-    "revision": "29e73cbffb69d9a706c9184dff33c3d5"
-  },
-  {
-    "url": "assets/icons/stop.svg",
-    "revision": "e3d0da25372c32b390a4a554215df628"
-  },
-  {
-    "url": "assets/logos/coming-soon.svg",
-    "revision": "e323dfae3bc0791b07449e783dd17d42"
   },
   {
     "url": "assets/stamps/Contents.json",
@@ -129,10 +89,6 @@ if (workbox) {
   {
     "url": "assets/stamps/monsters_a1_003_2.png",
     "revision": "0ee940ce4bb71f84e20ef049f79fc148"
-  },
-  {
-    "url": "assets/stamps/monsters_a1_003_bw_2.png",
-    "revision": "27396df36690666bb3463df8940680bc"
   },
   {
     "url": "assets/stamps/monsters_a1_003_bw.png",
@@ -439,106 +395,6 @@ if (workbox) {
     "revision": "866f72e2e261e5ffadd4f0fb0f6ada31"
   },
   {
-    "url": "assets/stamps/teachers_a1_001.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_002.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_003.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_004.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_005.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_006.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_007.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_008.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_009.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_010.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_011.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_012.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_013.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_014.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_015.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_016.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_017.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_018.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_019.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_020.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_021.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_022.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_023.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_024.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
-    "url": "assets/stamps/teachers_a1_025.png",
-    "revision": "3379cc991bb0e5e15581ee142e753a9d"
-  },
-  {
     "url": "assets/stamps/teachers_anna_01.png",
     "revision": "e21557bb6df2ed695c2bb325c9b83523"
   },
@@ -604,11 +460,11 @@ if (workbox) {
   },
   {
     "url": "build/bundle.css",
-    "revision": "f960e3b3732f71f6eb5cced3394eb06f"
+    "revision": "fb05b4cf9e1fc1023b9bad07903f2c20"
   },
   {
     "url": "build/bundle.js",
-    "revision": "d085ffebcc8e398a5be985335b2f2ce4"
+    "revision": "e6af54660a969094e2c0658ec76da7ca"
   },
   {
     "url": "favicon.png",
@@ -633,10 +489,6 @@ if (workbox) {
   {
     "url": "offline.html",
     "revision": "65e942e3cfc99e7d3432d3939bc66a09"
-  },
-  {
-    "url": "service-worker.js",
-    "revision": "6537d1cd11442c6fb97b09b4fd0774b3"
   }
 ]);
 } else {
