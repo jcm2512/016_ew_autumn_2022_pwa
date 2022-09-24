@@ -460,11 +460,11 @@ if (workbox) {
   },
   {
     "url": "build/bundle.css",
-    "revision": "368e518c20d03ec89214eceb74f0da10"
+    "revision": "78947e20df84db375d8e96a548b747d4"
   },
   {
     "url": "build/bundle.js",
-    "revision": "e6af54660a969094e2c0658ec76da7ca"
+    "revision": "8e3f52f7866b577355a86613d2c8d951"
   },
   {
     "url": "favicon.png",
@@ -500,7 +500,7 @@ if (workbox) {
   },
   {
     "url": "index.html",
-    "revision": "11cefb9a55f1960beaec67bacd7a5e0b"
+    "revision": "61f53b50f3ca7e732e334372bc5d7e65"
   },
   {
     "url": "logo.png",
