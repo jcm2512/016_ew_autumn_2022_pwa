@@ -32,10 +32,6 @@
     margin-top: 4vw;
   }
 
-  /* .menu_item.activity {
-    grid-template-rows: 7rem;
-  } */
-
   .english {
     background-color: var(--blue);
     grid-column: span 2;

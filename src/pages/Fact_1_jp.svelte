@@ -24,13 +24,6 @@
 </div>
 
 <style>
-  .jp-title {
-    font-family: "Kosugi Maru";
-  }
-
-  .jp-font-2 {
-    font-family: "Kaisei Decol";
-  }
   .menu_item {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -40,10 +33,6 @@
   p {
     margin-top: 4vw;
   }
-
-  /* .menu_item.activity {
-    grid-template-rows: 7rem;
-  } */
 
   .japanese {
     background-color: var(--purple);
