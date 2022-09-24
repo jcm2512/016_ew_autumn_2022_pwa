@@ -27,6 +27,11 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: senobi-gothic;
+  src: url("./fonts/Senobi-Gothic-Medium.ttf");
+}
+
 html,
 body {
   position: relative;
@@ -90,10 +95,6 @@ html {
 .jp-font {
   font-family: senobi-gothic, sans-serif;
 
-}
-
-.jp-font {
-  font-family: senobi-gothic, sans-serif;
 }
 
 .regular {

@@ -608,7 +608,7 @@ if (workbox) {
   },
   {
     "url": "build/bundle.js",
-    "revision": "88b136e9eb0199e5865e5a0de1f979c6"
+    "revision": "d085ffebcc8e398a5be985335b2f2ce4"
   },
   {
     "url": "favicon.png",
@@ -616,11 +616,11 @@ if (workbox) {
   },
   {
     "url": "global.css",
-    "revision": "cc5e77d4c7f1a0bdaf6ea65c935142d4"
+    "revision": "62158ba1d7c072286e6d06c9e358cbc4"
   },
   {
     "url": "index.html",
-    "revision": "3bbc0ddee527a1a08ad217f9a3f612db"
+    "revision": "45143eaaf7b6e8daadec165369e96369"
   },
   {
     "url": "logo.png",
@@ -642,14 +642,3 @@ if (workbox) {
 } else {
   console.log(`Boo! Workbox didn't load 😬`);
 }
-
-// stale-while-revalidate strategy
-
-self.addEventListener("fetch", (event) => {
-  const { request } = event;
-  const url = new URL(request.url);
-
-  if (url.origin === location.origin && url.pathname === "/") {
-    event.respondWith(new StaleWhileRevalidate().handle({ event, request }));
-  }
-});

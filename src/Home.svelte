@@ -35,7 +35,7 @@
   import "animate.css";
   import Teachers from "./stamps/Teachers.svelte";
 
-  let versionNum = 13;
+  export const versionNum = 15;
 
   // Check for admin key
   const searchParams = new URLSearchParams(
