@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "rollup -c && workbox injectManifest workbox-config.js",
-    "dev": "rollup -c -w",
+    "build": "rollup -c",
+    "dev": "workbox injectManifest workbox-config.js && rollup -c -w",
     "start": "sirv public"
   },
   "devDependencies": {

@@ -604,11 +604,11 @@ if (workbox) {
   },
   {
     "url": "build/bundle.css",
-    "revision": "cc7c6bb49c769ceebe554fad3036faaf"
+    "revision": "f960e3b3732f71f6eb5cced3394eb06f"
   },
   {
     "url": "build/bundle.js",
-    "revision": "5a9d5a060899028d75f30047a6c06715"
+    "revision": "88b136e9eb0199e5865e5a0de1f979c6"
   },
   {
     "url": "favicon.png",
