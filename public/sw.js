@@ -460,7 +460,7 @@ if (workbox) {
   },
   {
     "url": "build/bundle.css",
-    "revision": "fb05b4cf9e1fc1023b9bad07903f2c20"
+    "revision": "368e518c20d03ec89214eceb74f0da10"
   },
   {
     "url": "build/bundle.js",
@@ -471,12 +471,36 @@ if (workbox) {
     "revision": "df91dc163c369f33f94340a06d5e0964"
   },
   {
+    "url": "fonts/Fredoka-Regular.ttf",
+    "revision": "31d41d3ce805bcfad27a5437876fe814"
+  },
+  {
+    "url": "fonts/KaiseiDecol-Regular.ttf",
+    "revision": "5355e690ad486524e38bee0ad2ac895c"
+  },
+  {
+    "url": "fonts/KosugiMaru-Regular.ttf",
+    "revision": "f0f9ba6949b53fa1ec3a5c49e508bcda"
+  },
+  {
+    "url": "fonts/LondrinaSolid-Regular.ttf",
+    "revision": "0e0c966ac6cad3afcfd672c96197f360"
+  },
+  {
+    "url": "fonts/LuckiestGuy-Regular.ttf",
+    "revision": "79188087ce07615e9fb2c074d8808bdb"
+  },
+  {
+    "url": "fonts/Senobi-Gothic-Medium.ttf",
+    "revision": "1458e60247321629e03e9ff1be695cd4"
+  },
+  {
     "url": "global.css",
-    "revision": "62158ba1d7c072286e6d06c9e358cbc4"
+    "revision": "a68436f250632fb3375bd6a8bd2e8194"
   },
   {
     "url": "index.html",
-    "revision": "45143eaaf7b6e8daadec165369e96369"
+    "revision": "11cefb9a55f1960beaec67bacd7a5e0b"
   },
   {
     "url": "logo.png",

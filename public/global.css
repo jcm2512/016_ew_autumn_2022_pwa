@@ -28,9 +28,35 @@
 }
 
 @font-face {
-  font-family: senobi-gothic;
+  font-family: "Senobi Gothic";
   src: url("./fonts/Senobi-Gothic-Medium.ttf");
 }
+
+@font-face {
+  font-family: 'Luckiest Guy';
+  src: url("./fonts/LuckiestGuy-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Fredoka";
+  src: url("./fonts/Fredoka-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Londrina Solid";
+  src: url("./fonts/LondrinaSolid-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Kosugi Maru";
+  src: url("./fonts/KosugiMaru-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Kaisei Decol";
+  src: url("./fonts/KaiseiDecol-Regular.ttf");
+}
+
 
 html,
 body {
@@ -53,7 +79,7 @@ body {
 
 html {
   height: -webkit-fill-available;
-  font-family: 'Comfortaa', cursive;
+  font-family: "Fredoka";
 }
 
 .grid {
@@ -93,8 +119,16 @@ html {
 }
 
 .jp-font {
-  font-family: senobi-gothic, sans-serif;
+  font-family: "Senobi Gothic", sans-serif;
 
+}
+
+.jp-title {
+  font-family: "Kosugi Maru";
+}
+
+.jp-font-2 {
+  font-family: "Kaisei Decol";
 }
 
 .regular {
