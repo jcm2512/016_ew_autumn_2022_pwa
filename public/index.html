@@ -83,6 +83,21 @@
               console.log(
                 `Service Worker registered! Scope: ${registration.scope}`
               );
+              registration.addEventListener("updatefound", () => {
+                // An updated service worker has appeared
+                newWorker = registration.installing;
+                newWorker.addEventListener("statechange", () => {
+                  // Has service worker state changed?
+                  switch (newWorker.state) {
+                    case "installed":
+                      // There is a new service worker available
+                      if (navigator.serviceWorker.controller) {
+                        newWorker.postMessage({ action: "skipWaiting" });
+                      }
+                      break;
+                  }
+                });
+              });
             })
             .catch((err) => {
               console.log(`Service Worker registration failed: ${err}`);
