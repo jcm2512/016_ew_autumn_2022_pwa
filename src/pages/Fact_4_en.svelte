@@ -16,7 +16,7 @@
       <p class="trivia reveal" on:click={() => (answer = true)}>Answer</p>
     {:else}
       <p class="trivia answer" on:click={() => (answer = false)}>
-        It's a fruit!
+        Actually, it's a fruit!
       </p>
     {/if}
     <Translate />
