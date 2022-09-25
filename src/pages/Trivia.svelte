@@ -9,7 +9,8 @@
   import Fact_2_jp from "./Fact_2_jp.svelte";
   import Fact_3_en from "./Fact_3_en.svelte";
   import Fact_3_jp from "./Fact_3_jp.svelte";
-
+  import Fact_4_en from "./Fact_4_en.svelte";
+  import Fact_4_jp from "./Fact_4_jp.svelte";
   import { Swiper, SwiperSlide } from "swiper/svelte";
 
   // Import Swiper
@@ -39,6 +40,9 @@
       >
         {#if $eng}
           <SwiperSlide>
+            <Fact_4_en />
+          </SwiperSlide>
+          <SwiperSlide>
             <Fact_3_en />
           </SwiperSlide>
           <SwiperSlide>
@@ -48,6 +52,9 @@
             <Fact_1_en />
           </SwiperSlide>
         {:else}
+          <SwiperSlide>
+            <Fact_4_jp />
+          </SwiperSlide>
           <SwiperSlide>
             <Fact_3_jp />
           </SwiperSlide>
