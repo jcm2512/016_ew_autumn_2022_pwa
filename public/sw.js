@@ -45,7 +45,7 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons/nav/loading.svg",
-    "revision": "ca42ffa72e0709fd425d7ad3a7b490a1"
+    "revision": "7cd7f895b42751072fa90dbc8f227a80"
   },
   {
     "url": "assets/icons/nav/monsters-active.svg",
@@ -57,11 +57,11 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/icons/nav/scan-barcode.svg",
-    "revision": "29e73cbffb69d9a706c9184dff33c3d5"
+    "revision": "0ae82e1e2a1f8184d553aece97ce0fb2"
   },
   {
     "url": "assets/icons/nav/stop.svg",
-    "revision": "e3d0da25372c32b390a4a554215df628"
+    "revision": "27b511c41c88515b488be9a99c70e1f0"
   },
   {
     "url": "assets/icons/nav/user-square-active.svg",
@@ -473,11 +473,11 @@ self.__precacheManifest = [
   },
   {
     "url": "build/bundle.css",
-    "revision": "3e5497fba172bbd2f2c7188587dcab39"
+    "revision": "8a9815caf03c145a1554473e7faa8433"
   },
   {
     "url": "build/bundle.js",
-    "revision": "aad18e962ac52b766c99b4344f53d9ca"
+    "revision": "ffe8081fa0db6b496235b16d2c887896"
   },
   {
     "url": "favicon.png",

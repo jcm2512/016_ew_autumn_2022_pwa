@@ -34,6 +34,7 @@
   import Teachers from "./stamps/Teachers.svelte";
 
   export const versionNum = 15;
+  let weeklyMonster = "specials_a1_003";
 
   // Check for admin key
   const searchParams = new URLSearchParams(
@@ -398,7 +399,7 @@
   }
 
   // SEP 9 WEEKLY MONSTER
-  getWeeklyMonster("specials_a1_002");
+  getWeeklyMonster(weeklyMonster);
 </script>
 
 <div id="main" bind:this={main} class="bg_dark">
