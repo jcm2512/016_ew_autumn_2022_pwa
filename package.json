@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "build": "rollup -c",
-    "dev": "workbox injectManifest workbox-config.js && rollup -c -w",
+    "dev": "rollup -c -w",
+    "update": "rollup -c && workbox generateSW workbox-config.js",
     "start": "sirv public"
   },
   "devDependencies": {

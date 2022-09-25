@@ -1,11 +1,24 @@
-importScripts(
-  "https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox-sw.js"
-);
+/**
+ * Welcome to your Workbox-powered service worker!
+ *
+ * You'll need to register this file in your web app and you should
+ * disable HTTP caching for this file too.
+ * See https://goo.gl/nhQhGp
+ *
+ * The rest of the code is auto-generated. Please don't update this file
+ * directly; instead, make changes to your Workbox build configuration
+ * and re-run your build process.
+ * See https://goo.gl/2aRDsh
+ */
 
-if (workbox) {
-  console.log(`Yay! Workbox is loaded 🎉`);
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
-  workbox.precaching.precacheAndRoute([
+/**
+ * The workboxSW.precacheAndRoute() method efficiently caches and responds to
+ * requests for URLs in the manifest.
+ * See https://goo.gl/S9QRab
+ */
+self.__precacheManifest = [
   {
     "url": "assets/bg/hw_bg.png",
     "revision": "1332cc6970631de1f570e14dc842e978"
@@ -460,11 +473,11 @@ if (workbox) {
   },
   {
     "url": "build/bundle.css",
-    "revision": "78947e20df84db375d8e96a548b747d4"
+    "revision": "15b7b392e5a8c32b139f5a94942248b3"
   },
   {
     "url": "build/bundle.js",
-    "revision": "8e3f52f7866b577355a86613d2c8d951"
+    "revision": "4e9c229e3a0d1da3ab4d666150abdabf"
   },
   {
     "url": "favicon.png",
@@ -500,7 +513,7 @@ if (workbox) {
   },
   {
     "url": "index.html",
-    "revision": "61f53b50f3ca7e732e334372bc5d7e65"
+    "revision": "5ab88198688dadadc450f252fc2388b5"
   },
   {
     "url": "logo.png",
@@ -514,7 +527,6 @@ if (workbox) {
     "url": "offline.html",
     "revision": "65e942e3cfc99e7d3432d3939bc66a09"
   }
-]);
-} else {
-  console.log(`Boo! Workbox didn't load 😬`);
-}
+].concat(self.__precacheManifest || []);
+workbox.precaching.suppressWarnings();
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {});

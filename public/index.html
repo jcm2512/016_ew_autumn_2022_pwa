@@ -6,26 +6,11 @@
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-2QLN8HM2DM"
     ></script>
-    <script>
-      // window.dataLayer = window.dataLayer || [];
-      // function gtag() {
-      //   dataLayer.push(arguments);
-      // }
-      // gtag("js", new Date());
-
-      // gtag("config", "G-2QLN8HM2DM");
-    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
     <title>Monster Stamp Rally</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- <link
-      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Kaisei+Decol&family=Kosugi+Maru&family=Fredoka&family=Londrina+Solid:wght@300;900&family=Luckiest+Guy&display=swap"
-      rel="stylesheet"
-    /> -->
     <link rel="manifest" href="/manifest.json" />
     <meta name="description" content="Monster Stamp Rally" />
     <meta name="theme-color" content="#2F3BA2" />
@@ -38,38 +23,6 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="stylesheet" href="/global.css" />
     <link rel="stylesheet" href="/build/bundle.css" />
-    <!-- Load custom Japanese font -->
-    <!-- <script>
-      (function (d) {
-        var config = {
-            kitId: "mfc2jvh",
-            scriptTimeout: 3000,
-            async: true,
-          },
-          h = d.documentElement,
-          t = setTimeout(function () {
-            h.className =
-              h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
-          }, config.scriptTimeout),
-          tk = d.createElement("script"),
-          f = false,
-          s = d.getElementsByTagName("script")[0],
-          a;
-        h.className += " wf-loading";
-        tk.src = "https://use.typekit.net/" + config.kitId + ".js";
-        tk.async = true;
-        tk.onload = tk.onreadystatechange = function () {
-          a = this.readyState;
-          if (f || (a && a != "complete" && a != "loaded")) return;
-          f = true;
-          clearTimeout(t);
-          try {
-            Typekit.load(config);
-          } catch (e) {}
-        };
-        s.parentNode.insertBefore(tk, s);
-      })(document);
-    </script> -->
     <script defer src="/build/bundle.js"></script>
   </head>
 
@@ -83,21 +36,22 @@
               console.log(
                 `Service Worker registered! Scope: ${registration.scope}`
               );
-              registration.addEventListener("updatefound", () => {
-                // An updated service worker has appeared
-                newWorker = registration.installing;
-                newWorker.addEventListener("statechange", () => {
-                  // Has service worker state changed?
-                  switch (newWorker.state) {
-                    case "installed":
-                      // There is a new service worker available
-                      if (navigator.serviceWorker.controller) {
-                        newWorker.postMessage({ action: "skipWaiting" });
-                      }
-                      break;
-                  }
-                });
-              });
+              // registration.addEventListener("updatefound", () => {
+              //   // An updated service worker has appeared
+              //   newWorker = registration.installing;
+              //   newWorker.addEventListener("statechange", () => {
+              //     // Has service worker state changed?
+              //     switch (newWorker.state) {
+              //       case "installed":
+              //         // There is a new service worker available
+              //         if (navigator.serviceWorker.controller) {
+              //           newWorker.postMessage({ action: "skipWaiting" });
+              //         }
+              //         break;
+              //     }
+              //   });
+              // });
+              registration.update();
             })
             .catch((err) => {
               console.log(`Service Worker registration failed: ${err}`);
