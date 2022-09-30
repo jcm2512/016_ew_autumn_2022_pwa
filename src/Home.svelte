@@ -33,7 +33,7 @@
   import "animate.css";
   import Teachers from "./stamps/Teachers.svelte";
 
-  export const versionNum = 15;
+  export const versionNum = 16;
   let weeklyMonster = "specials_a1_003";
 
   // Check for admin key
@@ -289,6 +289,11 @@
             // localStorage.setItem("state", "home");
             $advertState = true;
             console.log("set advert state: true");
+            return false;
+          }
+          if (stamp == "viewall") {
+            $viewAllStamps = true;
+            console.log("set viewall state: true");
             return false;
           }
           console.log("Found:", stamp);
