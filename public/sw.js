@@ -80,10 +80,6 @@ self.__precacheManifest = [
     "revision": "3097887145fa434401654d98f9fcfd4b"
   },
   {
-    "url": "assets/stamps/Contents.json",
-    "revision": "dd4fa8ee80ae15162c5fee20c16092b2"
-  },
-  {
     "url": "assets/stamps/monsters_a1_001_bw.png",
     "revision": "083a25f9aa12d67a037706d7f434cc6b"
   },
@@ -98,10 +94,6 @@ self.__precacheManifest = [
   {
     "url": "assets/stamps/monsters_a1_002.png",
     "revision": "133a12c6344479e5683e790a2b302597"
-  },
-  {
-    "url": "assets/stamps/monsters_a1_003_2.png",
-    "revision": "0ee940ce4bb71f84e20ef049f79fc148"
   },
   {
     "url": "assets/stamps/monsters_a1_003_bw.png",
@@ -272,14 +264,6 @@ self.__precacheManifest = [
     "revision": "3463ade2f5ca2e1b90f9603b1797f14f"
   },
   {
-    "url": "assets/stamps/monsters_a4_006_2.png",
-    "revision": "27cf55fb2f3aadbb30bba3552a6cbebe"
-  },
-  {
-    "url": "assets/stamps/monsters_a4_006_bw_2.png",
-    "revision": "428c3f73119e50e723b27be84a0c611d"
-  },
-  {
     "url": "assets/stamps/monsters_a4_006_bw.png",
     "revision": "868d7ee5759043781a1987007c119290"
   },
@@ -409,51 +393,243 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/stamps/teachers_anna_01.png",
-    "revision": "e21557bb6df2ed695c2bb325c9b83523"
+    "revision": "84237fbb4aa86d818476f7599ca717c8"
   },
   {
     "url": "assets/stamps/teachers_anna_02.png",
-    "revision": "c879776be17e35fbec5cb0985f00ab9d"
+    "revision": "ae48632f71c59c2e3e2f2500ffbd9a7e"
   },
   {
     "url": "assets/stamps/teachers_anna_03.png",
-    "revision": "cba151d2e59037f8804b6bc9fc3d659f"
+    "revision": "6f0ff74143a184b122cdcbf24ed3bd0b"
+  },
+  {
+    "url": "assets/stamps/teachers_anthony_01.png",
+    "revision": "e04a12016ae0264f3db962403d6f0c50"
+  },
+  {
+    "url": "assets/stamps/teachers_anthony_02.png",
+    "revision": "f4cf6dda23bc12696b323afc01f49ba1"
+  },
+  {
+    "url": "assets/stamps/teachers_anthony_03.png",
+    "revision": "8fed417cd77bb5c38759844c7aedfda4"
+  },
+  {
+    "url": "assets/stamps/teachers_avery_01.png",
+    "revision": "b9058cf4e80c1c9f2f47eceb15809fa8"
+  },
+  {
+    "url": "assets/stamps/teachers_avery_02.png",
+    "revision": "da3f8d800553ab1fb29ba03a5834ddcb"
+  },
+  {
+    "url": "assets/stamps/teachers_avery_03.png",
+    "revision": "44f942481c10917a127d8391b13f2327"
+  },
+  {
+    "url": "assets/stamps/teachers_ayako_01.png",
+    "revision": "cd9bff305b9cdab14a32b27e7f446e17"
+  },
+  {
+    "url": "assets/stamps/teachers_ayako_02.png",
+    "revision": "f59132f2da486477a884246a6a606746"
+  },
+  {
+    "url": "assets/stamps/teachers_ayako_03.png",
+    "revision": "87a7af06799427aebd945c909e90d5b2"
+  },
+  {
+    "url": "assets/stamps/teachers_brandon_01.png",
+    "revision": "6c6d74262a0de01efbf2a97a57920da6"
+  },
+  {
+    "url": "assets/stamps/teachers_brandon_02.png",
+    "revision": "da00e0a02309c96a82f855e211cd76af"
+  },
+  {
+    "url": "assets/stamps/teachers_brandon_03.png",
+    "revision": "b98bade3c994cdb730475c35f38c36ed"
+  },
+  {
+    "url": "assets/stamps/teachers_cameron_01.png",
+    "revision": "459c224db34144dac98d0498d3919541"
+  },
+  {
+    "url": "assets/stamps/teachers_cameron_02.png",
+    "revision": "ac2ca3d941c17273b590c7b2db3eb543"
+  },
+  {
+    "url": "assets/stamps/teachers_cameron_03.png",
+    "revision": "4a1e4ef2a2debce556d94570a2042f52"
+  },
+  {
+    "url": "assets/stamps/teachers_chance_01.png",
+    "revision": "db3c20fbd83229808f43dccfb4f80f8c"
+  },
+  {
+    "url": "assets/stamps/teachers_chance_02.png",
+    "revision": "db3c20fbd83229808f43dccfb4f80f8c"
+  },
+  {
+    "url": "assets/stamps/teachers_chance_03.png",
+    "revision": "db3c20fbd83229808f43dccfb4f80f8c"
+  },
+  {
+    "url": "assets/stamps/teachers_chris_01.png",
+    "revision": "f47504a31c50daaed5c3b07ad76e2ed6"
+  },
+  {
+    "url": "assets/stamps/teachers_chris_02.png",
+    "revision": "5929ec991996ebae071dd404cec9728e"
+  },
+  {
+    "url": "assets/stamps/teachers_chris_03.png",
+    "revision": "9c2f8ea71e04015a3b55fd962c2af07d"
   },
   {
     "url": "assets/stamps/teachers_georgia_01.png",
-    "revision": "7eff7c1167c82ccfdc04ae89953081a0"
+    "revision": "3c10008c871958596b068caf246256b0"
   },
   {
     "url": "assets/stamps/teachers_georgia_02.png",
-    "revision": "a6251242f8ce41272cbf64631fcc1795"
+    "revision": "1ca1ad89de5aac168e544b309e050215"
   },
   {
     "url": "assets/stamps/teachers_georgia_03.png",
-    "revision": "237be37dc880d35cbcaa51bb16c14176"
+    "revision": "35592e07bb4e67919dce3e5e1ccac50e"
+  },
+  {
+    "url": "assets/stamps/teachers_haruka_01.png",
+    "revision": "e643774c28fd28efa20489d4a2ffe1c8"
+  },
+  {
+    "url": "assets/stamps/teachers_haruka_02.png",
+    "revision": "b2e52aefd0f5c49bfa5337e6efd7f066"
+  },
+  {
+    "url": "assets/stamps/teachers_haruka_03.png",
+    "revision": "0aba398c8bc79e5fe624f493107cfd5b"
+  },
+  {
+    "url": "assets/stamps/teachers_isaac_01.png",
+    "revision": "eb78285edddfadcbd81a3f2b12313545"
+  },
+  {
+    "url": "assets/stamps/teachers_isaac_02.png",
+    "revision": "37be55b20da4cdbd248d9a8b8a769b58"
+  },
+  {
+    "url": "assets/stamps/teachers_isaac_03.png",
+    "revision": "62348f9a77fd89fa25c11852200a7dde"
+  },
+  {
+    "url": "assets/stamps/teachers_james_01.png",
+    "revision": "99ee333579707d62e446c9222a5d00c8"
+  },
+  {
+    "url": "assets/stamps/teachers_james_02.png",
+    "revision": "046e15f1cc7aebe94f352de737303b05"
+  },
+  {
+    "url": "assets/stamps/teachers_james_03.png",
+    "revision": "3933e9d6ab55c40a4b8b066486853f19"
+  },
+  {
+    "url": "assets/stamps/teachers_jason_01.png",
+    "revision": "be04d415fe61f2dc749c09fd0b5059f7"
+  },
+  {
+    "url": "assets/stamps/teachers_jason_02.png",
+    "revision": "fc12469992e915beff7583a9c104635d"
+  },
+  {
+    "url": "assets/stamps/teachers_jason_03.png",
+    "revision": "a615708379b851c7964f36a4162d62aa"
   },
   {
     "url": "assets/stamps/teachers_joe_01.png",
-    "revision": "ac6338a112465d17e4384094edfb0a05"
+    "revision": "069b4403f9165d1e6a73f8e42cd065cc"
   },
   {
     "url": "assets/stamps/teachers_joe_02.png",
-    "revision": "93df3bd7e8f898cdc299e33e67ab84f4"
+    "revision": "a70a6558344643adb460064c26b41f72"
   },
   {
     "url": "assets/stamps/teachers_joe_03.png",
-    "revision": "04106ba994c910b20d64778eebaf0177"
+    "revision": "04adf66910877070d09e9145a7a4190c"
+  },
+  {
+    "url": "assets/stamps/teachers_joey_01.png",
+    "revision": "1257d798382b9ea1128f3763e905417e"
+  },
+  {
+    "url": "assets/stamps/teachers_joey_02.png",
+    "revision": "39604c03d8e132c911de1bf49af13ce4"
+  },
+  {
+    "url": "assets/stamps/teachers_joey_03.png",
+    "revision": "de7447f8be5514a586b143aa5f30d7dd"
+  },
+  {
+    "url": "assets/stamps/teachers_katrina_01.png",
+    "revision": "db3c20fbd83229808f43dccfb4f80f8c"
+  },
+  {
+    "url": "assets/stamps/teachers_katrina_02.png",
+    "revision": "db3c20fbd83229808f43dccfb4f80f8c"
+  },
+  {
+    "url": "assets/stamps/teachers_katrina_03.png",
+    "revision": "db3c20fbd83229808f43dccfb4f80f8c"
+  },
+  {
+    "url": "assets/stamps/teachers_kuni_01.png",
+    "revision": "db3c20fbd83229808f43dccfb4f80f8c"
+  },
+  {
+    "url": "assets/stamps/teachers_kuni_02.png",
+    "revision": "db3c20fbd83229808f43dccfb4f80f8c"
+  },
+  {
+    "url": "assets/stamps/teachers_kuni_03.png",
+    "revision": "db3c20fbd83229808f43dccfb4f80f8c"
+  },
+  {
+    "url": "assets/stamps/teachers_mari_01.png",
+    "revision": "db3c20fbd83229808f43dccfb4f80f8c"
+  },
+  {
+    "url": "assets/stamps/teachers_mari_02.png",
+    "revision": "db3c20fbd83229808f43dccfb4f80f8c"
+  },
+  {
+    "url": "assets/stamps/teachers_mari_03.png",
+    "revision": "db3c20fbd83229808f43dccfb4f80f8c"
   },
   {
     "url": "assets/stamps/teachers_michi_01.png",
-    "revision": "cd7404310377c73ad51d74ec25c48b93"
+    "revision": "a9bf9a3508c1a848bfd8513968225497"
   },
   {
     "url": "assets/stamps/teachers_michi_02.png",
-    "revision": "1bdda783b70fe256096449968ae58fb8"
+    "revision": "e2e51ff959f98cb24b745b18cc35f720"
   },
   {
     "url": "assets/stamps/teachers_michi_03.png",
-    "revision": "2bbb925d6d43f79be9019281f724a2cf"
+    "revision": "5366e6497592353be295a5b431be7eed"
+  },
+  {
+    "url": "assets/stamps/teachers_mike_01.png",
+    "revision": "db3c20fbd83229808f43dccfb4f80f8c"
+  },
+  {
+    "url": "assets/stamps/teachers_mike_02.png",
+    "revision": "db3c20fbd83229808f43dccfb4f80f8c"
+  },
+  {
+    "url": "assets/stamps/teachers_mike_03.png",
+    "revision": "db3c20fbd83229808f43dccfb4f80f8c"
   },
   {
     "url": "assets/stamps/teachers_profile_bw.png",
@@ -461,23 +637,35 @@ self.__precacheManifest = [
   },
   {
     "url": "assets/stamps/teachers_rika_01.png",
-    "revision": "75a6d9b7369290ca224ece66700f64a9"
+    "revision": "7f87b0847694b6337e2871e624a6a183"
   },
   {
     "url": "assets/stamps/teachers_rika_02.png",
-    "revision": "1de75d618bdc3109d123b4ad1d67b9fc"
+    "revision": "7bee84e75850ff880bd53e7c41768fd5"
   },
   {
     "url": "assets/stamps/teachers_rika_03.png",
-    "revision": "37da5d3ca1db4188bf7685cf982831b1"
+    "revision": "465aa96f49ff4d80679451ac1a7ab1d6"
+  },
+  {
+    "url": "assets/stamps/teachers_sakurako_01.png",
+    "revision": "80cd1b6aa216a1c0180c4fc5f580eab6"
+  },
+  {
+    "url": "assets/stamps/teachers_sakurako_02.png",
+    "revision": "f6122b8bca139e84f21c1d1c6564c6f6"
+  },
+  {
+    "url": "assets/stamps/teachers_sakurako_03.png",
+    "revision": "365d91721be3a6937ff083a6a3e1a027"
   },
   {
     "url": "build/bundle.css",
-    "revision": "8a9815caf03c145a1554473e7faa8433"
+    "revision": "b62b5f612c4b01900c179d46e4881f42"
   },
   {
     "url": "build/bundle.js",
-    "revision": "ffe8081fa0db6b496235b16d2c887896"
+    "revision": "42475134abf88959a1d4efa8105a6fe2"
   },
   {
     "url": "favicon.png",

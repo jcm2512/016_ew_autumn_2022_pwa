@@ -806,32 +806,6 @@
                 },
               },
             },
-            mari: {
-              title: "mari",
-              area_stamps: {
-                teachers_mari_01: {
-                  name: "teachers_mari_01",
-                  count: 0,
-                  special: true,
-                  img: "/assets/stamps/teachers_mari_01.png",
-                  found: false,
-                },
-                teachers_mari_02: {
-                  name: "teachers_mari_02",
-                  count: 0,
-                  special: true,
-                  img: "/assets/stamps/teachers_mari_02.png",
-                  found: false,
-                },
-                teachers_mari_03: {
-                  name: "teachers_mari_03",
-                  count: 0,
-                  special: true,
-                  img: "/assets/stamps/teachers_mari_03.png",
-                  found: false,
-                },
-              },
-            },
             michi: {
               title: "michi",
               area_stamps: {

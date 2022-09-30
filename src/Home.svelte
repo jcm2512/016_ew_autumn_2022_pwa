@@ -71,6 +71,7 @@
   if (JSON.parse(localStorage.getItem("DEV_MODE")) == true) {
     console.log("DEV MODE");
     $devMode = true;
+    $viewAllStamps = true;
   }
 
   // INITIALIZE WEEKLY MONSTERS STAMPS
@@ -149,8 +150,6 @@
   $notifyMonsters = JSON.parse(localStorage.getItem("notifyMonsters"));
 
   $stampCount = $sessionStorage.get("found").found;
-
-  $viewAllStamps = false;
 
   // Check for advertisement key
   if (localStorage.getItem("advert") != undefined) {
@@ -303,6 +302,8 @@
           $devMode = true;
           console.log("/// DEV MODE ///");
           $viewAllStamps = true;
+          console.log(`/// viewAllStamps:${viewAllStamps}  ///`);
+
         default:
           console.log("Please add 'id' parameter to url");
           return false;
@@ -400,6 +401,8 @@
 
   // SEP 9 WEEKLY MONSTER
   getWeeklyMonster(weeklyMonster);
+
+  console.log(`//// View All Stamps: ${$viewAllStamps}/////`);
 </script>
 
 <div id="main" bind:this={main} class="bg_dark">

@@ -22,6 +22,8 @@
     DOM_Content.scrollTop = DOM_Headings[$stampArea].offsetTop;
     $stampArea = "top"; // Revert to default position
   });
+
+  console.log("viewallstamps: ", $viewAllStamps);
 </script>
 
 <div id="content" bind:this={DOM_Content} class="grid-top grid">
