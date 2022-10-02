@@ -13,7 +13,9 @@
     {#if answer == false}
       <p class="trivia reveal" on:click={() => (answer = true)}>Answer</p>
     {:else}
-      <p class="trivia answer" on:click={() => (answer = false)}>Turnips!</p>
+      <p class="trivia answer" on:click={() => (answer = false)}>
+        YYYYAAAAAYYY!
+      </p>
     {/if}
     <Translate />
   </div>
