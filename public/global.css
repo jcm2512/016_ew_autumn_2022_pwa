@@ -529,3 +529,13 @@ img.monster{
   font-family: "Kosugi Maru";
   font-size: 5vw;
 }
+
+#message {
+  z-index: 100;
+  background-color: black;
+  height: fit-content;
+  font-size: 5vw;
+  font-family: 'Courier New', Courier, monospace;
+  width: 100vw;
+  overflow-wrap: break-word;
+}

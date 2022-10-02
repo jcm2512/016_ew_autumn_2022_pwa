@@ -22,6 +22,7 @@
     notifyMonsters,
     showNotification,
     stampArea,
+    message,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Std_Layout from "./stamps/Std_Layout.svelte";
@@ -296,6 +297,18 @@
             console.log("set viewall state: true");
             return false;
           }
+
+          if (stamp == "sw") {
+            // LIST SERVICE WORKERS
+            navigator.serviceWorker
+              .getRegistrations()
+              .then(function (registrations) {
+                registrations.forEach(function (v) {
+                  $message += `service worker: ${v.active.scriptURL}`;
+                });
+              });
+            return false;
+          }
           console.log("Found:", stamp);
           ///
           getFoundStamp(stamp);
@@ -411,6 +424,12 @@
 </script>
 
 <div id="main" bind:this={main} class="bg_dark">
+  {#key $message}
+    <div id="message" class="grid-top">
+      {$message}
+    </div>
+  {/key}
+
   {#if $found}
     <Dialog STAMP={$foundStampCollection} />
   {/if}

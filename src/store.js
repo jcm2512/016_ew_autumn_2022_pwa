@@ -22,6 +22,7 @@ export const notifyMonsters = writable();
 export const showNotification = writable(true);
 export const stampArea = writable("top");
 export const scrollToStamp = writable(false);
+export const message = writable("");
 
 // MONSTER LIST
 export const stampCollection = writable({});
