@@ -10,7 +10,9 @@
       <span class="counter">#4 / 7</span>
     </div>
     <p class="trivia">
-      Is a pumpkin a vegetable? <br /> Or is it a fruit?
+      Is a pumpkin a vegetable? <br />
+      <!-- Or is it a fruit? -->
+      This got updated
     </p>
     {#if answer == false}
       <p class="trivia reveal" on:click={() => (answer = true)}>Answer</p>
