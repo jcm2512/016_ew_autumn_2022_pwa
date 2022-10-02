@@ -118,18 +118,9 @@ html {
   background-color: var(--blue);
 }
 
-.jp-font {
-  font-family: "Senobi Gothic", sans-serif;
 
-}
 
-.jp-title {
-  font-family: "Kosugi Maru";
-}
 
-.jp-font-2 {
-  font-family: "Kaisei Decol";
-}
 
 .regular {
   font-weight: 400;
@@ -524,4 +515,17 @@ img.monster{
 
 .disabled {
   background: linear-gradient(180deg, hsl(225, 8%, 41%) 32.81%, hsl(204, 25%, 26%) 100%);
+}
+.jp-font {
+  font-family: "Kosugi Maru";
+
+}
+
+.jp-title {
+  font-family: "Kosugi Maru";
+}
+
+.jp-font-2 {
+  font-family: "Kosugi Maru";
+  font-size: 5vw;
 }
