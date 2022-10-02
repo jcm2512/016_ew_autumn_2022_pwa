@@ -11,14 +11,14 @@
     </div>
     <p class="trivia">
       Is a pumpkin a vegetable? <br />
-      <!-- Or is it a fruit? -->
-      This got updated
+      Or is it a fruit?
+      <!-- This got updated -->
     </p>
     {#if answer == false}
       <p class="trivia reveal" on:click={() => (answer = true)}>Answer</p>
     {:else}
       <p class="trivia answer" on:click={() => (answer = false)}>
-        Actually, it's a fruit!
+        Actually, it's a fruit!!
       </p>
     {/if}
     <Translate />

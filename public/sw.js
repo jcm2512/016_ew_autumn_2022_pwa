@@ -661,11 +661,11 @@ self.__precacheManifest = [
   },
   {
     "url": "build/bundle.css",
-    "revision": "2dd44f65535c6e0ee30455e66cf47c25"
+    "revision": "28a0fbb26f01cce0787f45a26ebc6b07"
   },
   {
     "url": "build/bundle.js",
-    "revision": "17c22771b28cadeec48cfb2de495cd64"
+    "revision": "205f9c77f3f0fbc636b4e8f00aec2827"
   },
   {
     "url": "favicon.png",
