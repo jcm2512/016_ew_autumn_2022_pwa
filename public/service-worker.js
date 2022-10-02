@@ -661,7 +661,7 @@ self.__precacheManifest = [
   },
   {
     "url": "build/bundle.css",
-    "revision": "fce70798f9c36c7912d716dd231d6b9c"
+    "revision": "2a35b22aa83b2ced60a7ecc30ee39e1b"
   },
   {
     "url": "build/bundle.js",
@@ -701,7 +701,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "5ab88198688dadadc450f252fc2388b5"
+    "revision": "0f4a97791a103c815c87094083bde1b3"
   },
   {
     "url": "logo.png",
