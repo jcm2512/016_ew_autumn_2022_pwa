@@ -318,7 +318,7 @@
   <div id="bg" class="grid-top " />
 
   {#if $menuState === "home"}
-    <Trivia />
+    <Menu />
   {/if}
   {#if $menuState === "teachers"}
     <Teachers />
