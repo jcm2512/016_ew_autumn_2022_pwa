@@ -12,15 +12,11 @@
     triggerMenuState,
     qr_state,
     sessionStorage,
-    current_param,
     foundStamp,
     foundStampCollection,
     advertState,
     viewAllStamps,
     stampCount,
-    devMode,
-    // notifyMonsters,
-    // showNotification,
     stampArea,
     message,
   } from "./store.js";
@@ -57,8 +53,6 @@
   }
 
   // Global Variables
-  let eventid = "ew2022-10",
-    stampid = "m";
   let reader, button, overlay, main, next; // Reference to DOM element
   let nav_menu, nav_home, nav_teachers, nav_specials, nav_monsters; // Reference to DOM Nav elements
   let previous_nav = nav_home;
@@ -71,31 +65,13 @@
   }
   if (JSON.parse(localStorage.getItem("DEV_MODE")) == true) {
     console.log("DEV MODE");
-    $devMode = true;
     $viewAllStamps = true;
   }
-
-  // INITIALIZE WEEKLY MONSTERS STAMPS
-  // if (localStorage.getItem("Weekly_Monsters") == undefined) {
-  //   localStorage.setItem("Weekly_Monsters", JSON.stringify([]));
-  // }
 
   // INITIALIZE TEACHER STAMPS
   if (localStorage.getItem("Teacher_Stamps") == undefined) {
     localStorage.setItem("Teacher_Stamps", JSON.stringify([]));
   }
-
-  // GET WEEKLY MONSTER
-  // let weeklyMonsters = JSON.parse(localStorage.getItem("Weekly_Monsters"));
-  // function getWeeklyMonster(stamp_id) {
-  //   if (!weeklyMonsters.includes(stamp_id)) {
-  //     $found = true;
-  //     console.log("don't have", stamp_id);
-  //     weeklyMonsters.push(stamp_id);
-  //     localStorage.setItem("Weekly_Monsters", JSON.stringify(weeklyMonsters));
-  //     getFoundStamp(stamp_id);
-  //   }
-  // }
 
   // Load local data
   $sessionStorage = localData;
@@ -124,32 +100,6 @@
     updateStampCollection();
   }
 
-  //// Load Weekly Stamps
-  // function loadWeeklyStamps(stamp_id) {
-  //   $stampCount += 1;
-  //   let id = stamp_id.split("_");
-  //   let stamp;
-
-  //   stamp = $stampCollection[id[0]].stamps[id[1]].area_stamps[stamp_id];
-
-  //   stamp.count += 1;
-  //   stamp.found = true;
-  //   // $foundStampCollection.push(stamp);
-  //   console.log($stampCount);
-
-  //   console.log(stamp);
-  //   $sessionStorage.set({ found: $stampCount });
-  //   $sessionStorage.save();
-  //   saveResults();
-  // }
-
-  // CHECK FOR NEW NOTIFICATIONS
-  // if (localStorage.getItem("notifyMonsters") == undefined) {
-  //   localStorage.setItem("notifyMonsters", JSON.stringify(true));
-  // }
-
-  // $notifyMonsters = JSON.parse(localStorage.getItem("notifyMonsters"));
-
   $stampCount = $sessionStorage.get("found").found;
 
   // Check for advertisement key
@@ -159,14 +109,7 @@
     localStorage.setItem("advert", JSON.stringify($advertState));
   }
 
-  const saveState = function () {
-    localStorage.setItem("state", JSON.stringify($menuState));
-  };
-
-  // loadState();
-
   function updateState() {
-    // saveState();
     console.log("updating menu state");
     nav_home.classList.remove("active");
     nav_monsters.classList.remove("active");
@@ -222,8 +165,6 @@
   onResize();
   window.onresize = onResize;
 
-  //// ---- FUNCTIONS:
-
   //// Get Found Stamp
   function getFoundStamp(stamp) {
     let id = stamp.split("_");
@@ -277,59 +218,6 @@
     saveResults();
   }
 
-  //// Get Parameter
-  function getParameter(url, eventid) {
-    const params = new URLSearchParams(new URL(url).search);
-    if (!params.get(stampid)) {
-      console.log("Stamp not found in URL");
-    } else {
-      switch (params.get("id")) {
-        case eventid:
-          let stamp = params.get(stampid);
-          if (stamp == "advertisement") {
-            // localStorage.setItem("state", "home");
-            $advertState = true;
-            console.log("set advert state: true");
-            return false;
-          }
-          if (stamp == "viewall") {
-            $viewAllStamps = true;
-            console.log("set viewall state: true");
-            return false;
-          }
-
-          if (stamp == "sw") {
-            // LIST SERVICE WORKERS
-            navigator.serviceWorker
-              .getRegistrations()
-              .then(function (registrations) {
-                registrations.forEach(function (v) {
-                  $message += `service worker: ${v.active.scriptURL}`;
-                });
-              });
-            return false;
-          }
-          console.log("Found:", stamp);
-          ///
-          getFoundStamp(stamp);
-          return params.get(stampid);
-        case "clear":
-          sessionStorage.clear();
-          return false;
-        case "admin":
-          $devMode = true;
-          console.log("/// DEV MODE ///");
-          $viewAllStamps = true;
-          console.log(`/// viewAllStamps:${viewAllStamps}  ///`);
-
-        default:
-          console.log("Please add 'id' parameter to url");
-          return false;
-      }
-      return false;
-    }
-  }
-
   //// Save Results
   function saveResults() {
     console.log("save results");
@@ -354,12 +242,6 @@
 
   //// ---- QR SCAN ----
   onMount(() => {
-    $current_param = getParameter(window.location.href, eventid);
-    if ($current_param === "advertisement") {
-      localStorage.setItem("advert", JSON.stringify("true"));
-      $advertState = true;
-      $menuState = "home";
-    }
     previous_nav = getNav($menuState);
     nav(previous_nav);
 
@@ -416,9 +298,6 @@
       nav(target);
     }
   }
-
-  // SEP 9 WEEKLY MONSTER
-  // getWeeklyMonster(weeklyMonster);
 
   console.log(`//// View All Stamps: ${$viewAllStamps}/////`);
 </script>
