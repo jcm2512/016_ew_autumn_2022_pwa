@@ -19,8 +19,8 @@
     viewAllStamps,
     stampCount,
     devMode,
-    notifyMonsters,
-    showNotification,
+    // notifyMonsters,
+    // showNotification,
     stampArea,
     message,
   } from "./store.js";
@@ -76,9 +76,9 @@
   }
 
   // INITIALIZE WEEKLY MONSTERS STAMPS
-  if (localStorage.getItem("Weekly_Monsters") == undefined) {
-    localStorage.setItem("Weekly_Monsters", JSON.stringify([]));
-  }
+  // if (localStorage.getItem("Weekly_Monsters") == undefined) {
+  //   localStorage.setItem("Weekly_Monsters", JSON.stringify([]));
+  // }
 
   // INITIALIZE TEACHER STAMPS
   if (localStorage.getItem("Teacher_Stamps") == undefined) {
@@ -86,16 +86,16 @@
   }
 
   // GET WEEKLY MONSTER
-  let weeklyMonsters = JSON.parse(localStorage.getItem("Weekly_Monsters"));
-  function getWeeklyMonster(stamp_id) {
-    if (!weeklyMonsters.includes(stamp_id)) {
-      $found = true;
-      console.log("don't have", stamp_id);
-      weeklyMonsters.push(stamp_id);
-      localStorage.setItem("Weekly_Monsters", JSON.stringify(weeklyMonsters));
-      getFoundStamp(stamp_id);
-    }
-  }
+  // let weeklyMonsters = JSON.parse(localStorage.getItem("Weekly_Monsters"));
+  // function getWeeklyMonster(stamp_id) {
+  //   if (!weeklyMonsters.includes(stamp_id)) {
+  //     $found = true;
+  //     console.log("don't have", stamp_id);
+  //     weeklyMonsters.push(stamp_id);
+  //     localStorage.setItem("Weekly_Monsters", JSON.stringify(weeklyMonsters));
+  //     getFoundStamp(stamp_id);
+  //   }
+  // }
 
   // Load local data
   $sessionStorage = localData;
@@ -117,38 +117,38 @@
 
     // Load weekly monster from local localStorage
     // (We do this here because localStorage will get wiped when updating the database)
-    console.log("Reloading weekly stamps");
-    weeklyMonsters.forEach((stamp_id) => loadWeeklyStamps(stamp_id));
+    // console.log("Reloading weekly stamps");
+    // weeklyMonsters.forEach((stamp_id) => loadWeeklyStamps(stamp_id));
   } else {
     $sessionStorage.load();
     updateStampCollection();
   }
 
   //// Load Weekly Stamps
-  function loadWeeklyStamps(stamp_id) {
-    $stampCount += 1;
-    let id = stamp_id.split("_");
-    let stamp;
+  // function loadWeeklyStamps(stamp_id) {
+  //   $stampCount += 1;
+  //   let id = stamp_id.split("_");
+  //   let stamp;
 
-    stamp = $stampCollection[id[0]].stamps[id[1]].area_stamps[stamp_id];
+  //   stamp = $stampCollection[id[0]].stamps[id[1]].area_stamps[stamp_id];
 
-    stamp.count += 1;
-    stamp.found = true;
-    // $foundStampCollection.push(stamp);
-    console.log($stampCount);
+  //   stamp.count += 1;
+  //   stamp.found = true;
+  //   // $foundStampCollection.push(stamp);
+  //   console.log($stampCount);
 
-    console.log(stamp);
-    $sessionStorage.set({ found: $stampCount });
-    $sessionStorage.save();
-    saveResults();
-  }
+  //   console.log(stamp);
+  //   $sessionStorage.set({ found: $stampCount });
+  //   $sessionStorage.save();
+  //   saveResults();
+  // }
 
   // CHECK FOR NEW NOTIFICATIONS
-  if (localStorage.getItem("notifyMonsters") == undefined) {
-    localStorage.setItem("notifyMonsters", JSON.stringify(true));
-  }
+  // if (localStorage.getItem("notifyMonsters") == undefined) {
+  //   localStorage.setItem("notifyMonsters", JSON.stringify(true));
+  // }
 
-  $notifyMonsters = JSON.parse(localStorage.getItem("notifyMonsters"));
+  // $notifyMonsters = JSON.parse(localStorage.getItem("notifyMonsters"));
 
   $stampCount = $sessionStorage.get("found").found;
 
@@ -190,8 +190,8 @@
       nav_monsters.classList.add("active");
 
       // REMOVE NOTIFICATIONS
-      $notifyMonsters = false;
-      localStorage.setItem("notifyMonsters", JSON.stringify(false));
+      // $notifyMonsters = false;
+      // localStorage.setItem("notifyMonsters", JSON.stringify(false));
     }
 
     if ($menuState === "specials") {
@@ -418,7 +418,7 @@
   }
 
   // SEP 9 WEEKLY MONSTER
-  getWeeklyMonster(weeklyMonster);
+  // getWeeklyMonster(weeklyMonster);
 
   console.log(`//// View All Stamps: ${$viewAllStamps}/////`);
 </script>
@@ -471,7 +471,7 @@
     {/if}
   </div>
 
-  {#if $notifyMonsters && $showNotification}
+  <!-- {#if $notifyMonsters && $showNotification}
     <div
       on:click={() => checkIfNotScanning(nav_monsters)}
       class="animate__animated animate__delay-1s animate__heartBeat animate__infinite"
@@ -479,7 +479,7 @@
     >
       NEW!
     </div>
-  {/if}
+  {/if} -->
 
   <div
     bind:this={nav_teachers}

@@ -1,6 +1,7 @@
 module.exports = {
   globDirectory: "public/",
-  globPatterns: ["**/*.{png,svg,css,js,ttf,html,json}"],
-  swDest: "public\\sw.js",
-  maximumFileSizeToCacheInBytes: "15000000",
+  globPatterns: ["**/*.{png,svg,css,ttf,html,json}"],
+  swDest: "public/sw.js",
+  ignoreURLParametersMatching: [/^utm_/, /^fbclid$/],
+  maximumFileSizeToCacheInBytes: 5000000,
 };
