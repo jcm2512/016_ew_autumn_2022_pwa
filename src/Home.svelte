@@ -407,7 +407,7 @@
     };
     const qrCodeSuccessCallback = (decodedText, decodedResult) => {
       stop();
-      getParameter(decodedText, eventid);
+      getFoundStamp(decodedText);
     };
   });
 
