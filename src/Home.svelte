@@ -30,8 +30,7 @@
   import "animate.css";
   import Teachers from "./stamps/Teachers.svelte";
 
-  export const versionNum = 16;
-  let weeklyMonster = "specials_a1_003";
+  export const versionNum = 20;
 
   // Check for admin key
   const searchParams = new URLSearchParams(
