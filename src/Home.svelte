@@ -23,6 +23,7 @@
   import { localData } from "./localstorage.svelte";
   import Std_Layout from "./stamps/Std_Layout.svelte";
   import Menu from "./Menu.svelte";
+  import Main from "./Main.svelte";
   import QR from "./components/QR.svelte";
   // import Unavailable from "./pages/Unavailable.svelte";
   import Trivia from "./pages/Trivia.svelte";
@@ -317,7 +318,7 @@
   <div id="bg" class="grid-top " />
 
   {#if $menuState === "home"}
-    <Menu />
+    <Main />
   {/if}
   {#if $menuState === "teachers"}
     <Teachers />
