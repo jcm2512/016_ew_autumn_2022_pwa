@@ -16,26 +16,30 @@
       </div>
     </div>
     <div class="centered">
-      {#if $stampCount > 10}
-        <div class="title">GOOD JOB!</div>
-      {:else if $stampCount > 20}
-        <div class="title">KEEP GOING!</div>
-      {:else if $stampCount > 30}
-        <div class="title">WOW, SO MANY...</div>
-      {:else if $stampCount > 40}
-        <div class="title">YOU ARE AMAZING!</div>
-      {:else if $stampCount > 50}
-        <div class="title">FANTASTIC!</div>
-      {:else if $stampCount > 60}
+      {#if $stampCount > 69}
+        <div class="title">HOORAY!! <br /> YOU DID IT!</div>
+      {:else if $stampCount > 59}
         <div class="title">YOU ARE ALMOST THERE!</div>
-      {:else if $stampCount > 70}
-        <div class="title">HOORAY!! YOU DID IT!</div>
+      {:else if $stampCount > 49}
+        <div class="title">FANTASTIC!</div>
+      {:else if $stampCount > 39}
+        <div class="title">YOU ARE AMAZING!</div>
+      {:else if $stampCount > 29}
+        <div class="title">WOW, SO MANY...</div>
+      {:else if $stampCount > 19}
+        <div class="title">KEEP GOING!</div>
+      {:else if $stampCount > 9}
+        <div class="title">GOOD JOB!</div>
       {/if}
     </div>
   </div>
 </div>
 
 <style>
+  .title {
+    font-size: 10vw;
+    text-align: center;
+  }
   .circle {
     height: 60vw;
     width: 60vw;
@@ -48,7 +52,6 @@
     align-content: center;
     align-items: center;
     text-align: center;
-
     font-weight: 400;
     background-color: var(--red);
   }

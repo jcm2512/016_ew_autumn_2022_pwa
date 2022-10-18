@@ -23,6 +23,8 @@ export const showNotification = writable(true);
 export const stampArea = writable("top");
 export const scrollToStamp = writable(false);
 export const message = writable("");
+export const triggerTrivia = writable(false);
+export const triviaCorrect = writable(false);
 
 // MONSTER LIST
 export const stampCollection = writable({});

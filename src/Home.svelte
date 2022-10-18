@@ -19,6 +19,7 @@
     stampCount,
     stampArea,
     message,
+    triggerTrivia,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Std_Layout from "./stamps/Std_Layout.svelte";
@@ -28,6 +29,7 @@
   // import Unavailable from "./pages/Unavailable.svelte";
   import Trivia from "./pages/Trivia.svelte";
   import Dialog from "./popups/Dialog.svelte";
+  import TriviaPopup from "./popups/TriviaPopup.svelte";
   import "animate.css";
   import Teachers from "./stamps/Teachers.svelte";
 
@@ -175,19 +177,28 @@
     console.log(stamp);
 
     // SINGLE STAMP
-    if (id.length === 3) {
+    if (id[0] == "specials") {
       $foundStamp = current_stamp[stamp];
-      $foundStamp.count += 1;
-      $foundStamp.found = true;
-      $foundStampCollection.push($foundStamp);
-      $stampCount += 1;
+
+      if (!$foundStamp.found) {
+        console.log("YOU FOUND A TRIVIA STAMP");
+        $triggerTrivia = true;
+        $foundStampCollection.push($foundStamp);
+      } else {
+        console.log("ALREADY FOUND THIS STAMP");
+      }
+      return;
     }
 
     // MULTI STAMP
     if (id.length === 2) {
       items = Object.keys(current_stamp);
+
+      // 3 stamps per set; therefor count = 2
       let count = 2;
+
       if (id[0] == "teachers") {
+        // Filter out stamps that have already been found
         let filtered_stamps = Object.fromEntries(
           Object.entries(current_stamp).filter(
             ([key, value]) => value.found == false
@@ -195,7 +206,11 @@
         );
         items = Object.keys(filtered_stamps);
         console.log(items.length);
+
+        // Removed a stamp, so count = 1
         count = 1;
+
+        // If all stamps have been found return message
         if (items.length == 0) return;
       }
       for (let i = 0; i < count; i++) {
@@ -300,6 +315,9 @@
   }
 
   console.log(`//// View All Stamps: ${$viewAllStamps}/////`);
+
+  //// DEV
+  // getFoundStamp("specials_a2_002");
 </script>
 
 <div id="main" bind:this={main} class="bg_dark">
@@ -311,6 +329,10 @@
 
   {#if $found}
     <Dialog STAMP={$foundStampCollection} />
+  {/if}
+
+  {#if $triggerTrivia}
+    <TriviaPopup STAMP={$foundStamp} />
   {/if}
 
   <div bind:this={reader} id="reader" width="600px" class="grid-top" />
@@ -349,16 +371,6 @@
       <img class="nav_img" src="assets/icons/nav/home.svg" alt="home" />
     {/if}
   </div>
-
-  <!-- {#if $notifyMonsters && $showNotification}
-    <div
-      on:click={() => checkIfNotScanning(nav_monsters)}
-      class="animate__animated animate__delay-1s animate__heartBeat animate__infinite"
-      id="notification"
-    >
-      NEW!
-    </div>
-  {/if} -->
 
   <div
     bind:this={nav_teachers}
