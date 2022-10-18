@@ -27,10 +27,10 @@
   margin: 0;
 }
 
-@font-face {
+/* @font-face {
   font-family: "Senobi Gothic";
   src: url("./fonts/Senobi-Gothic-Medium.ttf");
-}
+} */
 
 @font-face {
   font-family: 'Luckiest Guy';
@@ -47,15 +47,15 @@
   src: url("./fonts/LondrinaSolid-Regular.ttf");
 }
 
-@font-face {
+/* @font-face {
   font-family: "Kosugi Maru";
   src: url("./fonts/KosugiMaru-Regular.ttf");
-}
+} */
 
-@font-face {
+/* @font-face {
   font-family: "Kaisei Decol";
   src: url("./fonts/KaiseiDecol-Regular.ttf");
-}
+} */
 
 
 html,
@@ -538,4 +538,31 @@ img.monster{
   font-family: 'Courier New', Courier, monospace;
   width: 100vw;
   overflow-wrap: break-word;
+}
+
+.choices {
+  border: dashed 1vw white;
+  border-radius: 4vw;
+  padding: 1.5vw;
+  width: 90%;
+  background-color: hsl(0, 0%, 100%, 0.3)
+}
+
+.incorrect{
+  color: var(--red);
+  border: solid 1vw var(--red);
+  text-decoration: line-through;
+  background-color: hsl(358, 77%, 60%, 0.3)
+}
+
+.correct{
+  color: var(--green);
+  border: solid 1vw var(--green);
+  background-color: hsl(97, 49%, 67%, 0.3)
+
+}
+
+hr.thin {
+  border: 0;
+  border-top: 1px solid hsl(0, 0%, 100%, 0.7);
 }

@@ -26,7 +26,7 @@
 <div id="content" class="grid-top grid" bind:this={DOM_Content}>
   <div bind:this={DOM_Headings["top"]} id="stamp_card">
     <div id="heading" bind:this={heading}>
-      <div class="sub jp-font">{$stampCollection[$menuState].subheading}</div>
+      <!-- <div class="sub jp-font">{$stampCollection[$menuState].subheading}</div> -->
       <div class="main">{$stampCollection[$menuState].heading}</div>
     </div>
     <div id="menu">
@@ -34,6 +34,7 @@
         <div class="title" bind:this={DOM_Headings[area_name]}>
           {$stampCollection[$menuState].stamps[area_name].title}
         </div>
+        <hr class="thin" />
         <div class="menu_item stamps">
           {#key $updateStamps}
             {#each Object.keys($stampCollection[$menuState].stamps[area_name].area_stamps) as stamp, index}
@@ -77,6 +78,7 @@
     justify-items: center;
     align-items: center;
     grid-gap: 0.5rem;
+    margin-bottom: 2vw;
   }
 
   .stamp {
