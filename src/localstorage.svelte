@@ -63,7 +63,7 @@
               },
             },
             a2: {
-              title: "Frankenstein's Kitchen",
+              title: "Monster Playground",
               area_stamps: {
                 monsters_a2_001: {
                   name: "monsters_a2_001",
@@ -116,7 +116,7 @@
               },
             },
             a3: {
-              title: "Cursed Graveyard",
+              title: "Magical Fountain",
               area_stamps: {
                 monsters_a3_001: {
                   name: "monsters_a3_001",
@@ -169,7 +169,7 @@
               },
             },
             a4: {
-              title: "Witches Garden",
+              title: "Cursed Graveyard",
               area_stamps: {
                 monsters_a4_001: {
                   name: "monsters_a4_001",

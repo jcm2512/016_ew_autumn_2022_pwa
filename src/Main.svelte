@@ -8,7 +8,7 @@
     <div class="sub">STAMP RALLY</div>
   </div>
   <div id="menu">
-    <div class="title" />
+    <div class="title">You found</div>
     <div class="centered">
       <div class="circle">
         <span class="number">{$stampCount}</span>

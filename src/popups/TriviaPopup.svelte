@@ -54,9 +54,9 @@
       options: ["four", "eight", "ten"],
     },
     Q007: {
-      question: "Question 7",
-      answer: 0,
-      options: ["a", "b", "c"],
+      question: "What do you say to get candy on Halloween?",
+      answer: 2,
+      options: ["Smelly Feet!", "BOO!", "Trick or Treat!"],
     },
     Q008: {
       question: "What does the name 'Dracula' mean?",
@@ -64,9 +64,9 @@
       options: ["a", "b", "Son of the Devil"],
     },
     Q009: {
-      question: "Question 9",
+      question: "What are vampires afraid of?",
       answer: 0,
-      options: ["a", "b", "c"],
+      options: ["garlic", "carrots", "sharks"],
     },
   };
 
