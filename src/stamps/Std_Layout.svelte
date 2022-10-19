@@ -42,31 +42,40 @@
         <div class="menu_item stamps">
           {#key $updateStamps}
             {#each Object.keys($stampCollection[$menuState].stamps[area_name].area_stamps) as stamp, index}
-              {#if $stampCollection[$menuState].stamps[area_name].area_stamps[stamp].found || $viewAllStamps}
-                <img
-                  bind:this={DOM_Stamps[stamp]}
-                  on:click|preventDefault={() => {
-                    animateCSS(DOM_Stamps[stamp], "tada");
-                  }}
-                  src={$stampCollection[$menuState].stamps[area_name]
-                    .area_stamps[stamp].img}
-                  alt={$stampCollection[$menuState].stamps[area_name]
-                    .area_stamps[stamp].name}
-                  class="stamp"
-                />
-              {:else}
-                <img
-                  bind:this={DOM_Stamps[stamp]}
-                  on:click|preventDefault={() => {
-                    animateCSS(DOM_Stamps[stamp], "headShake");
-                  }}
-                  src={$stampCollection[$menuState].stamps[area_name]
-                    .area_stamps[stamp].bw}
-                  alt={$stampCollection[$menuState].stamps[area_name]
-                    .area_stamps[stamp].name}
-                  class="stamp locked"
-                />
-              {/if}
+              <div class="wrapper">
+                {#if $stampCollection[$menuState].stamps[area_name].area_stamps[stamp].count > 1}
+                  <div class="counter">
+                    {$stampCollection[$menuState].stamps[area_name].area_stamps[
+                      stamp
+                    ].count}
+                  </div>
+                {/if}
+                {#if $stampCollection[$menuState].stamps[area_name].area_stamps[stamp].found || $viewAllStamps}
+                  <img
+                    bind:this={DOM_Stamps[stamp]}
+                    on:click|preventDefault={() => {
+                      animateCSS(DOM_Stamps[stamp], "tada");
+                    }}
+                    src={$stampCollection[$menuState].stamps[area_name]
+                      .area_stamps[stamp].img}
+                    alt={$stampCollection[$menuState].stamps[area_name]
+                      .area_stamps[stamp].name}
+                    class="stamp"
+                  />
+                {:else}
+                  <img
+                    bind:this={DOM_Stamps[stamp]}
+                    on:click|preventDefault={() => {
+                      animateCSS(DOM_Stamps[stamp], "headShake");
+                    }}
+                    src={$stampCollection[$menuState].stamps[area_name]
+                      .area_stamps[stamp].bw}
+                    alt={$stampCollection[$menuState].stamps[area_name]
+                      .area_stamps[stamp].name}
+                    class="stamp locked"
+                  />
+                {/if}
+              </div>
             {/each}
           {/key}
         </div>
@@ -78,18 +87,12 @@
 <style>
   .menu_item.stamps {
     display: grid;
-
-    grid-template-rows: repeat(2, 7rem);
+    grid-template-rows: repeat(2, 30vw);
     grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-    align-items: center;
+    /* justify-items: center; */
+    /* align-items: center; */
     grid-gap: 0.5rem;
     margin-bottom: 2vw;
-  }
-
-  .stamp {
-    max-height: 25vw;
-    max-width: 25vw;
   }
 
   .locked {
