@@ -53,7 +53,7 @@
     align-items: center;
     text-align: center;
     font-weight: 400;
-    background-color: var(--red);
+    background-color: var(--purple);
   }
 
   .number {

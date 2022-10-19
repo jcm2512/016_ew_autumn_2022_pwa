@@ -35,7 +35,7 @@
           {$stampCollection[$menuState].stamps[area_name].title}
         </div>
         <hr class="thin" />
-        <div class="menu_item stamps">
+        <div class="menu_item teacher_stamps">
           {#key $updateStamps}
             {#each Object.keys($stampCollection[$menuState].stamps[area_name].area_stamps) as stamp, index}
               {#if $stampCollection[$menuState].stamps[area_name].area_stamps[stamp].found || $viewAllStamps}
@@ -71,19 +71,11 @@
 </div>
 
 <style>
-  .menu_item.stamps {
-    display: grid;
-    grid-template-rows: 7rem;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-    align-items: center;
-    grid-gap: 0.5rem;
+  .menu_item.teacher_stamps {
+    display: flex;
+    justify-content: space-evenly;
     margin-bottom: 2vw;
-  }
-
-  .stamp {
-    max-height: 25vw;
-    max-width: 25vw;
+    margin-top: 4vw;
   }
 
   .locked {

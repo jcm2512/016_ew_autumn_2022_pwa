@@ -511,6 +511,7 @@ img.monster{
   grid-row: 1;
   grid-column: 1;
   z-index: 90;
+  width: 15vw;
 }
 
 .disabled {
@@ -568,20 +569,22 @@ hr.thin {
 }
 
 .stamp {
-  grid-row: 1/-1;
-  grid-column: 1/-1;
   max-height: 25vw;
   max-width: 25vw;
   z-index: 40;
 }
 
-.wrapper{
-  height: 2vw;
-  display: grid;
+.absolute_grid{
+  grid-row: 1/-1;
+  grid-column: 1/-1;
+}
 
+.wrapper{
+  height: 30vw;
+  display: grid;
+  align-content: center;
 }
 .counter {
-  /* box-sizing: content-box; */
   font-family: "Londrina Solid";
   font-weight: 200;
   width: 8vw;
