@@ -19,6 +19,7 @@
     stampArea,
     triggerTrivia,
     errorDialog,
+    stampType,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Std_Layout from "./stamps/Std_Layout.svelte";
@@ -152,6 +153,7 @@
     let current_stamp = $stampCollection[id[0]].stamps[id[1]].area_stamps;
     let items = [];
     // Get stamp location
+    $stampType = id[0];
     $stampArea = id[1];
 
     // IF TRIVIA STAMP
@@ -189,18 +191,23 @@
 
         // If all stamps have been found return message
         if (items.length == 0) {
+          $foundStamp = current_stamp[Object.keys(current_stamp)[0]];
+          $foundStampCollection.push($foundStamp);
           getstamp = false;
           $errorDialog = true;
         }
       }
 
-      for (let i = 0; i < count; i++) {
-        let random = items[Math.floor(Math.random() * items.length)];
-        $foundStamp = current_stamp[random];
-        $foundStamp.found = true;
-        $foundStamp.count += 1;
-        $foundStampCollection.push($foundStamp);
-        $stampCount += 1;
+      if (items.length > 0) {
+        for (let i = 0; i < count; i++) {
+          let random = items[Math.floor(Math.random() * items.length)];
+          $foundStamp = current_stamp[random];
+          console.log("foundstamp random", $foundStamp);
+          $foundStamp.found = true;
+          $foundStamp.count += 1;
+          $foundStampCollection.push($foundStamp);
+          $stampCount += 1;
+        }
       }
     }
 
@@ -301,7 +308,9 @@
   }
 
   //// DEV
-  // getFoundStamp("specials_a2_002");
+  // getFoundStamp("teachers_haruka");
+  // getFoundStamp("teachers_joey");
+  getFoundStamp("specials_a2_002");
 </script>
 
 <div id="main" bind:this={main} class="bg_dark">
@@ -310,7 +319,7 @@
   {/if}
 
   {#if $errorDialog}
-    <ErrorDialog STAMP={$foundStampCollection} />{/if}
+    <ErrorDialog />{/if}
 
   {#if $triggerTrivia}
     <TriviaPopup STAMP={$foundStamp} />

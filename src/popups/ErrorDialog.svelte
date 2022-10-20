@@ -7,19 +7,8 @@
     triggerMenuState,
     showNotification,
     scrollToStamp,
+    stampType,
   } from "../store.js";
-
-  import { onMount } from "svelte";
-
-  import { animateCSS } from "../animateCSS.svelte";
-
-  let DOM_Stamps = [];
-
-  // onMount(() => {
-  //   STAMP.forEach((stamp, index) => {
-  //     animateCSS(DOM_Stamps[index], "flip");
-  //   });
-  // });
 
   $showNotification = false;
 
@@ -39,24 +28,52 @@
     $showNotification = true;
   }
 
-  export let STAMP;
+  console.log($stampType);
 </script>
 
 <div id="popup">
   <div id="popup_dialog">
     <div id="popup_bg" />
 
-    <div id="popup_message">NOTHING TO SEE HERE</div>
-    <div id="popup_monsters">
-      <!-- {#each STAMP as stamp, index}
-          <div class="full-tile" bind:this={DOM_Stamps[index]}>
-            <img src={stamp.img} class="fullsize monster" alt={stamp.name} />
-          </div>
-        {/each} -->
-      oh...
+    <div id="popup_message">BOO!</div>
+    <div id="popup_monsters" class="std_font message">
+      {#if $stampType == "teachers"}
+        No more stamps...<br /><br />Please ask <br />another teacher
+      {/if}
+      {#if $stampType == "specials"}
+        No more stamps...<br /><br />Please find <br />another quiz
+      {/if}
     </div>
 
     <div on:click={button} id="ok_button">OK</div>
   </div>
 </div>
 <div id="overlay_popup" class="grid-top " />
+
+<style>
+  .std_font {
+    font-family: "Londrina Solid";
+  }
+
+  .message {
+    margin: 2vw;
+  }
+
+  #popup_dialog {
+    width: 80vw;
+    height: 100vw;
+    font-size: 16vw;
+    display: grid;
+    grid-template: 25vw 60vw 15vw / 1fr;
+  }
+
+  #popup_monsters {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 50vw;
+  }
+</style>

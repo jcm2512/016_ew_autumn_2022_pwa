@@ -40,6 +40,7 @@
   }
 
   export let STAMP;
+  console.log(STAMP);
 </script>
 
 <div id="popup">

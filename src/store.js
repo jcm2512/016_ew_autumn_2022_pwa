@@ -20,6 +20,7 @@ export const devMode = writable(false);
 export const notifyMonsters = writable();
 export const showNotification = writable(true);
 export const stampArea = writable("top");
+export const stampType = writable("specials");
 export const scrollToStamp = writable(false);
 export const triggerTrivia = writable(false);
 export const triviaCorrect = writable(false);
