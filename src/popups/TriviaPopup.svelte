@@ -81,18 +81,18 @@
     console.log(option);
     // let parent = event.path[0];
     // let selected = parent.getAttribute("id");
-    if (TRIVIA[num].answer == selected && !$foundStamp.found) {
-      // If correct
-      $foundStamp.found = true;
-      $foundStamp.count += 1;
-      $stampCount += 1;
-      // Show Stamp Button
-      $triviaCorrect = true;
-      // parent.classList.add("correct");
-    } else {
-      // If incorrect
-      // parent.classList.add("incorrect");
-    }
+    // if (TRIVIA[num].answer == selected && !$foundStamp.found) {
+    //   // If correct
+    //   $foundStamp.found = true;
+    //   $foundStamp.count += 1;
+    //   $stampCount += 1;
+    //   // Show Stamp Button
+    //   $triviaCorrect = true;
+    //   // parent.classList.add("correct");
+    // } else {
+    //   // If incorrect
+    //   // parent.classList.add("incorrect");
+    // }
   }
   function button() {
     $triggerMenuState += 1;
