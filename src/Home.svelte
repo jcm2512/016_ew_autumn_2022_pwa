@@ -20,7 +20,7 @@
     stampArea,
     message,
     triggerTrivia,
-    alreadyFound,
+    errorDialog,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Std_Layout from "./stamps/Std_Layout.svelte";
@@ -30,6 +30,7 @@
   // import Unavailable from "./pages/Unavailable.svelte";
   import Trivia from "./pages/Trivia.svelte";
   import Dialog from "./popups/Dialog.svelte";
+  import ErrorDialog from "./popups/ErrorDialog.svelte";
   import TriviaPopup from "./popups/TriviaPopup.svelte";
   import "animate.css";
   import Teachers from "./stamps/Teachers.svelte";
@@ -171,6 +172,7 @@
   //// Get Found Stamp
   function getFoundStamp(stamp) {
     let getstamp = true;
+    let alreadyfound = false;
     let id = stamp.split("_");
     let current_stamp = $stampCollection[id[0]].stamps[id[1]].area_stamps;
     let items = [];
@@ -190,6 +192,8 @@
         $foundStampCollection.push($foundStamp);
       } else {
         console.log("ALREADY FOUND THIS STAMP");
+        $foundStampCollection.push($foundStamp);
+        alreadyfound = true;
       }
       console.log("RETURNING FROM IF SPECIALS");
       // return;
@@ -219,15 +223,18 @@
         if (items.length == 0) {
           console.log("YOU ALREADY HAVE THIS STAMP");
           getstamp = false;
-          // $alreadyFound = true;
+          console.log(getstamp);
+          alreadyfound = true;
           // return;
         }
       }
-      // end if teachers
+      // end of teachers
+      console.log("end of teachers");
 
       for (let i = 0; i < count; i++) {
         let random = items[Math.floor(Math.random() * items.length)];
         $foundStamp = current_stamp[random];
+        console.log("$foundStamp", $foundStamp);
         $foundStamp.found = true;
         $foundStamp.count += 1;
         $foundStampCollection.push($foundStamp);
@@ -239,6 +246,7 @@
 
     if (getstamp) {
       // show dialog and save stamps to localstorage
+      console.log("getstamp true");
       $found = true;
 
       console.log($foundStampCollection);
@@ -247,6 +255,12 @@
       $sessionStorage.save();
 
       saveResults();
+    }
+
+    if (alreadyfound) {
+      console.log("---error dialog----");
+      // Show error dialog
+      $errorDialog = true;
     }
   }
 
@@ -347,6 +361,9 @@
   {#if $found}
     <Dialog STAMP={$foundStampCollection} />
   {/if}
+
+  {#if $errorDialog}
+    <ErrorDialog STAMP={$foundStampCollection} />{/if}
 
   {#if $triggerTrivia}
     <TriviaPopup STAMP={$foundStamp} />

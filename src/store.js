@@ -26,6 +26,7 @@ export const message = writable("");
 export const triggerTrivia = writable(false);
 export const triviaCorrect = writable(false);
 export const alreadyFound = writable(false);
+export const errorDialog = writable(false);
 
 // MONSTER LIST
 export const stampCollection = writable({});
