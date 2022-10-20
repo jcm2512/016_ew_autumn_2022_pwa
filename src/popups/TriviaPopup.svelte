@@ -61,7 +61,7 @@
     Q008: {
       question: "What does the name 'Dracula' mean?",
       answer: 2,
-      options: ["a", "b", "Son of the Devil"],
+      options: ["Batman", "Doctor Acula", "Son of the Devil"],
     },
     Q009: {
       question: "What are vampires afraid of?",
