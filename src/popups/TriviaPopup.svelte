@@ -71,27 +71,29 @@
   };
 
   let DOM_Stamps = [];
+  let CHOICES = [];
 
   $showNotification = false;
 
   let id = $foundStampCollection[0].name.split("_");
   let num = `Q${id[2].toString()}`;
 
-  function optionSelected(option) {
-    console.log(option);
+  function optionSelected(selected) {
+    console.log(selected.classList);
     // let parent = event.path[0];
-    // let selected = parent.getAttribute("id");
-    if (TRIVIA[num].answer == option && !$foundStamp.found) {
+    let answer = selected.getAttribute("id");
+    if (TRIVIA[num].answer == answer && !$foundStamp.found) {
       // If correct
+      selected.classList.add("correct");
       $foundStamp.found = true;
       $foundStamp.count += 1;
       $stampCount += 1;
+
       // Show Stamp Button
       $triviaCorrect = true;
-      // parent.classList.add("correct");
     } else {
       // If incorrect
-      // parent.classList.add("incorrect");
+      selected.classList.add("incorrect");
     }
   }
   function button() {
@@ -124,7 +126,12 @@
     <div id="popup_message">{TRIVIA[num].question}</div>
     <div id="trivia_options">
       {#each TRIVIA[num].options as option, index}
-        <div class="choices" id={index} on:click={() => optionSelected(index)}>
+        <div
+          class="choices"
+          bind:this={CHOICES[index]}
+          id={index}
+          on:click={() => optionSelected(CHOICES[index])}
+        >
           {option}
         </div>
       {/each}
