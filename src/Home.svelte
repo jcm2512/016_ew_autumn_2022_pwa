@@ -309,7 +309,7 @@
   }
 
   //// DEV
-  getFoundStamp("teachers_haruka");
+  // getFoundStamp("teachers_haruka");
   // getFoundStamp("teachers_joey");
   // getFoundStamp("specials_a2_002");
 </script>
