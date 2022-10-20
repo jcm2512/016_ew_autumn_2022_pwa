@@ -33,6 +33,7 @@
   import TriviaPopup from "./popups/TriviaPopup.svelte";
   import "animate.css";
   import Teachers from "./stamps/Teachers.svelte";
+  import { fade } from "svelte/transition";
 
   export const versionNum = 20;
 
@@ -308,7 +309,7 @@
   }
 
   //// DEV
-  // getFoundStamp("teachers_haruka");
+  getFoundStamp("teachers_haruka");
   // getFoundStamp("teachers_joey");
   // getFoundStamp("specials_a2_002");
 </script>

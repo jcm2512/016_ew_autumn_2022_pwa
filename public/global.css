@@ -19,7 +19,7 @@
 
   --sub-menu-height: 10rem;
   --nav-padding-bottom: 3vw;
-
+  --animate-delay: 2.0s
 }
 
 * {

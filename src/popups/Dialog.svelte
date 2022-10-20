@@ -12,12 +12,14 @@
   import { onMount } from "svelte";
 
   import { animateCSS } from "../animateCSS.svelte";
+  import { fade } from "svelte/transition";
 
   let DOM_Stamps = [];
 
   onMount(() => {
     STAMP.forEach((stamp, index) => {
       animateCSS(DOM_Stamps[index], "flip");
+      animateCSS(DOM_Stamps[index], "delay-1s");
     });
   });
 
