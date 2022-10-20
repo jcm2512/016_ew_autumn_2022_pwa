@@ -123,9 +123,9 @@
     <div id="popup_message">{TRIVIA[num].question}</div>
     <div id="trivia_options">
       {#each TRIVIA[num].options as option, index}
-        <span class="choices" id={index} on:click={optionSelected}>
-          {option}</span
-        >
+        <div class="choices" id={index} on:click={optionSelected}>
+          {option}
+        </div>
       {/each}
     </div>
     {#if $triviaCorrect}
