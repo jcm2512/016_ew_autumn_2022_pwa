@@ -190,7 +190,7 @@
         // If all stamps have been found return message
         if (items.length == 0) {
           getstamp = false;
-          alreadyfound = true;
+          $errorDialog = true;
         }
       }
 
