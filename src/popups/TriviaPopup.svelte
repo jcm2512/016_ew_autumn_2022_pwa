@@ -20,7 +20,6 @@
   import { animateCSS } from "../animateCSS.svelte";
 
   export let STAMP;
-  console.log(STAMP);
 
   const TRIVIA = {
     Q001: {
@@ -79,7 +78,6 @@
   let num = `Q${id[2].toString()}`;
 
   function optionSelected(selected) {
-    console.log(selected.classList);
     // let parent = event.path[0];
     let answer = selected.getAttribute("id");
     if (TRIVIA[num].answer == answer && !$foundStamp.found) {
@@ -115,7 +113,6 @@
     $sessionStorage.set({ found: $stampCount });
     $sessionStorage.save();
 
-    console.log("save results");
     $trigger += 1;
   }
 </script>

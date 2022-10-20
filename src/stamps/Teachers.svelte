@@ -30,7 +30,6 @@
 <div id="content" class="grid-top grid" bind:this={DOM_Content}>
   <div bind:this={DOM_Headings["top"]} id="stamp_card">
     <div id="heading" bind:this={heading}>
-      <!-- <div class="sub jp-font">{$stampCollection[$menuState].subheading}</div> -->
       <div class="main">{$stampCollection[$menuState].heading}</div>
     </div>
     <div id="menu">

@@ -25,9 +25,7 @@
 
   function button() {
     $triggerMenuState += 1;
-    console.log($foundStampCollection);
     let id = $foundStampCollection[0].name.split("_");
-    console.log(id[0]);
     let area = id[0];
     $found = false;
     $updateStamps += 1;
@@ -36,14 +34,12 @@
 
     // grab from here even if all stamps found
     $scrollToStamp = true;
-    console.log("scrolltostamp: ", $scrollToStamp);
 
     // SHOW ANY NOTIFICATIONS IF ANY
     $showNotification = true;
   }
 
   export let STAMP;
-  console.log(STAMP);
 </script>
 
 <div id="popup">

@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { Html5QrcodeScanner, Html5Qrcode } from "html5-qrcode";
+  import { Html5Qrcode } from "html5-qrcode";
   import {
     found,
     scanning,
@@ -14,11 +14,9 @@
     sessionStorage,
     foundStamp,
     foundStampCollection,
-    advertState,
     viewAllStamps,
     stampCount,
     stampArea,
-    message,
     triggerTrivia,
     errorDialog,
   } from "./store.js";
@@ -37,24 +35,17 @@
 
   export const versionNum = 20;
 
-  // Check for admin key
   const searchParams = new URLSearchParams(
     new URL(window.location.href).search
   );
-  if (searchParams.get("login") !== "admin") {
-    console.log("Running Google Analytics");
-    window.dataLayer = window.dataLayer || [];
+  window.dataLayer = window.dataLayer || [];
 
-    // Run Google Analytics only if not logged in as admin
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-2QLN8HM2DM");
-  } else {
-    console.log("Logged in as admin; Google Analytics disabled");
+  // Google Analytics
+  function gtag() {
+    dataLayer.push(arguments);
   }
+  gtag("js", new Date());
+  gtag("config", "G-2QLN8HM2DM");
 
   // Global Variables
   let reader, button, overlay, main, next; // Reference to DOM element
@@ -68,7 +59,6 @@
     localStorage.setItem("DEV_MODE", JSON.stringify(false));
   }
   if (JSON.parse(localStorage.getItem("DEV_MODE")) == true) {
-    console.log("DEV MODE");
     $viewAllStamps = true;
   }
 
@@ -87,18 +77,12 @@
 
   // CHECK VERSION NUMBER AND CLEAR LOCAL CACHE
   if (localStorage.getItem("MSR_version") != versionNum) {
-    console.log("clearing cache");
     $sessionStorage.clear();
     $sessionStorage.load();
     updateStampCollection();
 
     // SET VERSION NUMBER
     localStorage.setItem("MSR_version", JSON.stringify(versionNum));
-
-    // Load weekly monster from local localStorage
-    // (We do this here because localStorage will get wiped when updating the database)
-    // console.log("Reloading weekly stamps");
-    // weeklyMonsters.forEach((stamp_id) => loadWeeklyStamps(stamp_id));
   } else {
     $sessionStorage.load();
     updateStampCollection();
@@ -106,15 +90,7 @@
 
   $stampCount = $sessionStorage.get("found").found;
 
-  // Check for advertisement key
-  if (localStorage.getItem("advert") != undefined) {
-    $advertState = JSON.parse(localStorage.getItem("advert"));
-  } else {
-    localStorage.setItem("advert", JSON.stringify($advertState));
-  }
-
   function updateState() {
-    console.log("updating menu state");
     nav_home.classList.remove("active");
     nav_monsters.classList.remove("active");
     nav_specials.classList.remove("active");
@@ -161,7 +137,6 @@
 
   // Fix document page size when toolbar is shown or hidden
   const onResize = function () {
-    console.log("resized");
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   };
@@ -178,8 +153,6 @@
     let items = [];
     // Get stamp location
     $stampArea = id[1];
-    console.log($stampArea);
-    console.log(stamp);
 
     // IF TRIVIA STAMP
     if (id[0] == "specials") {
@@ -187,16 +160,12 @@
       $foundStamp = current_stamp[stamp];
 
       if (!$foundStamp.found) {
-        console.log("YOU FOUND A TRIVIA STAMP");
         $triggerTrivia = true;
         $foundStampCollection.push($foundStamp);
       } else {
-        console.log("ALREADY FOUND THIS STAMP");
         $foundStampCollection.push($foundStamp);
         alreadyfound = true;
       }
-      console.log("RETURNING FROM IF SPECIALS");
-      // return;
     }
 
     // MULTI STAMP
@@ -214,27 +183,20 @@
           )
         );
         items = Object.keys(filtered_stamps);
-        console.log(items.length);
 
         // Removed a stamp, so count = 1
         count = 1;
 
         // If all stamps have been found return message
         if (items.length == 0) {
-          console.log("YOU ALREADY HAVE THIS STAMP");
           getstamp = false;
-          console.log(getstamp);
           alreadyfound = true;
-          // return;
         }
       }
-      // end of teachers
-      console.log("end of teachers");
 
       for (let i = 0; i < count; i++) {
         let random = items[Math.floor(Math.random() * items.length)];
         $foundStamp = current_stamp[random];
-        console.log("$foundStamp", $foundStamp);
         $foundStamp.found = true;
         $foundStamp.count += 1;
         $foundStampCollection.push($foundStamp);
@@ -242,14 +204,9 @@
       }
     }
 
-    console.log("STILL IN GETFOUNDSTAMP FUNCTION");
-
     if (getstamp) {
       // show dialog and save stamps to localstorage
-      console.log("getstamp true");
       $found = true;
-
-      console.log($foundStampCollection);
 
       $sessionStorage.set({ found: $stampCount });
       $sessionStorage.save();
@@ -258,7 +215,6 @@
     }
 
     if (alreadyfound) {
-      console.log("---error dialog----");
       // Show error dialog
       $errorDialog = true;
     }
@@ -266,7 +222,6 @@
 
   //// Save Results
   function saveResults() {
-    console.log("save results");
     $trigger += 1;
   }
 
@@ -345,19 +300,11 @@
     }
   }
 
-  console.log(`//// View All Stamps: ${$viewAllStamps}/////`);
-
   //// DEV
   // getFoundStamp("specials_a2_002");
 </script>
 
 <div id="main" bind:this={main} class="bg_dark">
-  {#key $message}
-    <div id="message" class="grid-top">
-      {$message}
-    </div>
-  {/key}
-
   {#if $found}
     <Dialog STAMP={$foundStampCollection} />
   {/if}
