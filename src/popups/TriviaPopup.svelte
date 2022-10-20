@@ -123,7 +123,7 @@
     <div id="popup_message">{TRIVIA[num].question}</div>
     <div id="trivia_options">
       {#each TRIVIA[num].options as option, index}
-        <div class="choices" id={index} on:click={optionSelected()}>
+        <div class="choices" id={index} on:click={() => optionSelected()}>
           {option}
         </div>
       {/each}
