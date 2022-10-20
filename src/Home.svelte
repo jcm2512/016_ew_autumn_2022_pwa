@@ -310,7 +310,7 @@
   //// DEV
   // getFoundStamp("teachers_haruka");
   // getFoundStamp("teachers_joey");
-  getFoundStamp("specials_a2_002");
+  // getFoundStamp("specials_a2_002");
 </script>
 
 <div id="main" bind:this={main} class="bg_dark">
