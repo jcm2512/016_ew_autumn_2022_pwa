@@ -327,7 +327,7 @@
           $scanning = false;
           $qr_state = "ready";
           nav_menu.classList.remove("disabled");
-          nav(previous_nav);
+          // nav(previous_nav);
         })
         .catch((err) => {
           // Stop failed, handle it.
