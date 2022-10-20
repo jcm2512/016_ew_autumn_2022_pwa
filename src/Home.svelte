@@ -170,6 +170,7 @@
 
   //// Get Found Stamp
   function getFoundStamp(stamp) {
+    let getstamp = false;
     let id = stamp.split("_");
     let current_stamp = $stampCollection[id[0]].stamps[id[1]].area_stamps;
     let items = [];
@@ -220,6 +221,7 @@
           // return;
         }
         console.log("RETURNING FROM IF TEACHERS");
+        getstamp = true;
         // return;
       }
       // end if teachers
@@ -236,15 +238,17 @@
 
     console.log("STILL IN GETFOUNDSTAMP FUNCTION");
 
-    // if (items.length == 0) return;
-    $found = true;
+    if (getstamp) {
+      // if (items.length == 0) return;
+      $found = true;
 
-    console.log($foundStampCollection);
+      console.log($foundStampCollection);
 
-    $sessionStorage.set({ found: $stampCount });
-    $sessionStorage.save();
+      $sessionStorage.set({ found: $stampCount });
+      $sessionStorage.save();
 
-    saveResults();
+      saveResults();
+    }
   }
 
   //// Save Results
