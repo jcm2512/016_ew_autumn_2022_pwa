@@ -20,6 +20,7 @@
     stampArea,
     message,
     triggerTrivia,
+    alreadyFound,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Std_Layout from "./stamps/Std_Layout.svelte";
@@ -172,6 +173,7 @@
     let id = stamp.split("_");
     let current_stamp = $stampCollection[id[0]].stamps[id[1]].area_stamps;
     let items = [];
+    // Get stamp location
     $stampArea = id[1];
     console.log($stampArea);
     console.log(stamp);
@@ -187,7 +189,8 @@
       } else {
         console.log("ALREADY FOUND THIS STAMP");
       }
-      return;
+      console.log("RETURNING FROM IF SPECIALS");
+      // return;
     }
 
     // MULTI STAMP
@@ -211,8 +214,16 @@
         count = 1;
 
         // If all stamps have been found return message
-        if (items.length == 0) return;
+        if (items.length == 0) {
+          console.log("YOU ALREADY HAVE THIS STAMP");
+          // $alreadyFound = true;
+          // return;
+        }
+        console.log("RETURNING FROM IF TEACHERS");
+        // return;
       }
+      // end if teachers
+
       for (let i = 0; i < count; i++) {
         let random = items[Math.floor(Math.random() * items.length)];
         $foundStamp = current_stamp[random];
@@ -222,6 +233,9 @@
         $stampCount += 1;
       }
     }
+
+    console.log("STILL IN GETFOUNDSTAMP FUNCTION");
+
     // if (items.length == 0) return;
     $found = true;
 

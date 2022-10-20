@@ -17,8 +17,12 @@
   let DOM_Content;
 
   onMount(() => {
+    console.log("MOUNTED", $stampArea);
     // SCROLL TO STAMP
     DOM_Content.scrollTop = DOM_Headings[$stampArea].offsetTop;
+    console.log(DOM_Headings[$stampArea]);
+    console.log(DOM_Headings[$stampArea].offsetTop);
+
     $stampArea = "top"; // Revert to default
   });
 </script>
@@ -31,7 +35,7 @@
     </div>
     <div id="menu">
       {#each Object.keys($stampCollection[$menuState].stamps) as area_name}
-        <div class="title" bind:this={DOM_Headings[area_name]}>
+        <div class="title" id={area_name} bind:this={DOM_Headings[area_name]}>
           {$stampCollection[$menuState].stamps[area_name].title}
         </div>
         <hr class="thin" />

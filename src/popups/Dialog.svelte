@@ -33,6 +33,8 @@
     $updateStamps += 1;
     $foundStampCollection = [];
     $menuState = area;
+
+    // grab from here even if all stamps found
     $scrollToStamp = true;
     console.log("scrolltostamp: ", $scrollToStamp);
 
