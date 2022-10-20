@@ -221,7 +221,6 @@
           // return;
         }
         console.log("RETURNING FROM IF TEACHERS");
-        getstamp = true;
         // return;
       }
       // end if teachers
@@ -235,6 +234,8 @@
         $stampCount += 1;
       }
     }
+
+    getstamp = true;
 
     console.log("STILL IN GETFOUNDSTAMP FUNCTION");
 
