@@ -170,7 +170,7 @@
 
   //// Get Found Stamp
   function getFoundStamp(stamp) {
-    let getstamp = false;
+    let getstamp = true;
     let id = stamp.split("_");
     let current_stamp = $stampCollection[id[0]].stamps[id[1]].area_stamps;
     let items = [];
@@ -179,8 +179,9 @@
     console.log($stampArea);
     console.log(stamp);
 
-    // SINGLE STAMP
+    // IF TRIVIA STAMP
     if (id[0] == "specials") {
+      getstamp = false;
       $foundStamp = current_stamp[stamp];
 
       if (!$foundStamp.found) {
@@ -217,11 +218,10 @@
         // If all stamps have been found return message
         if (items.length == 0) {
           console.log("YOU ALREADY HAVE THIS STAMP");
+          getstamp = false;
           // $alreadyFound = true;
           // return;
         }
-        console.log("RETURNING FROM IF TEACHERS");
-        // return;
       }
       // end if teachers
 
@@ -235,12 +235,10 @@
       }
     }
 
-    getstamp = true;
-
     console.log("STILL IN GETFOUNDSTAMP FUNCTION");
 
     if (getstamp) {
-      // if (items.length == 0) return;
+      // show dialog and save stamps to localstorage
       $found = true;
 
       console.log($foundStampCollection);
