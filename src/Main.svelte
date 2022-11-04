@@ -8,41 +8,39 @@
     <div class="sub">STAMP RALLY</div>
   </div>
   <div id="menu">
-    <div class="title">You found</div>
-    <div class="centered">
+    <div class="centered-stamp">
       <div class="circle">
-        <span class="number">{$stampCount}</span>
-        <span class="stamps">STAMPS</span>
+        <img
+          src="./assets/stamps/specials_a1_001.png"
+          alt="stamp"
+          class="stamp_lg absolute_grid"
+        />
       </div>
     </div>
     <div class="centered">
-      {#if $stampCount > 69}
-        <div class="title">HOORAY!! <br /> YOU DID IT!</div>
-      {:else if $stampCount > 59}
-        <div class="title">YOU ARE ALMOST THERE!</div>
-      {:else if $stampCount > 49}
-        <div class="title">FANTASTIC!</div>
-      {:else if $stampCount > 39}
-        <div class="title">YOU ARE AMAZING!</div>
-      {:else if $stampCount > 29}
-        <div class="title">WOW, SO MANY...</div>
-      {:else if $stampCount > 19}
-        <div class="title">KEEP GOING!</div>
-      {:else if $stampCount > 9}
-        <div class="title">GOOD JOB!</div>
-      {/if}
+      <div class="message">ALL STAMPS UNLOCKED</div>
+      <div class="title">
+        THANKS FOR PLAYING! <br />
+      </div>
     </div>
   </div>
 </div>
 
 <style>
   .title {
-    font-size: 10vw;
+    margin-top: 4vw;
+    font-size: 8vw;
     text-align: center;
   }
+  .message {
+    font-size: 10vw;
+    text-align: center;
+    height: fit-content;
+    background-color: var(--red);
+  }
   .circle {
-    height: 60vw;
-    width: 60vw;
+    height: 50vw;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     border-radius: 50%;
@@ -67,9 +65,21 @@
   .centered {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+  }
+
+  .centered-stamp {
+    display: flex;
+    justify-content: center;
   }
 
   #menu_heading .sub {
     margin-top: -5vw;
+  }
+
+  .stamp_lg {
+    max-height: 35vw;
+    max-width: 35vw;
+    z-index: 40;
   }
 </style>

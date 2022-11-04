@@ -1,4 +1,8 @@
 <script>
+  // This is the final version of the app after the end of the event.
+  // All stamps will be shown to the players
+  // Please see "simple-qr" branch for previous playable version
+
   import { onMount } from "svelte";
   import { Html5Qrcode } from "html5-qrcode";
   import {
@@ -20,6 +24,8 @@
     triggerTrivia,
     errorDialog,
     stampType,
+    showfullsize,
+    fullsizestamp,
   } from "./store.js";
   import { localData } from "./localstorage.svelte";
   import Std_Layout from "./stamps/Std_Layout.svelte";
@@ -29,6 +35,7 @@
   // import Unavailable from "./pages/Unavailable.svelte";
   import Trivia from "./pages/Trivia.svelte";
   import Dialog from "./popups/Dialog.svelte";
+  import Fullsize from "./popups/Fullsize.svelte";
   import ErrorDialog from "./popups/ErrorDialog.svelte";
   import TriviaPopup from "./popups/TriviaPopup.svelte";
   import "animate.css";
@@ -55,6 +62,9 @@
   let previous_nav = nav_home;
   let start, stop; // Functions loaded on Mount
   $found = false;
+
+  // Set all stamps to be shown
+  $viewAllStamps = true;
 
   // INITIALIZE DEVMODE
   if (localStorage.getItem("DEV_MODE") == undefined) {
@@ -317,6 +327,10 @@
 <div id="main" bind:this={main} class="bg_dark">
   {#if $found}
     <Dialog STAMP={$foundStampCollection} />
+  {/if}
+
+  {#if $showfullsize}
+    <Fullsize STAMP={$fullsizestamp} />
   {/if}
 
   {#if $errorDialog}

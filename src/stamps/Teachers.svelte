@@ -5,6 +5,8 @@
     updateStamps,
     viewAllStamps,
     stampArea,
+    showfullsize,
+    fullsizestamp,
   } from "../store.js";
   import { onMount } from "svelte";
 
@@ -15,6 +17,11 @@
   let DOM_Stamps = [];
   let DOM_Headings = [];
   let DOM_Content;
+
+  function showFullSize(stamp) {
+    $fullsizestamp.push(stamp);
+    $showfullsize = true;
+  }
 
   onMount(() => {
     console.log("MOUNTED", $stampArea);
@@ -45,7 +52,12 @@
                 <img
                   bind:this={DOM_Stamps[stamp]}
                   on:click|preventDefault={() => {
-                    animateCSS(DOM_Stamps[stamp], "tada");
+                    showFullSize(
+                      $stampCollection[$menuState].stamps[area_name]
+                        .area_stamps[stamp]
+                    );
+
+                    // animateCSS(DOM_Stamps[stamp], "tada");
                   }}
                   src={$stampCollection[$menuState].stamps[area_name]
                     .area_stamps[stamp].img}
